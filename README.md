@@ -4,7 +4,7 @@
 
 <br>
 <div align="center">
-  <img src="./src/components/images/Task-Logo-fullcol-Copy.png" alt="Logo" width="140" height="160">
+  <img src="./src/components/images/Task-Logo-fullcol-Copy.png" alt="Logo" width="140" height="150">
   <h3 align="center">Final Project TaskPro App</h3>
   <a href="https://proyecto-final-emiand.vercel.app/auth/login">Visit Website</a>
 </div>
