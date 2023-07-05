@@ -65,10 +65,12 @@ The application provides functionalities such as user account registration, task
 
  - Implentar HTML y CSS del Sign Up y Sing In ✅  <br>
  - Implentar la logica para el Sign Up, Sign In y Sing Out ✅  <br>
- - Implementar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In ✅  <br>
+ - Implementar la funcion de ocultar/mostrar contraseña a la hora de hacer Sign In y Sing Out ✅  <br>
 
  <h3>Miercoles 05/07/23</h3>
+
  - Añadir funcionalidad al boton update para editar titulo y descripción de la tarea  ✅ <br>
+ - Preparar la tienda task.js para poder conectar los botones con la base de datos<br>
  - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Completada", esta se tacha<br>
 
  <h3>Jueves 06/07/23</h3>
@@ -77,21 +79,22 @@ The application provides functionalities such as user account registration, task
 
  <h3>Viernes 07/07/23</h3>
 
+ - Implementar menu hamburguesa para versiones moviles<br>
  - Adaptar el diseño a la version movil<br>
 
  <h3>Sabado 08/07/23</h3>
 
  - Hacer el fetch de las tareas de Supabase al cargar la pagina y cada vez que se ejecute alguna accion de cambio<br>
- - Implementar funcionalidad de la fecha en el home<br>
+
 
 
  <h3>Lunes 10/07/23</h3>
-
- - Implementar menu hamburguesa para versiones moviles<br>
+ - Implementar funcionalidad de la fecha en el home<br>
+ 
  
  <h3>Martes 11/07/23</h3>
 
- - Preparar la tienda task.js para poder conectar los botones con la base de datos<br>
+
 
 
  <h3>Sabado 15/07/23</h3>
