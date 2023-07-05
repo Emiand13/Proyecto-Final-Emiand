@@ -68,13 +68,11 @@ The application provides functionalities such as user account registration, task
  - Implementar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In ✅  <br>
 
  <h3>Miercoles 05/07/23</h3>
+ - Añadir funcionalidad al boton update para editar tarea  ✅ <br>
+ - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Hecha", esta se tacha<br>
 
- - Añadir ultimos detalles Readme<br>
- 
- 
  <h3>Jueves 06/07/23</h3>
  
- - Añadir funcionalidad al boton update para editar tarea<br>
  - Implementar la funcionalidad de addTask y taskItem<br>
 
  <h3>Viernes 07/07/23</h3>
@@ -90,9 +88,7 @@ The application provides functionalities such as user account registration, task
  <h3>Lunes 10/07/23</h3>
 
  - Implementar menu hamburguesa para versiones moviles<br>
- - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Hecha", esta se tacha<br>
-
-
+ 
  <h3>Martes 11/07/23</h3>
 
  - Preparar la tienda task.js para poder conectar los botones con la base de datos<br>
@@ -105,7 +101,7 @@ The application provides functionalities such as user account registration, task
  - Añadir el diseño CSS del componente taskItem <br>
 
  <h3>Lunes 17/07/23</h3>
-
+ - Añadir ultimos detalles Readme<br>
  - Repaso a la pagina y todas sus funcionalidades<br>
  - Preparar la presentacion del proyecto<br>
 
