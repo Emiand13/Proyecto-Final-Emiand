@@ -57,7 +57,7 @@ The application provides functionalities such as user account registration, task
 
  <h3>Sabado 01/07/23</h3>
 
- - Preparar el README con la descripcion del proyecto y el roadmap ✓ <br>
+ - Preparar el README con la descripcion del proyecto y el roadmap <i class="fa-solid fa-circle-check"></i> <br>
  - Subir el proyecto a Vercel para que este disponible para todo el mundo ✓  <br>
  - Conectar el proyecto con supabase para almacenar los datos de la app ✓ <br>
 
