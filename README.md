@@ -57,15 +57,15 @@ The application provides functionalities such as user account registration, task
 
  <h3>Sabado 01/07/23</h3>
 
- - Preparar el README con la descripcion del proyecto y el roadmap <br><i class="fas fa-check-circle" style="color: green;"></i>
- - Subir el proyecto a Vercel para que este disponible para todo el mundo <br>
- - Conectar el proyecto con supabase para almacenar los datos de la app <br>
+ - Preparar el README con la descripcion del proyecto y el roadmap ✓ <br>
+ - Subir el proyecto a Vercel para que este disponible para todo el mundo ✓  <br>
+ - Conectar el proyecto con supabase para almacenar los datos de la app ✓ <br>
 
  <h3>Martes 03/07/23</h3>
 
- - Implentar HTML y CSS del Sign Up y Sing In<br>
- - Implentar la logica para el Sign Up, Sign In y Sing Out<br>
- - Implementar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In<br>
+ - Implentar HTML y CSS del Sign Up y Sing In ✓ <br>
+ - Implentar la logica para el Sign Up, Sign In y Sing Out ✓ <br>
+ - Implementar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In ✓ <br>
 
  <h3>Miercoles 05/07/23</h3>
 
