@@ -18,13 +18,13 @@ const { user } = storeToRefs(userStore);
 onMounted(async () => {
   const appReady = ref(null);
   try {
-    await userStore.fetchUser(); // here we call fetch user
+    await userStore.fetchUser(); // aquí llamamos a buscar usuario
     if (!user.value) {
-      // redirect them to logout if the user is not there
+     // Redirigirlos a cerrar sesión si el usuario no está allí
       appReady.value = true;
       router.push({ path: "/auth/login" });
     } else {
-      // continue to dashboard
+     // continuar al tablero
       router.push({ path: "/" });
     }
   } catch (e) {
@@ -33,4 +33,5 @@ onMounted(async () => {
 });
 </script>
 
-<style></style>
+<style scoped>
+</style>

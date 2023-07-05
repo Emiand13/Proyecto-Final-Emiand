@@ -1,44 +1,69 @@
 <template>
   <div class="container">
-
     <div class="header">
       <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
-        <p class="header-subtitle">Start organizing your tasks!</p>
+        <div class="text-center">
+          <img
+            src="../components/images/Task-Logo-fullcol-Copy.png"
+            class="image"
+            alt="imagen logo"
+          />
+          <h3 class="header-title">Register to TaskPro</h3>
+          <p class="header-subtitle">
+            Ready to create your tasks in TaskPro!!!
+          </p>
+        </div>
       </div>
     </div>
 
     <form @submit.prevent="signUp" class="form-sign-in">
       <div class="form">
         <div class="form-input">
-          <label class="input-field-label">E-mail</label>
+          <label class="input-field-label"></label>
           <input
             type="email"
             class="input-field"
             placeholder="example@gmail.com"
-            id="email"
             v-model="email"
             required
           />
         </div>
         <div class="form-input">
-          <label class="input-field-label">Password</label>
+          <label class="input-field-label">
+            <span
+              class="toggle-password1"
+              @click="togglePasswordVisibility('password')"
+            >
+              <i
+                class="fa"
+                :class="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"
+              ></i>
+            </span>
+          </label>
           <input
-            type="password"
+            :type="passwordVisible ? 'text' : 'password'"
             class="input-field"
-            placeholder="**********"
-            id="password"
+            placeholder="Password"
             v-model="password"
             required
           />
         </div>
         <div class="form-input">
-          <label class="input-field-label">Confirm password</label>
+          <label class="input-field-label">
+            <span
+              class="toggle-password2"
+              @click="togglePasswordVisibility('confirmPassword')"
+            >
+              <i
+                class="fa"
+                :class="confirmPasswordVisible ? 'fa-eye-slash' : 'fa-eye'"
+              ></i>
+            </span>
+          </label>
           <input
-            type="password"
+            :type="confirmPasswordVisible ? 'text' : 'password'"
             class="input-field"
-            placeholder="**********"
-            id="confirmPassword"
+            placeholder="Confirm password"
             v-model="confirmPassword"
             required
           />
@@ -55,7 +80,7 @@
       </div>
     </form>
 
-    <div v-show="errorMsg">{{errorMsg}}</div>
+    <div v-show="errorMsg">{{ errorMsg }}</div>
   </div>
 </template>
 
@@ -75,6 +100,21 @@ const buttonText = "Sign In";
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
+
+//=========================================================
+
+//Visibilidad password y confirm password
+const passwordVisible = ref(false);
+const confirmPasswordVisible = ref(false);
+
+const togglePasswordVisibility = (field) => {
+  if (field === "password") {
+    passwordVisible.value = !passwordVisible.value;
+  } else if (field === "confirmPassword") {
+    confirmPasswordVisible.value = !confirmPasswordVisible.value;
+  }
+};
+//========================================================
 
 // Error Message
 const errorMsg = ref("");
@@ -100,8 +140,109 @@ const signUp = async () => {
     }
     return;
   }
-  errorMsg.value = "error";
+  errorMsg.value = "Los datos introducidos no son correctos!!!";
 };
 </script>
 
-<style></style>
+<style  scoped>
+.form-input-label {
+  display: flex;
+  align-items: center;
+}
+
+/* icono ojo visible/ no password*/
+.toggle-password1 {
+  position: absolute;
+  top: 53.5%;
+  right: 610px; /* Ajusta la posición del ícono */
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1; /* Asegura que el ícono esté por encima del input */
+
+  color: #467ffa;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.toggle-password2 {
+  position: absolute;
+  top: 62%;
+  right: 610px; /* Ajusta la posición del ícono */
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1; /* Asegura que el ícono esté por encima del input */
+
+  color: #467ffa;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* .fa {
+  font-size: 18px;
+  color: #ccc;
+} */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.header-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.image {
+  height: 200px;
+  width: 240px;
+}
+.form-sign-in {
+  /* border: 1px solid #ccc; */
+  padding: 20px 20px 20px 20px;
+}
+
+.form-input {
+  margin-bottom: 10px;
+}
+
+.input-field-label {
+  font-weight: bold;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #ffae00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.router-link {
+  align-items: center;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+</style>
+
+

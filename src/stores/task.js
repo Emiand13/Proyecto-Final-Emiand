@@ -6,7 +6,7 @@ import { useUserStore } from "./user";
 export const useTaskStore = defineStore("tasks", () => {
   // Esta tienda utiliza el Composition API
   const tasksArr = ref(null);
-  // conesguir tareas de supabase
+  // conseguir tareas de supabase
   const fetchTasks = async () => {
     const { data: tasks } = await supabase
       .from("tasks")
@@ -35,3 +35,16 @@ export const useTaskStore = defineStore("tasks", () => {
   };
   return { tasksArr, fetchTasks, addTask, deleteTask };
 });
+
+ // actualizar tareas de supabase
+ const updateTask = async (title, description) => {
+  console.log(useUserStore().user.id);
+  const { data, error } = await supabase.from("tasks").update([
+    {
+      user_id: useUserStore().user.id,
+      title: title,
+      is_complete: false,
+      description: description,
+    },
+  ]);
+};

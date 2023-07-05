@@ -1,21 +1,24 @@
 <template>
-    <h1>Add a new Task</h1>
-    <div v-if="showErrorMessage">
+    <div class="add-task-form">
+      <h1>Add a new Task</h1>
+      <div v-if="showErrorMessage">
         <p class="error-text">{{ errorMessage }}</p>
-    </div>
-    <div>
+      </div>
+      <div>
         <div class="input-field">
-            <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
+          <input type="text" placeholder="Add a Task Title - Listen to Snoop Dog" v-model="name">
         </div>
         <div class="input-field">
-            <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
+            <textarea placeholder="Add a Task Description - We are going to the concert next week" v-model="description" class="input-field"></textarea>
         </div>
         <button @click="addTask" class="button">Add</button>
+      </div>
     </div>
-</template>
+  </template>
 
 <script setup>
-import { ref } from "vue";
+
+import { ref, } from "vue";
 import { useTaskStore } from "../stores/task"   
 
 const taskStore = useTaskStore();
@@ -24,11 +27,14 @@ const taskStore = useTaskStore();
 const name = ref('');
 const description = ref('');
 
-// constant to save a variable that holds an initial false boolean value for the errorMessage container that is conditionally displayed depending if the input field is empty
+// constante para guardar una variable que contiene un valor booleano falso inicial para el contenedor de mensaje de error que se muestra condicionalmente dependiendo de si el campo de entrada está vacío
 const showErrorMessage = ref(false);
 
-// const constant to save a variable that holds the value of the error message
+//   constante para guardar una variable que contiene el valor del mensaje de error
 const errorMessage = ref(null);
+
+
+
 
 // Arrow function para crear tareas.
 const addTask = () => {
@@ -41,7 +47,7 @@ if(name.value.length === 0 || description.value.length === 0){
     showErrorMessage.value = false;
     }, 5000);
 
-} else {
+}  else {
     // Aquí mandamos los valores a la store para crear la nueva Task. Esta parte de la función tenéis que refactorizarla para que funcione con emit y el addTask del store se llame desde Home.vue.
 
     taskStore.addTask(name.value, description.value);
@@ -50,7 +56,44 @@ if(name.value.length === 0 || description.value.length === 0){
 }
 };
 
+
 </script>
 
-<style></style>
+<style scooped >
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  margin-bottom: 10px;
+ 
+}
+
+.input-field input {
+  width: 400px;
+}
+.input-field textarea{
+    width: 400px;
+}
+.button {
+  width: 400px;
+  padding: 10px 20px;
+  background-color: #63E667;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+</style>
   
