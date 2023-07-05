@@ -68,12 +68,12 @@ The application provides functionalities such as user account registration, task
  - Implementar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In ✅  <br>
 
  <h3>Miercoles 05/07/23</h3>
- - Añadir funcionalidad al boton update para editar tarea  ✅ <br>
- - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Hecha", esta se tacha<br>
+ - Añadir funcionalidad al boton update para editar titulo y descripción de la tarea  ✅ <br>
+ - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Completada", esta se tacha<br>
 
  <h3>Jueves 06/07/23</h3>
  
- - Implementar la funcionalidad de addTask y taskItem<br>
+ - Implementar la funcionalidad de alerta cuando se borre alguna tarea con Sweetalert2 <br>
 
  <h3>Viernes 07/07/23</h3>
 
@@ -92,8 +92,7 @@ The application provides functionalities such as user account registration, task
  <h3>Martes 11/07/23</h3>
 
  - Preparar la tienda task.js para poder conectar los botones con la base de datos<br>
- - Añadir funcionalidad al boton toggle que permite cambiar el estado de la tarea<br>
- - Añadir funcionalidad al boton de cambiar el nombre que permite al usuario cambiar el titulo de la tarea<br>
+
 
  <h3>Sabado 15/07/23</h3>
 
