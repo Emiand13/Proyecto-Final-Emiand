@@ -4,7 +4,7 @@
 
 <br>
 <div align="center">
-  <img src="./src/components/images/Task-Logo-fullcol-Copy.png" alt="Logo" width="100" height="100">
+  <img src="./src/components/images/Task-Logo-fullcol-Copy.png" alt="Logo" width="140" height="160">
   <h3 align="center">Final Project TaskPro App</h3>
   <a href="https://proyecto-final-emiand.vercel.app/auth/login">Visit Website</a>
 </div>
@@ -105,7 +105,7 @@ The application provides functionalities such as user account registration, task
  -Añadir el diseño CSS del componente taskItem <br>
 
  <h3>Lunes 17/07/23</h3>
- 
+
  -Repaso a la pagina y todas sus funcionalidades<br>
  -Preparar la presentacion del proyecto<br>
 
