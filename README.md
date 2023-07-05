@@ -57,9 +57,9 @@ The application provides functionalities such as user account registration, task
 
  <h3>Sabado 01/07/23</h3>
 
- - Preparar el README con la descripcion del proyecto y el roadmap <br>
- - Subir el proyecto a Vercel para que este disponible para todo el mundo <br>
- - Conectar el proyecto con supabase para almacenar los datos de la app <br>
+ - 	~~ ~~ Preparar el README con la descripcion del proyecto y el roadmap <br>
+ - 	~~ ~~ Subir el proyecto a Vercel para que este disponible para todo el mundo <br>
+ - 	~~ ~~ Conectar el proyecto con supabase para almacenar los datos de la app <br>
 
  <h3>Martes 03/07/23</h3>
 
@@ -70,16 +70,16 @@ The application provides functionalities such as user account registration, task
  <h3>Miercoles 05/07/23</h3>
 
  - Añadir ultimos detalles Readme<br>
- - Añadir funcionalidad al boton update para editar tarea<br>
  
-
+ 
  <h3>Jueves 06/07/23</h3>
 
+ - Añadir funcionalidad al boton update para editar tarea<br>
  - Implementar la funcionalidad de addTask y taskItem<br>
 
  <h3>Viernes 07/07/23</h3>
 
- - Adaptar el diseño a la version movil, en este caso solo hay solo media query que se activa a partir de 747px para abajo<br>
+ - Adaptar el diseño a la version movil<br>
 
  <h3>Sabado 08/07/23</h3>
 
