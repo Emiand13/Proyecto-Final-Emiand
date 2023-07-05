@@ -124,13 +124,13 @@ The application provides functionalities such as user account registration, task
 
 <h2>Features</h2>
 
-- Discover the key functions of  __Taskpro:__<br>
+ Discover the key functions of  __Taskpro:__<br>
 
- Maintain order in your daily life with TaskPro.<br>
- Register and create your own account in TaskPro.<br>
- Manage all your tasks efficiently.<br>
- Edit and delete: Customize your tasks according to your needs.<br>
- Tasks with due dates: Set and track tasks by date.<br>
+ - Maintain order in your daily life with TaskPro.<br>
+ - Register and create your own account in TaskPro.<br>
+ - Manage all your tasks efficiently.<br>
+ - Edit and delete: Customize your tasks according to your needs.<br>
+ - Tasks with due dates: Set and track tasks by date.<br>
 
 With TaskPro, you will have a simple and effective tool to manage your tasks in a practical way.<br>
 
