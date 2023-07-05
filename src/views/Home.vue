@@ -5,7 +5,7 @@
     <router-link to="/account">Account</router-link> -->
    
     <NewTask @add-task="handleAddTask" />
-    <h1 class="text-center">Tasks:</h1>
+  
     <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
   </div>
 
