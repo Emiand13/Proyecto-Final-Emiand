@@ -57,57 +57,57 @@ The application provides functionalities such as user account registration, task
 
  <h3>Sabado 01/07/23</h3>
 
- -Preparar el README con la descripcion del proyecto y el roadmap <br>
- -Subir el proyecto a Vercel para que este disponible para todo el mundo <br>
- -Conectar el proyecto con supabase para almacenar los datos de la app <br>
+ - Preparar el README con la descripcion del proyecto y el roadmap <br>
+ - Subir el proyecto a Vercel para que este disponible para todo el mundo <br>
+ - Conectar el proyecto con supabase para almacenar los datos de la app <br>
 
  <h3>Martes 03/07/23</h3>
 
- -Implentar HTML y CSS del Sign Up y Sing In<br>
- -Implentar la logica para el Sign Up, Sign In y Sing Out<br>
- -Implementar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In<br>
+ - Implentar HTML y CSS del Sign Up y Sing In<br>
+ - Implentar la logica para el Sign Up, Sign In y Sing Out<br>
+ - Implementar la funcionalidad de ocultar/mostrar contraseña a la hora de hacer Sign In<br>
 
  <h3>Miercoles 05/07/23</h3>
 
- -Añadir ultimos detalles Readme
- -Añadir funcionalidad al boton update para editar tarea<br>
+ - Añadir ultimos detalles Readme<br>
+ - Añadir funcionalidad al boton update para editar tarea<br>
  
 
  <h3>Jueves 06/07/23</h3>
 
- -Implementar la funcionalidad de addTask y taskItem<br>
+ - Implementar la funcionalidad de addTask y taskItem<br>
 
  <h3>Viernes 07/07/23</h3>
 
- -Adaptar el diseño a la version movil, en este caso solo hay solo media query que se activa a partir de 747px para abajo<br>
+ - Adaptar el diseño a la version movil, en este caso solo hay solo media query que se activa a partir de 747px para abajo<br>
 
  <h3>Sabado 08/07/23</h3>
 
- -Hacer el fetch de las tareas de Supabase al cargar la pagina y cada vez que se ejecute alguna accion de cambio<br>
- -Implementar funcionalidad de la fecha en el home<br>
+ - Hacer el fetch de las tareas de Supabase al cargar la pagina y cada vez que se ejecute alguna accion de cambio<br>
+ - Implementar funcionalidad de la fecha en el home<br>
 
 
  <h3>Lunes 10/07/23</h3>
 
- -Implementar menu hamburguesa para versiones moviles<br>
- -Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Hecha", esta se tacha<br>
+ - Implementar menu hamburguesa para versiones moviles<br>
+ - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Hecha", esta se tacha<br>
 
 
  <h3>Martes 11/07/23</h3>
 
- -Preparar la tienda task.js para poder conectar los botones con la base de datos<br>
- -Añadir funcionalidad al boton toggle que permite cambiar el estado de la tarea<br>
- -Añadir funcionalidad al boton de cambiar el nombre que permite al usuario cambiar el titulo de la tarea<br>
+ - Preparar la tienda task.js para poder conectar los botones con la base de datos<br>
+ - Añadir funcionalidad al boton toggle que permite cambiar el estado de la tarea<br>
+ - Añadir funcionalidad al boton de cambiar el nombre que permite al usuario cambiar el titulo de la tarea<br>
 
  <h3>Sabado 15/07/23</h3>
 
- -Empezar con el diseño CSS del componente addTask<br>
- -Añadir el diseño CSS del componente taskItem <br>
+ - Empezar con el diseño CSS del componente addTask<br>
+ - Añadir el diseño CSS del componente taskItem <br>
 
  <h3>Lunes 17/07/23</h3>
 
- -Repaso a la pagina y todas sus funcionalidades<br>
- -Preparar la presentacion del proyecto<br>
+ - Repaso a la pagina y todas sus funcionalidades<br>
+ - Preparar la presentacion del proyecto<br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
