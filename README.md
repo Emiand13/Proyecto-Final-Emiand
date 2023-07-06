@@ -74,7 +74,6 @@ The application provides functionalities such as user account registration, task
  - Implementar funcionalidad de la fecha en el home ✅ <br>
 
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
  <h3>Jueves 06/07/23</h3>
  
  - Implementar la funcionalidad de alerta cuando se borre alguna tarea con Sweetalert2 ✅ <br>
