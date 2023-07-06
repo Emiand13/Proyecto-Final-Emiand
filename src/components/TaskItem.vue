@@ -195,7 +195,7 @@ const toggleComplete = () => {
   height: 58px;
   width: 60px;
 
-  background-color: #fab700d1;
+  background-color: gold;
   color: white;
   border: none;
   border-radius: 100%;
@@ -205,7 +205,7 @@ const toggleComplete = () => {
   height: 58px;
   width: 60px;
 
-  background-color: #ff3d3dd1;
+  background-color: #ff0000d1;
   color: white;
   border: none;
   border-radius: 100%;

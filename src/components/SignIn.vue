@@ -40,7 +40,7 @@
       </div>
     </form>
 
-    <p>Don't have an account? <router-link to="/auth/signup">Sign Up</router-link></p>
+    <p class="texto-have-acount">Don't have an account? <router-link to="/auth/signup">Sign Up</router-link></p>
   </div>
 </div>
 </template>
@@ -179,6 +179,9 @@ p {
   margin-top: 10px;
 }
 
+.texto-have-acount{
+  color:white;
+}
 .router-link {
  align-items: center;
   color: #007bff;

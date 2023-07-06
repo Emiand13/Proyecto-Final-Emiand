@@ -43,6 +43,8 @@
 
 With TaskPro, we aim to get a centralized space to create, edit and manage all your tasks, whether they are pending, in progress or completed.
 
+<img src="./src/components/images/capturaReadme.png" alt="CapturaApp" >
+
 <h2> Description </h2>
 
 This is the final project developed during the Front-End Development bootcamp at Ironhack. It consists of a Vue.js based web application that allows users to manage their tasks.<br>
