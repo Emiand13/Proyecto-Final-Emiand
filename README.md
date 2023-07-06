@@ -73,6 +73,7 @@ The application provides functionalities such as user account registration, task
  - Preparar la tienda task.js para poder conectar los botones con la base de datos ✅ <br>
  - Implementar funcionalidad de la fecha en el home ✅ <br>
 
+ <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  <h3>Jueves 06/07/23</h3>
  
