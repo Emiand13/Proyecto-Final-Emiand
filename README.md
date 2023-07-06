@@ -70,12 +70,14 @@ The application provides functionalities such as user account registration, task
  <h3>Miercoles 05/07/23</h3>
 
  - Añadir funcionalidad al boton update para editar titulo y descripción de la tarea  ✅ <br>
- - Preparar la tienda task.js para poder conectar los botones con la base de datos<br>
- - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Completada", esta se tacha<br>
+ - Preparar la tienda task.js para poder conectar los botones con la base de datos ✅ <br>
+ - Implementar funcionalidad de la fecha en el home ✅ <br>
+
 
  <h3>Jueves 06/07/23</h3>
  
- - Implementar la funcionalidad de alerta cuando se borre alguna tarea con Sweetalert2 <br>
+ - Implementar la funcionalidad de alerta cuando se borre alguna tarea con Sweetalert2 ✅ <br>
+ - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Completada", esta se tacha<br>
 
  <h3>Viernes 07/07/23</h3>
 
@@ -89,12 +91,12 @@ The application provides functionalities such as user account registration, task
 
 
  <h3>Lunes 10/07/23</h3>
- - Implementar funcionalidad de la fecha en el home<br>
+ 
  
  
  <h3>Martes 11/07/23</h3>
 
-
+ -Completar Navbar y dejarlo preparado para el CSS.
 
 
  <h3>Sabado 15/07/23</h3>

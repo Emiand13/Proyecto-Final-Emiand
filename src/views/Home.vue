@@ -1,37 +1,33 @@
 <template>
-  <div>
-    <Nav/>
-    <!-- <h1>Your account:</h1>
-    <router-link to="/account">Account</router-link> -->
+  <div class="wrapper">
+    <Nav />
+    <div class="content">
+      <!-- <h3>Your account:</h3>
+      <router-link to="/account">Account</router-link> -->
+    </div>
+    <NewTask />
    
-    <NewTask @add-task="handleAddTask" />
-  
     <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
   </div>
-
 </template>
 
 <script setup>
-import { ref, onUpdated } from 'vue';
-import { useTaskStore } from '../stores/task';
-import { useRouter } from 'vue-router';
+import { ref, onMounted, computed } from 'vue';
+import { useTaskStore } from "../stores/task";
 import Nav from '../components/Nav.vue';
 import NewTask from '../components/NewTask.vue';
 import TaskItem from '../components/TaskItem.vue';
 
-// Utilizamos useTaskStore para obtener la instancia de la tienda de tareas.
 const taskStore = useTaskStore();
 
-// Variable para guardar las tareas de supabase
-const tasks = ref([]);
+const tasks = computed(() => taskStore.tasksArr);
+console.log("taskComputed:", tasks.value);
+
+onMounted(async () => {
+  await taskStore.fetchTasks();
+  console.log("taskOnmouted:", tasks.value);
+});
 
 
-// Creamos una función que conecte a la store para conseguir las tareas de supabase
-const getTasks = async() => {
-  tasks.value = await taskStore.fetchTasks();
-};
-getTasks();
-onUpdated(async () => {
-   await getTasks();
-})
 </script>
+

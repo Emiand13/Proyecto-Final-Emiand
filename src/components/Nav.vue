@@ -10,13 +10,14 @@
     </router-link>
  
     <ul>
-        <li>
-          <router-link to="/" class="nav-link">Task Manager</router-link>
-        </li>
-
-        <li>
+      <li>
           <router-link to="/account" class="nav-link">Your Account</router-link>
         </li>
+        <li>
+          <router-link to="/" class="nav-link">Your Tasks</router-link>
+        </li>
+
+       
     </ul>
 
     <div class="">

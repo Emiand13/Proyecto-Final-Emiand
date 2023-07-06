@@ -88,11 +88,6 @@ const togglePasswordVisibility = (field) => {
 
 <style scoped>
 
-
-
-.password-wrapper {
-  display: flex;
-}
 .input-password {
   padding-right: 30px; /* Ajusta el espaciado para el ícono */
   position: relative;

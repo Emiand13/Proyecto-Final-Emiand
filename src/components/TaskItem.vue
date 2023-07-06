@@ -6,22 +6,37 @@
         <img src="../components/images/Task-Logo-fullcol-Copy.png" />
         {{ task.title }}
       </div>
+
       <div class="card-body">
         <h5 class="card-title">task incompleted</h5>
         <p class="card-text">{{ task.description }}</p>
         <div class="icons">
-          <button @click="completeTask" class="boton-complete"></button>
-          <button @click="deleteTask" class="boton-delete"></button>
-          <button @click="updateToggle" class="boton-update"></button>
-
-          <form v-if="inputUpdate" class="update-form">
-            <div class="form-group">
-              <input type="text" v-model="updatedTitle" class="update-input" placeholder="New title" />
-            </div>
-            <div class="form-group">
-              <input type="text" v-model="updatedDescription" class="update-input" placeholder="New description" />
-            </div>
-            <button @click="updateTask" class="boton-save">Update Task</button>
+          <button
+            @click="completeTask(task.id, task.title, task.description)"
+            class="boton-complete"
+          >
+            Comp
+          </button>
+          <button @click="deleteTask" class="boton-delete">Delete</button>
+          <button @click="UpdateToggle" class="boton-update">Edit</button>
+        </div>
+        <div>
+          <form v-if="inputUpdate" class="update-form text-center">
+            <input
+              type="text"
+              v-model="name"
+              class="input1"
+              placeholder="New Title"
+            />
+            <textarea
+              type="text"
+              v-model="description"
+              class="input2"
+              placeholder="New Description"
+            ></textarea>
+            <button @click="updateTask" class="boton-save">
+              Guardar New Edittask
+            </button>
           </form>
         </div>
       </div>
@@ -29,65 +44,63 @@
   </div>
 </template>
 
-  <script setup>
+<script setup>
 import { ref, onUpdated } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
 
+const name = ref("");
+
+const description = ref("");
+
 const props = defineProps({
   task: Object,
 });
-
-const inputUpdate = ref(false);
-const updatedTitle = ref("");
-const updatedDescription = ref("");
-
-
 
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async () => {
   await taskStore.deleteTask(props.task.id);
 };
 
+// variable inputUpdate la utilizo en false para luego utilizarla en el dom para mantener ocultos los inputs para hacer un update
+const inputUpdate = ref(false);
 
-const updateToggle = () => {
+// funcion basica para hacer un toggle a traves de un boton @click para cambiar la variable inputUpdate de false a true y con esto dejar ver en el DOM dichos inputs y el boton para hacer el update
+const UpdateToggle = () => {
   inputUpdate.value = !inputUpdate.value;
-  updatedTitle.value = props.task.title;
-  updatedDescription.value = props.task.description;
 };
 
-const updateTask = async () => {
-  if (updatedTitle.value && updatedDescription.value) {
-    const { data, error } = await supabase
-      .from('tasks')
-      .update({ title: updatedTitle.value, description: updatedDescription.value })
-      .eq('id', props.task.id);
-
-    if (error) {
-      console.error('Error updating task:', error);
-    } else {
-      inputUpdate.value = false;
-      props.task.title = updatedTitle.value;
-      props.task.description = updatedDescription.value;
-    }
-  }
+// funcion que llama a funcion de la store task.js que se encarga de hacer una actualizacion de los datos de la tarea.
+const updateTask = () => {
+  taskStore.updateTask(props.task.id, name.value, description.value);
+  name.value = "";
+  description.value = "";
 };
-
-onUpdated(() => {
-  taskStore.fetchTasks();
-});
-
-onUpdated(() => {
-  taskStore.fetchTasks();
-});
 </script>
-  
-  <style scoped>
 
+  <style scoped>
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.input1 {
+  height: 50px;
+  width: 250px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+.input2 {
+  width: 250px;
+}
+.completed-task {
+  text-decoration: underline;
+}
 .update-form {
-  margin-top: 20px;
+  margin-top: 100px;
 }
 
 .update-input {
@@ -112,42 +125,44 @@ onUpdated(() => {
 }
 .container {
   margin-bottom: 35px;
-  margin-left: 35px;
   margin-top: 50px;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: center;
 }
 .card-header {
-  border-radius:  20px 20px 0px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px 20px 0px 0px;
 }
 .card {
-  width: 380px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 300px;
   border-radius: 20px;
-  box-shadow: 2px 2px 2px 2px   #63E667;
+  box-shadow: 2px 2px 2px 2px #63e667;
 }
 .card-header img {
-
+  display: flex;
+  flex-wrap: wrap;
   height: 50px;
   width: 50px;
 }
-.icons{
-display: flex;
-justify-content: space-around;
-margin-bottom: 15px;
-
-
+.icons {
+  display: flex;
+  justify-content: space-around;
+  /* margin-bottom: 15px; */
 }
-.boton-complete{
+.boton-complete {
   height: 58px;
   width: 60px;
-  
   background-color: #6000fad1;
   color: white;
   border: none;
   border-radius: 80%;
   cursor: pointer;
-
 }
 .boton-update {
   height: 58px;
@@ -156,7 +171,7 @@ margin-bottom: 15px;
   background-color: #fab700d1;
   color: white;
   border: none;
-  border-radius: 80%;
+  border-radius: 100%;
   cursor: pointer;
 }
 .boton-delete {

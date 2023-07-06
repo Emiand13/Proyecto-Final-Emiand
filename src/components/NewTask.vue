@@ -1,6 +1,10 @@
 <template>
     <div class="add-task-form">
-      <h1>Add a new Task</h1>
+      <h2>Add a new Task</h2>
+      <p>Keep your tasks in order, reach your goals: Act today!</p>
+      <div>
+        <p><strong>Today's date is{{ formattedDate }}</strong></p>
+  </div>
       <div v-if="showErrorMessage">
         <p class="error-text">{{ errorMessage }}</p>
       </div>
@@ -17,8 +21,8 @@
   </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 
-import { ref, } from "vue";
 import { useTaskStore } from "../stores/task"   
 
 const taskStore = useTaskStore();
@@ -57,6 +61,24 @@ if(name.value.length === 0 || description.value.length === 0){
 };
 
 
+const currentDate = ref(new Date());
+
+const updateCurrentDate = () => {
+  currentDate.value = new Date();
+};
+
+onMounted(() => {
+  updateCurrentDate();
+  setInterval(updateCurrentDate, 24 * 60 * 60 * 1000); // Actualizar cada día (24 horas * 60 minutos * 60 segundos * 1000 milisegundos)
+});
+
+const formattedDate = ref('');
+
+onMounted(() => {
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const formatter = new Intl.DateTimeFormat('en', options);
+  formattedDate.value = formatter.format(currentDate.value);
+});
 </script>
 
 <style scooped >
@@ -65,7 +87,7 @@ if(name.value.length === 0 || description.value.length === 0){
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  height: 60vh;
 }
 
 h1 {
