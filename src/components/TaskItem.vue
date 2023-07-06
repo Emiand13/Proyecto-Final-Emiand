@@ -2,8 +2,8 @@
   <div class="container">
     <div class="card">
       <div :class="['card-header', { 'completed': task.is_complete }]">
-  TaskPro
-  <img src="https://www.rollapp.com/app/taskcoach/fb-icon" />
+  TASKPRO!
+  <img src="../components/images/imagenNueva2.png" class="image"/>
   <span :class="['title', { 'completed': task.is_complete }]">{{ task.title }}</span>
 </div>
 
@@ -146,7 +146,7 @@ const toggleComplete = () => {
 }
 
 .boton-save {
-  background-color: #4caf50;
+  background-color:#a504b7;
   color: white;
   padding: 8px 16px;
   border: none;
@@ -155,7 +155,7 @@ const toggleComplete = () => {
 }
 
 .boton-save:hover {
-  background-color: #45a049;
+  background-color:#cb53d8;
 }
 .container {
   margin-bottom: 35px;
@@ -196,7 +196,7 @@ const toggleComplete = () => {
   text-decoration: underline;
   height: 58px;
   width: 60px;
-  background-color: #6000fad1;
+  background-color: #a504b7;
   color: white;
   border: none;
   border-radius: 80%;

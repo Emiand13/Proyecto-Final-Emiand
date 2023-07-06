@@ -97,22 +97,23 @@ const togglePasswordVisibility = (field) => {
   flex-wrap: wrap;
   color: #467ffa;
   position: fixed;
-  top: 57%;
+  top: 55%;
   right: 700px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
 }
 .container {
-  max-width: 400px;
-  /* margin: 0 auto; */
+  max-width: 430px;
+   margin: 0 auto; 
 }
 
 .header-title {
+  color:#ffae00;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 32px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-size: 48px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .subtitle{

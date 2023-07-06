@@ -6,11 +6,11 @@
           <div class="text-center">
             <img
               src="../components/images/imagenNueva2.png"
-              class="image"
+              class="image2"
               alt="imagen logo"
             />
             <h3 class="header-title">Register to TaskPro</h3>
-            <p class="header-subtitle">
+            <p class="subtitle ">
               Ready to create your tasks in TaskPro!!!
             </p>
           </div>
@@ -147,24 +147,24 @@ const signUp = async () => {
 </script>
 
 <style  scoped>
-.form-input-label {
+/* .form-input-label {
   display: flex;
   align-items: center;
-}
+} */
 
-.background-container{
+/* .background-container{
  
   background-image: url('https://adnfriki.com/wp-content/uploads/2013/09/Fondos-Abstractos-II-ADNFriki-9.jpg');
 background-repeat: no-repeat; 
 background-position: center;
   background-size: cover;
 
-} 
+}  */
 
 /* icono ojo visible/ no password*/
 .toggle-password1 {
   position: absolute;
-  top: 48%;
+  top: 55%;
   right: 700px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;
@@ -176,7 +176,7 @@ background-position: center;
 }
 .toggle-password2 {
   position: absolute;
-  top: 56.5%;
+  top: 62.8%;
   right: 700px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;
@@ -210,7 +210,7 @@ background-position: center;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.image {
+.image2 {
   margin-top: 35px;
   height: 200px;
   width: 180px;

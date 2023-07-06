@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-light  px-3">
    <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/>    -->
    <div class="with-shadow ">
-     <img src="../components/images/Task-Logo-fullcol-Copy.png" class="logo">
+     <img src="../components/images/imagenNueva2.png" class="logo">
     </div>
     <router-link to="/" class="nav-link">
       Home
@@ -122,9 +122,11 @@ nav ul {
 }
 
 .log-out{
+  height: 45px;
   width: 100px;
+  align-content: center;
   padding: 10px 15px;
-  background-color: #ff3d3dd1;
+  background-color: #a504b7;
   color: white;
   border: none;
   border-radius: 5px;
