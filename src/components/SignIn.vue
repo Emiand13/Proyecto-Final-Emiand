@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="text-center">
-    <img src="../components/images/Task-Logo-fullcol-Copy.png" class="image" alt="imagen logo">
+    <img src="../components/images/imagenNueva2.png" class="image" alt="imagen logo">
     <h3 class="header-title">Welcome to TaskPro</h3>
     
     <p class="subtitle">Ready to create your tasks in TaskPro!!!</p>
@@ -94,17 +94,18 @@ const togglePasswordVisibility = (field) => {
 }
 
 .toggle-password {
+  flex-wrap: wrap;
   color: #467ffa;
   position: fixed;
-  top: 54%;
-  right: 610px; /* Ajusta la posición del ícono */
+  top: 57%;
+  right: 700px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
 }
 .container {
   max-width: 400px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .header-title {
@@ -122,8 +123,9 @@ const togglePasswordVisibility = (field) => {
   font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 .image{
+margin-top:35px;
 height: 200px;
-width: 240px;
+width: 180px;
 
 }
 

@@ -1,86 +1,88 @@
 <template>
-  <div class="container">
-    <div class="header">
-      <div class="header-description">
-        <div class="text-center">
-          <img
-            src="../components/images/Task-Logo-fullcol-Copy.png"
-            class="image"
-            alt="imagen logo"
-          />
-          <h3 class="header-title">Register to TaskPro</h3>
-          <p class="header-subtitle">
-            Ready to create your tasks in TaskPro!!!
+  <div class="background-container">
+    <div class="container">
+      <div class="header">
+        <div class="header-description">
+          <div class="text-center">
+            <img
+              src="../components/images/imagenNueva2.png"
+              class="image"
+              alt="imagen logo"
+            />
+            <h3 class="header-title">Register to TaskPro</h3>
+            <p class="header-subtitle">
+              Ready to create your tasks in TaskPro!!!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <form @submit.prevent="signUp" class="form-sign-in">
+        <div class="form">
+          <div class="form-input">
+            <label class="input-field-label"></label>
+            <input
+              type="email"
+              class="input-field"
+              placeholder="example@gmail.com"
+              v-model="email"
+              required
+            />
+          </div>
+          <div class="form-input">
+            <label class="input-field-label">
+              <span
+                class="toggle-password1"
+                @click="togglePasswordVisibility('password')"
+              >
+                <i
+                  class="fa"
+                  :class="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"
+                ></i>
+              </span>
+            </label>
+            <input
+              :type="passwordVisible ? 'text' : 'password'"
+              class="input-field"
+              placeholder="Password"
+              v-model="password"
+              required
+            />
+          </div>
+          <div class="form-input">
+            <label class="input-field-label">
+              <span
+                class="toggle-password2"
+                @click="togglePasswordVisibility('confirmPassword')"
+              >
+                <i
+                  class="fa"
+                  :class="confirmPasswordVisible ? 'fa-eye-slash' : 'fa-eye'"
+                ></i>
+              </span>
+            </label>
+            <input
+              :type="confirmPasswordVisible ? 'text' : 'password'"
+              class="input-field"
+              placeholder="Confirm password"
+              v-model="confirmPassword"
+              required
+            />
+          </div>
+          <button class="button" type="submit">Sign Up</button>
+          <p>
+            Have an account?
+            <PersonalRouter
+              :route="route"
+              :buttonText="buttonText"
+              class="sign-up-link"
+            />
           </p>
         </div>
-      </div>
+      </form>
+
+      <div v-show="errorMsg">{{ errorMsg }}</div>
     </div>
-
-    <form @submit.prevent="signUp" class="form-sign-in">
-      <div class="form">
-        <div class="form-input">
-          <label class="input-field-label"></label>
-          <input
-            type="email"
-            class="input-field"
-            placeholder="example@gmail.com"
-            v-model="email"
-            required
-          />
-        </div>
-        <div class="form-input">
-          <label class="input-field-label">
-            <span
-              class="toggle-password1"
-              @click="togglePasswordVisibility('password')"
-            >
-              <i
-                class="fa"
-                :class="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"
-              ></i>
-            </span>
-          </label>
-          <input
-            :type="passwordVisible ? 'text' : 'password'"
-            class="input-field"
-            placeholder="Password"
-            v-model="password"
-            required
-          />
-        </div>
-        <div class="form-input">
-          <label class="input-field-label">
-            <span
-              class="toggle-password2"
-              @click="togglePasswordVisibility('confirmPassword')"
-            >
-              <i
-                class="fa"
-                :class="confirmPasswordVisible ? 'fa-eye-slash' : 'fa-eye'"
-              ></i>
-            </span>
-          </label>
-          <input
-            :type="confirmPasswordVisible ? 'text' : 'password'"
-            class="input-field"
-            placeholder="Confirm password"
-            v-model="confirmPassword"
-            required
-          />
-        </div>
-        <button class="button" type="submit">Sign Up</button>
-        <p>
-          Have an account?
-          <PersonalRouter
-            :route="route"
-            :buttonText="buttonText"
-            class="sign-up-link"
-          />
-        </p>
-      </div>
-    </form>
-
-    <div v-show="errorMsg">{{ errorMsg }}</div>
   </div>
 </template>
 
@@ -150,11 +152,20 @@ const signUp = async () => {
   align-items: center;
 }
 
+.background-container{
+ 
+  background-image: url('https://adnfriki.com/wp-content/uploads/2013/09/Fondos-Abstractos-II-ADNFriki-9.jpg');
+background-repeat: no-repeat; 
+background-position: center;
+  background-size: cover;
+
+} 
+
 /* icono ojo visible/ no password*/
 .toggle-password1 {
   position: absolute;
-  top: 53.5%;
-  right: 610px; /* Ajusta la posición del ícono */
+  top: 48%;
+  right: 700px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
@@ -165,8 +176,8 @@ const signUp = async () => {
 }
 .toggle-password2 {
   position: absolute;
-  top: 62%;
-  right: 610px; /* Ajusta la posición del ícono */
+  top: 56.5%;
+  right: 700px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
@@ -181,15 +192,16 @@ const signUp = async () => {
   color: #ccc;
 } */
 .container {
-  max-width: 400px;
+  max-width: 430px;
   margin: 0 auto;
 }
 
 .header-title {
+  color:#ffae00;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 32px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 48px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .subtitle {
@@ -199,8 +211,9 @@ const signUp = async () => {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .image {
+  margin-top: 35px;
   height: 200px;
-  width: 240px;
+  width: 180px;
 }
 .form-sign-in {
   /* border: 1px solid #ccc; */

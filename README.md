@@ -75,9 +75,10 @@ The application provides functionalities such as user account registration, task
 
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
  <h3>Jueves 06/07/23</h3>
- 
+
+ - Hacer el fetch de las tareas de Supabase al cargar la pagina y cada vez que se ejecute alguna accion de cambio ✅ <br>
  - Implementar la funcionalidad de alerta cuando se borre alguna tarea con Sweetalert2 ✅ <br>
- - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Completada", esta se tacha<br>
+ - Cuando el usuario clique en el boton de toggle y cambie el estado de la tarea a "Completada", esta se tacha ✅ <br>
 
  <h3>Viernes 07/07/23</h3>
 
@@ -86,7 +87,7 @@ The application provides functionalities such as user account registration, task
 
  <h3>Sabado 08/07/23</h3>
 
- - Hacer el fetch de las tareas de Supabase al cargar la pagina y cada vez que se ejecute alguna accion de cambio<br>
+
 
 
 

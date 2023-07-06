@@ -1,22 +1,21 @@
 <template>
   <div class="container">
     <div class="card">
-      <div class="card-header">
-        TASKPRO
-        <img src="../components/images/Task-Logo-fullcol-Copy.png" />
-        {{ task.title }}
-      </div>
+      <div :class="['card-header', { 'completed': task.is_complete }]">
+  TaskPro
+  <img src="https://www.rollapp.com/app/taskcoach/fb-icon" />
+  <span :class="['title', { 'completed': task.is_complete }]">{{ task.title }}</span>
+</div>
 
       <div class="card-body">
-        <h5 class="card-title">task incompleted</h5>
+        <h5 :class="['card-title', { 'completed': task.is_complete }]">
+  {{ task.is_complete ? 'Task completed' : 'Task incompleted' }}
+</h5>
         <p class="card-text">{{ task.description }}</p>
         <div class="icons">
-          <button
-            @click="completeTask(task.id, task.title, task.description)"
-            class="boton-complete"
-          >
-            Comp
-          </button>
+          <button :class="['boton-complete', { 'completed': task.is_complete }]" @click="toggleComplete">
+  {{ task.is_complete ? 'Mark Incomplete' : 'Mark Complete' }}
+</button>
           <button @click="deleteTask" class="boton-delete">Delete</button>
           <button @click="UpdateToggle" class="boton-update">Edit</button>
         </div>
@@ -45,7 +44,7 @@
 </template>
 
 <script setup>
-import { ref, onUpdated } from "vue";
+import { ref, onUpdated, defineProps } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 
@@ -77,30 +76,65 @@ const updateTask = () => {
   taskStore.updateTask(props.task.id, name.value, description.value);
   name.value = "";
   description.value = "";
+  UpdateToggle();
 };
+
+
+const toggleComplete = () => {
+  props.task.is_complete = !props.task.is_complete;
+  taskStore.completeTask(props.task.id, props.task.is_complete);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
   <style scoped>
-.flex {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+
+.card-title.completed {
+  text-decoration: line-through;
+}
+
+
+
+.card-header.completed .title {
+  text-decoration: line-through;
+}
+
+
+
+
+
+.boton-complete.completed {
+  background-color: green;
 }
 
 .input1 {
-  height: 50px;
+  height: 30px;
   width: 250px;
   margin-bottom: 10px;
   margin-top: 0px;
 }
 .input2 {
   width: 250px;
+  margin-bottom: 15px;
 }
 .completed-task {
   text-decoration: underline;
 }
 .update-form {
-  margin-top: 100px;
+  margin-top:30px;
 }
 
 .update-input {
@@ -132,6 +166,9 @@ const updateTask = () => {
   justify-content: center;
 }
 .card-header {
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   border-radius: 20px 20px 0px 0px;
@@ -156,6 +193,7 @@ const updateTask = () => {
   /* margin-bottom: 15px; */
 }
 .boton-complete {
+  text-decoration: underline;
   height: 58px;
   width: 60px;
   background-color: #6000fad1;

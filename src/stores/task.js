@@ -71,26 +71,18 @@ export const useTaskStore = defineStore("tasks", () => {
   };
 
   // Completar tarea en supabase
-  const completeTask = async (id, title, description) => {
+  const completeTask = async (id, booleanValue) => {
     const { data, error } = await supabase
       .from("tasks")
-      .update([
-        {
-          user_id: useUserStore().user.id,
-          title: title,
-          is_complete: true,
-          description: description,
-        },
-      ])
+      .update({ is_complete: booleanValue })
       .eq("id", id);
 
     if (error) {
       console.error(error);
-    } else {
+      return;
+    } 
       await fetchTasks();
     }
-  };
-
   return {
     tasksArr,
     fetchTasks,

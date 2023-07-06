@@ -35,11 +35,5 @@ onMounted(async () => {
 
 <style scoped>
 
-body{
 
-background-image: url("https://th.bing.com/th/id/OIP.h5-6IdZpk78O-yeOZ2e2WAAAAA?pid=ImgDet&rs=1");
-
-
-
-}
 </style>
