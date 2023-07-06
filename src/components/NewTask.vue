@@ -1,9 +1,9 @@
 <template>
     <div class="add-task-form">
-      <h2>Add a new Task</h2>
-      <p>Keep your tasks in order, reach your goals: Act today!</p>
+      <h2 class="header-title">Add a new Task</h2>
+      <p class="subtitle">Keep your tasks in order, reach your goals: Act today!</p>
       <div>
-        <p><strong>Today's date is{{ formattedDate }}</strong></p>
+        <p class="date"><strong>Today's date is{{ formattedDate }}</strong></p>
   </div>
       <div v-if="showErrorMessage">
         <p class="error-text">{{ errorMessage }}</p>
@@ -82,12 +82,34 @@ onMounted(() => {
 </script>
 
 <style scooped >
+
+.header-title{
+  color:gold;
+  text-align: center;
+  margin-bottom: 20px;
+
+  font-size: 70px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+.subtitle {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.date{
+  color:gold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .add-task-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 65vh;
 }
 
 h1 {

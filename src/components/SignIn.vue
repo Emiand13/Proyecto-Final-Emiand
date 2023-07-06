@@ -1,7 +1,8 @@
 <template>
+   <div class="background-container">
   <div class="container">
     <div class="text-center">
-    <img src="../components/images/imagenNueva2.png" class="image" alt="imagen logo">
+    <img src="../components/images/IMAGENLOGO.png" class="image2" alt="imagen logo">
     <h3 class="header-title">Welcome to TaskPro</h3>
     
     <p class="subtitle">Ready to create your tasks in TaskPro!!!</p>
@@ -41,6 +42,7 @@
 
     <p>Don't have an account? <router-link to="/auth/signup">Sign Up</router-link></p>
   </div>
+</div>
 </template>
 
 <script setup>
@@ -87,7 +89,15 @@ const togglePasswordVisibility = (field) => {
 </script>
 
 <style scoped>
+ .background-container{
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
+  background-repeat: no-repeat; 
+  background-position: center;
 
+}  
 .input-password {
   padding-right: 30px; /* Ajusta el espaciado para el ícono */
   position: relative;
@@ -104,29 +114,32 @@ const togglePasswordVisibility = (field) => {
   z-index: 1; /* Asegura que el ícono esté por encima del input */
 }
 .container {
-  max-width: 430px;
-   margin: 0 auto; 
+  max-width: 450px;
+
 }
 
 .header-title {
-  color:#ffae00;
+  color:gold;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 48px;
+
+  font-size: 50px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .subtitle{
-
+  color: white;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.image{
-margin-top:35px;
-height: 200px;
-width: 180px;
+.image2{
+  border-radius: 15px;
+  margin-top: 80px;
+  margin-bottom:20px ;
+  height: 120px;
+  width: 120px;
 
 }
 
@@ -153,8 +166,8 @@ width: 180px;
 
 .button {
   padding: 10px 20px;
-  background-color: #ffae00;
-  color: #fff;
+  background-color: gold;
+  color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;

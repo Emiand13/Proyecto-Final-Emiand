@@ -1,4 +1,5 @@
 <template>
+  <div class="background-container">
   <div class="wrapper">
     <Nav />
     <div class="content">
@@ -9,6 +10,9 @@
    
     <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
   </div>
+</div>
+  
+
 </template>
 
 <script setup>
@@ -30,4 +34,17 @@ onMounted(async () => {
 
 
 </script>
+
+
+<style scoped>
+.background-container{
+  height: 1450px;
+  width: 100%;
+  background-size: cover;
+  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
+  background-repeat: no-repeat; 
+  background-position: center;
+
+}  
+</style>
 

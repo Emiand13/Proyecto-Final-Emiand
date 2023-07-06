@@ -1,23 +1,31 @@
 <template>
   <div class="container">
     <div class="card">
-      <div :class="['card-header', { 'completed': task.is_complete }]">
-  TASKPRO!
-  <img src="../components/images/imagenNueva2.png" class="image"/>
-  <span :class="['title', { 'completed': task.is_complete }]">{{ task.title }}</span>
-</div>
+      <div :class="['card-header', { completed: task.is_complete }]">
+        <img src="../components/images/imagenNueva2.png" class="image" />
+        <span :class="['title', { completed: task.is_complete }]">{{
+          task.title
+        }}</span>
+      </div>
 
       <div class="card-body">
-        <h5 :class="['card-title', { 'completed': task.is_complete }]">
-  {{ task.is_complete ? 'Task completed' : 'Task incompleted' }}
-</h5>
+        <h5 :class="['card-title', { completed: task.is_complete }]">
+          {{ task.is_complete ? "Task completed" : "Task incompleted" }}
+        </h5>
         <p class="card-text">{{ task.description }}</p>
         <div class="icons">
-          <button :class="['boton-complete', { 'completed': task.is_complete }]" @click="toggleComplete">
-  {{ task.is_complete ? 'Mark Incomplete' : 'Mark Complete' }}
-</button>
-          <button @click="deleteTask" class="boton-delete">Delete</button>
-          <button @click="UpdateToggle" class="boton-update">Edit</button>
+          <button
+            :class="['boton-complete', { completed: task.is_complete }]"
+            @click="toggleComplete">
+            <i class="fas fa-check fa-lg"></i>
+            {{ task.is_complete ? "Mark Incomplete" : "Mark Complete" }}
+          </button>
+          <button @click="deleteTask" class="boton-delete">
+            <i class="fas fa-trash fa-lg"></i>
+          </button>
+          <button @click="UpdateToggle" class="boton-update">
+            <i class="fas fa-edit fa-lg"></i>
+          </button>
         </div>
         <div>
           <form v-if="inputUpdate" class="update-form text-center">
@@ -25,14 +33,13 @@
               type="text"
               v-model="name"
               class="input1"
-              placeholder="New Title"
-            />
+              placeholder="New Title"/>
             <textarea
               type="text"
               v-model="description"
               class="input2"
-              placeholder="New Description"
-            ></textarea>
+              placeholder="New Description">
+            </textarea>
             <button @click="updateTask" class="boton-save">
               Guardar New Edittask
             </button>
@@ -43,17 +50,16 @@
   </div>
 </template>
 
+<!-- ===================== COMIENZA EL SCRIPT ================================= -->
+
 <script setup>
 import { ref, onUpdated, defineProps } from "vue";
 import { useTaskStore } from "../stores/task";
 import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
-
 const name = ref("");
-
 const description = ref("");
-
 const props = defineProps({
   task: Object,
 });
@@ -79,42 +85,26 @@ const updateTask = () => {
   UpdateToggle();
 };
 
-
 const toggleComplete = () => {
   props.task.is_complete = !props.task.is_complete;
   taskStore.completeTask(props.task.id, props.task.is_complete);
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 
   <style scoped>
-
 .card-title.completed {
   text-decoration: line-through;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
-
 
 .card-header.completed .title {
   text-decoration: line-through;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
-
-
-
 
 .boton-complete.completed {
   background-color: green;
@@ -134,19 +124,19 @@ const toggleComplete = () => {
   text-decoration: underline;
 }
 .update-form {
-  margin-top:30px;
+  margin-top: 30px;
 }
 
 .update-input {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid gold;
   border-radius: 4px;
 }
 
 .boton-save {
-  background-color:#a504b7;
+  background-color: #a504b7;
   color: white;
   padding: 8px 16px;
   border: none;
@@ -155,9 +145,10 @@ const toggleComplete = () => {
 }
 
 .boton-save:hover {
-  background-color:#cb53d8;
+  background-color: #cb53d8;
 }
 .container {
+  overflow: hidden;
   margin-bottom: 35px;
   margin-top: 50px;
   display: flex;
@@ -174,12 +165,10 @@ const toggleComplete = () => {
   border-radius: 20px 20px 0px 0px;
 }
 .card {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   width: 300px;
   border-radius: 20px;
-  box-shadow: 2px 2px 2px 2px #63e667;
+  box-shadow: 2px 2px 2px 2px gold;
 }
 .card-header img {
   display: flex;

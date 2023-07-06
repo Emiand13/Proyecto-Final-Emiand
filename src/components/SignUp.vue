@@ -4,11 +4,11 @@
       <div class="header">
         <div class="header-description">
           <div class="text-center">
-            <img
-              src="../components/images/imagenNueva2.png"
-              class="image2"
+             <img
+              src="../components/images/IMAGENLOGO.png"
+              class="image"
               alt="imagen logo"
-            />
+            /> 
             <h3 class="header-title">Register to TaskPro</h3>
             <p class="subtitle ">
               Ready to create your tasks in TaskPro!!!
@@ -33,6 +33,7 @@
             <label class="input-field-label">
               <span
                 class="toggle-password1"
+                :style="style"
                 @click="togglePasswordVisibility('password')"
               >
                 <i
@@ -53,6 +54,7 @@
             <label class="input-field-label">
               <span
                 class="toggle-password2"
+                :style="style"
                 @click="togglePasswordVisibility('confirmPassword')"
               >
                 <i
@@ -70,7 +72,7 @@
             />
           </div>
           <button class="button" type="submit">Sign Up</button>
-          <p>
+          <p class="texto-have-Acount">
             Have an account?
             <PersonalRouter
               :route="route"
@@ -87,12 +89,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, reactive, watch } from 'vue';
 import PersonalRouter from "./PersonalRouter.vue";
-import { supabase } from "../supabase";
+// import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
-import { storeToRefs } from "pinia";
+// import { storeToRefs } from "pinia";
 
 // Route Variables
 const route = "/auth/login";
@@ -105,14 +107,15 @@ const confirmPassword = ref("");
 
 //=========================================================
 
-//Visibilidad password y confirm password
+
+
 const passwordVisible = ref(false);
 const confirmPasswordVisible = ref(false);
 
 const togglePasswordVisibility = (field) => {
-  if (field === "password") {
+  if (field === 'password') {
     passwordVisible.value = !passwordVisible.value;
-  } else if (field === "confirmPassword") {
+  } else if (field === 'confirmPassword') {
     confirmPasswordVisible.value = !confirmPasswordVisible.value;
   }
 };
@@ -152,20 +155,22 @@ const signUp = async () => {
   align-items: center;
 } */
 
-/* .background-container{
- 
-  background-image: url('https://adnfriki.com/wp-content/uploads/2013/09/Fondos-Abstractos-II-ADNFriki-9.jpg');
-background-repeat: no-repeat; 
-background-position: center;
+/* =========== IMAGEN BACKGROUND SIGN UP ================================== */
+ .background-container{
+  height: 100vh;
+  width: 100%;
   background-size: cover;
+  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
+  background-repeat: no-repeat; 
+  background-position: center;
 
-}  */
+}  
 
-/* icono ojo visible/ no password*/
+/* ICONO1 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password1 {
   position: absolute;
   top: 55%;
-  right: 700px; /* Ajusta la posición del ícono */
+  right: 700px; 
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
@@ -174,10 +179,12 @@ background-position: center;
   margin-left: 5px;
   cursor: pointer;
 }
+
+/* ICONO2 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password2 {
   position: absolute;
   top: 62.8%;
-  right: 700px; /* Ajusta la posición del ícono */
+  right: 700px; 
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
@@ -187,33 +194,36 @@ background-position: center;
   cursor: pointer;
 }
 
-/* .fa {
-  font-size: 18px;
-  color: #ccc;
-} */
+/* ======= INPUT WRAPPER =================================================================== */
+
 .container {
-  max-width: 430px;
-  margin: 0 auto;
+  max-width: 450px;
+  
 }
 
 .header-title {
-  color:#ffae00;
+ 
+  color:gold;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 48px;
+
+  font-size: 50px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .subtitle {
+  color: white;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.image2 {
-  margin-top: 35px;
-  height: 200px;
-  width: 180px;
+.image {
+  border-radius: 15px;
+  margin-top: 80px;
+  margin-bottom:20px ;
+  height: 120px;
+  width: 120px;
 }
 .form-sign-in {
   /* border: 1px solid #ccc; */
@@ -237,8 +247,8 @@ background-position: center;
 
 .button {
   padding: 10px 20px;
-  background-color: #ffae00;
-  color: #fff;
+  background-color: gold;
+  color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -250,6 +260,12 @@ p {
   margin-top: 10px;
 }
 
+.texto-have-Acount{
+
+color:white;
+
+
+}
 .router-link {
   align-items: center;
   color: #007bff;

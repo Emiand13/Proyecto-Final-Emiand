@@ -1,32 +1,25 @@
 <template>
-  
-  <nav class="navbar navbar-expand-lg navbar-light  px-3">
-   <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/>    -->
-   <div class="with-shadow ">
-     <img src="../components/images/imagenNueva2.png" class="logo">
+  <nav class="navbar navbar-expand-lg navbar-light px-3">
+    <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/>    -->
+    <div class="with-shadow">
+      <img src="../components/images/imagenNueva2.png" class="logo" />
     </div>
-    <router-link to="/" class="nav-link">
-      Home
-    </router-link>
- 
-    <ul>
-      <li>
-          <router-link to="/account" class="nav-link">Your Account</router-link>
-        </li>
-        <li>
-          <router-link to="/" class="nav-link">Your Tasks</router-link>
-        </li>
+    <router-link to="/" class="nav-link"> Home </router-link>
 
-       
-    </ul>
+    <router-link to="/account" class="nav-link">Your Account</router-link>
+
+    <router-link to="/" class="nav-link">Your Tasks</router-link>
 
     <div class="">
       <ul>
         <li class="log-out-welcome">
-          <p class="nav-link">Welcome, {{getUser.email}}</p> <!-- Comentario: Muestra el correo electrónico del usuario -->
+          <p class="nav-link">Welcome,  
+            <span class="user-email">{{ getEmailPrefix(getUser.email) }}</span></p>
+          <!-- Comentario: Muestra el correo electrónico del usuario -->
         </li>
         <li>
-          <button @click="signOut" class="log-out">Log out</button> <!-- Comentario: Botón para cerrar sesión -->
+          <button @click="signOut" class="log-out">Log Out</button>
+          <!-- Comentario: Botón para cerrar sesión -->
         </li>
       </ul>
     </div>
@@ -38,7 +31,7 @@
 import { useUserStore } from "../stores/user";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
-import { ref } from 'vue';
+import { ref } from "vue";
 
 //constant to save a variable that will hold the use router method
 const route = "/";
@@ -68,28 +61,36 @@ const signOut = async () => {
   try {
     // Lógica para cerrar sesión
     await userStore.signOut(); // Comentario: Llama a la función de cierre de sesión del almacén de usuarios
-    
+
     // Redirigir al usuario a la página de registro
-    router.push('/auth/signup');
+    router.push("/auth/signup");
   } catch (error) {
     // Manejo de errores
     console.error(error);
   }
 };
+
+
+const getEmailPrefix = (email) => {
+  const atIndex = email.indexOf('@');
+  if (atIndex !== -1) {
+    return email.slice(0, atIndex);
+  }
+  return email;
+};
+
+
+
 </script>
 
 <style  scoped>
-
-
-.logo{
-height:80px;
-width: 85px;
-
-box-shadow: 20 20px 4px rgb(0, 0, 0);
+.logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 15px;
 }
 
 nav {
-  /* background-color: #63E667; */
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -98,30 +99,29 @@ nav {
 
 nav ul {
   list-style: none;
-  padding-inline-start: 0;
+  margin-top: 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
+.user-email {
+  color: gold; /* Cambia el color a tu preferencia */
+}
 .log-out-welcome p {
   margin: 0;
 }
 
-.button {
-  padding: 10px 20px;
-  background-color: #63E667;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
 .nav-link {
   text-decoration: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 16px;
+
+
 }
 
-.log-out{
+.log-out {
   height: 45px;
   width: 100px;
   align-content: center;
@@ -131,9 +131,6 @@ nav ul {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
-
-
-
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 </style>
