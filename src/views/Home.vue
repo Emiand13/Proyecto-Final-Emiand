@@ -1,26 +1,25 @@
 <template>
   <div class="background-container">
-  <div class="wrapper">
-    <Nav />
-    <div class="content">
-      <!-- <h3>Your account:</h3>
+    <div class="wrapper">
+      <Nav />
+      <div class="content">
+        <!-- <h3>Your account:</h3>
       <router-link to="/account">Account</router-link> -->
+      </div>
+      <NewTask />
+      <div class="flex">
+        <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
+      </div>
     </div>
-    <NewTask />
-   
-    <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
   </div>
-</div>
-  
-
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed } from "vue";
 import { useTaskStore } from "../stores/task";
-import Nav from '../components/Nav.vue';
-import NewTask from '../components/NewTask.vue';
-import TaskItem from '../components/TaskItem.vue';
+import Nav from "../components/Nav.vue";
+import NewTask from "../components/NewTask.vue";
+import TaskItem from "../components/TaskItem.vue";
 
 const taskStore = useTaskStore();
 
@@ -31,20 +30,24 @@ onMounted(async () => {
   await taskStore.fetchTasks();
   console.log("taskOnmouted:", tasks.value);
 });
-
-
 </script>
 
 
 <style scoped>
-.background-container{
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.background-container {
   height: 1450px;
   width: 100%;
   background-size: cover;
-  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
-  background-repeat: no-repeat; 
+  background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
+  background-repeat: no-repeat;
   background-position: center;
-
-}  
+}
 </style>
 

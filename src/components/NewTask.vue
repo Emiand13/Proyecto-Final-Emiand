@@ -1,24 +1,25 @@
 <template>
-    <div class="add-task-form">
-      <h2 class="header-title">Add a new Task</h2>
-      <p class="subtitle">Keep your tasks in order, reach your goals: Act today!</p>
-      <div>
-        <p class="date"><strong>Today's date is{{ formattedDate }}</strong></p>
-  </div>
-      <div v-if="showErrorMessage">
-        <p class="error-text">{{ errorMessage }}</p>
-      </div>
-      <div>
-        <div class="input-field">
-          <input type="text" placeholder="Add a Task Title - Listen to Snoop Dog" v-model="name">
-        </div>
-        <div class="input-field">
-            <textarea placeholder="Add a Task Description - We are going to the concert next week" v-model="description" class="input-field"></textarea>
-        </div>
-        <button @click="addTask" class="button">Add</button>
-      </div>
+  <div class="add-task-form">
+    <h2 class="header-title">Add a new Task</h2>
+    <p class="subtitle">Keep your tasks in order, reach your goals: Act today!</p>
+    <div>
+      <p class="date"><strong>Today's date is {{ formattedDate }}</strong></p>
     </div>
-  </template>
+    <div v-if="showErrorMessage">
+      <p class="error-text">{{ errorMessage }}</p>
+    </div>
+    <div>
+      <div class="input-field">
+        <input type="text" placeholder="Add a Task Title - Listen to Snoop Dog" v-model="name">
+      </div>
+      <div class="input-field">
+        <textarea placeholder="Add a Task Description - We are going to the concert next week" v-model="description" class="input-field"></textarea>
+      </div>
+      <button @click="addTask" class="button">Add</button>
+    </div>
+    </div>
+  
+</template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
@@ -31,6 +32,8 @@ const taskStore = useTaskStore();
 const name = ref('');
 const description = ref('');
 
+
+
 // constante para guardar una variable que contiene un valor booleano falso inicial para el contenedor de mensaje de error que se muestra condicionalmente dependiendo de si el campo de entrada está vacío
 const showErrorMessage = ref(false);
 
@@ -40,26 +43,26 @@ const errorMessage = ref(null);
 
 
 
+const tasks = ref([]);
+
 // Arrow function para crear tareas.
 const addTask = () => {
-if(name.value.length === 0 || description.value.length === 0){
-    // Primero comprobamos que ningún campo del input esté vacío y lanzamos el error con un timeout para informar al user.
-
+  if (name.value.length === 0 || description.value.length === 0) {
     showErrorMessage.value = true;
     errorMessage.value = 'The task title or description is empty';
     setTimeout(() => {
-    showErrorMessage.value = false;
+      showErrorMessage.value = false;
     }, 5000);
-
-}  else {
-    // Aquí mandamos los valores a la store para crear la nueva Task. Esta parte de la función tenéis que refactorizarla para que funcione con emit y el addTask del store se llame desde Home.vue.
-
+  } else {
     taskStore.addTask(name.value, description.value);
     name.value = '';
     description.value = '';
-}
+  }
 };
 
+
+
+//Variables y funciones para inyectar la fecha en el dom 
 
 const currentDate = ref(new Date());
 
@@ -120,16 +123,23 @@ h1 {
 .input-field {
   margin-bottom: 10px;
  
+ 
 }
 
 .input-field input {
-  width: 400px;
+  width: 500px;
+  height: 45px;
+  border-radius: 5px;
+  padding: 10px 10px;
 }
 .input-field textarea{
-    width: 400px;
+  padding: 10px 10px;
+    height: 55px;
+    width: 500px;
+    border-radius: 5px;
 }
 .button {
-  width: 400px;
+  width:500px;
   padding: 10px 20px;
   background-color:#a504b7;
   color: white;

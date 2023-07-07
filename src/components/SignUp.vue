@@ -1,9 +1,11 @@
 <template>
+
   <div class="background-container">
     <div class="container">
       <div class="header">
         <div class="header-description">
           <div class="text-center">
+            
              <img
               src="../components/images/IMAGENLOGO.png"
               class="image"
@@ -86,6 +88,7 @@
       <div v-show="errorMsg">{{ errorMsg }}</div>
     </div>
   </div>
+ 
 </template>
 
 <script setup>
@@ -154,6 +157,11 @@ const signUp = async () => {
   display: flex;
   align-items: center;
 } */
+/* ========================================================================== */
+
+
+
+
 
 /* =========== IMAGEN BACKGROUND SIGN UP ================================== */
  .background-container{
@@ -169,8 +177,8 @@ const signUp = async () => {
 /* ICONO1 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password1 {
   position: absolute;
-  top: 55%;
-  right: 700px; 
+  top: 58.5vh;
+  right: 600px; 
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
@@ -183,8 +191,8 @@ const signUp = async () => {
 /* ICONO2 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password2 {
   position: absolute;
-  top: 62.8%;
-  right: 700px; 
+  top: 67.5vh;
+  right: 600px; 
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */

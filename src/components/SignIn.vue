@@ -190,13 +190,13 @@ p {
 }
 
 
-@media (max-width: 924px) {
+@media (max-width: 1920px) {
 
   .toggle-password {
   color: #467ffa;
   position: absolute;
-  top: 76%;
-  right: 90px; /* Ajusta la posición del ícono */
+  top: 58.5vh;
+  right: 600px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
@@ -204,18 +204,31 @@ p {
 }
 
 }
-@media (max-width: 375px) {
+@media (max-width: 475px) {
 
 .toggle-password {
 color: #467ffa;
 position: absolute;
-top: 50%;
-right: 190px; /* Ajusta la posición del ícono */
+top: 80vh;
+right: 60px; /* Ajusta la posición del ícono */
 transform: translateY(-50%);
 cursor: pointer;
 z-index: 1; /* Asegura que el ícono esté por encima del input */
 /* … */
 }
+
+.background-container{
+  height: 110vh;
+  width: 100%;
+  background-size: cover;
+  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
+  background-repeat: no-repeat; 
+  background-position: center;
+
+}  
+
+
+
 
 }
 

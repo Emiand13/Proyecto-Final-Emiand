@@ -2,6 +2,9 @@
   <nav class="navbar navbar-expand-lg navbar-light px-3">
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/>    -->
     <div class="with-shadow">
+      <!-- <button class="navbar-toggler" type="button" @click="toggleMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
       <img src="../components/images/imagenNueva2.png" class="logo" />
     </div>
     <router-link to="/" class="nav-link"> Home </router-link>
@@ -10,11 +13,15 @@
 
     <router-link to="/" class="nav-link">Your Tasks</router-link>
 
+    <router-link class="nav-link" to="/reloj">Reloj</router-link>
+
     <div class="">
       <ul>
         <li class="log-out-welcome">
-          <p class="nav-link">Welcome,  
-            <span class="user-email">{{ getEmailPrefix(getUser.email) }}</span></p>
+          <p class="nav-link">
+            Welcome,
+            <span class="user-email">{{ getEmailPrefix(getUser.email) }}</span>
+          </p>
           <!-- Comentario: Muestra el correo electrónico del usuario -->
         </li>
         <li>
@@ -70,17 +77,14 @@ const signOut = async () => {
   }
 };
 
-
+//Esta funcion es para que se muestre solamente el prefijo del email del usuario
 const getEmailPrefix = (email) => {
-  const atIndex = email.indexOf('@');
+  const atIndex = email.indexOf("@");
   if (atIndex !== -1) {
     return email.slice(0, atIndex);
   }
   return email;
 };
-
-
-
 </script>
 
 <style  scoped>
@@ -112,13 +116,10 @@ nav ul {
   margin: 0;
 }
 
-
 .nav-link {
   text-decoration: none;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 16px;
-
-
 }
 
 .log-out {
@@ -131,6 +132,6 @@ nav ul {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 </style>

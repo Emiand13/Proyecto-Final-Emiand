@@ -1,22 +1,33 @@
 <template>
   
-<div class="background-container">
-  <Nav />
-  <div class="account">
-    <h1>Name: {{username}}</h1>
-  <img :src="avatar_url ? avatar_url : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'" alt="Profile picture">
+    <div class="background-container">
+    <Nav />
+    <div class="avatarProfile">
+    <img 
+      :src="
+        avatar_url
+          ? avatar_url
+          : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
+      "
+      alt="Profile picture"
+    />
+  </div>
+    <div>
+      <h2>Nombre de usuario: {{ username }}</h2>
+      <h2>Nombre completo: {{ name }}</h2>
+      <!-- <h2>Website: {{ website }}</h2> -->
+    </div>
+    <button class="avatarProfile" @click.prevent="editProfileButton">Edit your profile</button>
 
-</div>
-  
+    <form class="form-widget" @submit.prevent="updateProfile">
+    <!-- Add to body -->
+    <!-- <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" /> -->
 
+    <!-- Other form elements -->
+  </form>
+   
+  </div>
 
-
-
-
-
-
-
-</div>
 </template>
 
 <script setup>
@@ -60,7 +71,7 @@
 .account{
 display: flex;
 justify-content: center;
-margin-top: 150px;
+
 }
 
 

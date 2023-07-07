@@ -17,14 +17,14 @@
           <button
             :class="['boton-complete', { completed: task.is_complete }]"
             @click="toggleComplete">
-            <i class="fas fa-check fa-lg"></i>
+            <i class="fas fa-check fa-2x"></i>
             {{ task.is_complete ? "Mark Incomplete" : "Mark Complete" }}
           </button>
           <button @click="deleteTask" class="boton-delete">
-            <i class="fas fa-trash fa-lg"></i>
+            <i class="fas fa-trash fa-2x"></i>
           </button>
           <button @click="UpdateToggle" class="boton-update">
-            <i class="fas fa-edit fa-lg"></i>
+            <i class="fas fa-edit fa-2x"></i>
           </button>
         </div>
         <div>
@@ -64,6 +64,13 @@ const props = defineProps({
   task: Object,
 });
 
+
+const tasks = ref([
+  // Aquí van tus tareas existentes
+]);
+
+
+
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async () => {
   await taskStore.deleteTask(props.task.id);
@@ -92,12 +99,7 @@ const toggleComplete = () => {
 </script>
 
   <style scoped>
-.card-title.completed {
-  text-decoration: line-through;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+
 
 .card-header.completed .title {
   text-decoration: line-through;
@@ -120,9 +122,7 @@ const toggleComplete = () => {
   width: 250px;
   margin-bottom: 15px;
 }
-.completed-task {
-  text-decoration: underline;
-}
+
 .update-form {
   margin-top: 30px;
 }
@@ -163,18 +163,20 @@ const toggleComplete = () => {
   display: flex;
   flex-wrap: wrap;
   border-radius: 20px 20px 0px 0px;
+  background-color: gold;
 }
 .card {
   justify-content: space-around;
   width: 300px;
   border-radius: 20px;
-  box-shadow: 2px 2px 2px 2px gold;
+  /* box-shadow: 2px 2px 2px 2px gold; */
 }
 .card-header img {
   display: flex;
   flex-wrap: wrap;
   height: 50px;
   width: 50px;
+  border-radius: 5px;
 }
 .icons {
   display: flex;
@@ -185,6 +187,7 @@ const toggleComplete = () => {
   text-decoration: underline;
   height: 58px;
   width: 60px;
+  padding: 17px 15px 10px 15px;
   background-color: #a504b7;
   color: white;
   border: none;
@@ -194,7 +197,7 @@ const toggleComplete = () => {
 .boton-update {
   height: 58px;
   width: 60px;
-
+  padding: 10px 10px 10px 15px;
   background-color: gold;
   color: white;
   border: none;
@@ -204,7 +207,7 @@ const toggleComplete = () => {
 .boton-delete {
   height: 58px;
   width: 60px;
-
+  padding: 10px 10px 10px 10px;
   background-color: #ff0000d1;
   color: white;
   border: none;
