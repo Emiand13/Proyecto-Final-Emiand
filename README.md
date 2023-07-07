@@ -89,30 +89,24 @@ The application provides functionalities such as user account registration, task
 
  <h3>Sabado 08/07/23</h3>
 
-
-
-
-
- <h3>Lunes 10/07/23</h3>
- 
- 
- 
- <h3>Martes 11/07/23</h3>
-
- -Completar Navbar y dejarlo preparado para el CSS.
-
-
+ - Implementar formulario para los perfiles de usuario <br>
+ - Implementar funciones para almacenar los datos de perfil de usuario <br>
+ - Añadir ultimos detalles Readme  <br>
+ <p align="right">(<a href="#readme-top">back to top</a>)</p>
  <h3>Sabado 15/07/23</h3>
 
- - Empezar con el diseño CSS del componente addTask<br>
- - Añadir el diseño CSS del componente taskItem <br>
+ - Terminar con el diseño CSS de todos los componentes <br>
+ - Añadir el diseño CSS del View Account <br>
 
  <h3>Lunes 17/07/23</h3>
- - Añadir ultimos detalles Readme<br>
- - Repaso a la pagina y todas sus funcionalidades<br>
+
+ - Implementar "drag and drop" con las cards de las Tasks <br>
+
+ <h3>Martes 18/07/23</h3>
+
+ - Repaso a la App y todas sus funcionalidades<br>
  - Preparar la presentacion del proyecto<br>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h2>Technologies</h2>
 

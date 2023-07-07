@@ -1,7 +1,22 @@
 <template>
+  
+<div class="background-container">
   <Nav />
-  <h1>Name: {{username}}</h1>
+  <div class="account">
+    <h1>Name: {{username}}</h1>
   <img :src="avatar_url ? avatar_url : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'" alt="Profile picture">
+
+</div>
+  
+
+
+
+
+
+
+
+
+</div>
 </template>
 
 <script setup>
@@ -40,7 +55,26 @@
   }
 </script>
 
-<style>
+<style scoped>
+
+.account{
+display: flex;
+justify-content: center;
+margin-top: 150px;
+}
+
+
+
+.background-container{
+  height: 140vh;
+  width: 100%;
+  background-size: cover;
+  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
+  background-repeat: no-repeat; 
+  background-position: center;
+
+}  
+
 img {
   width: 200px;
   border-radius: 50%;

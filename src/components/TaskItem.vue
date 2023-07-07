@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="flex-container">
     <div class="card">
       <div :class="['card-header', { completed: task.is_complete }]">
         <img src="../components/images/imagenNueva2.png" class="image" />
@@ -41,7 +41,7 @@
               placeholder="New Description">
             </textarea>
             <button @click="updateTask" class="boton-save">
-              Guardar New Edittask
+              Update task
             </button>
           </form>
         </div>
@@ -147,7 +147,7 @@ const toggleComplete = () => {
 .boton-save:hover {
   background-color: #cb53d8;
 }
-.container {
+.flex-container {
   overflow: hidden;
   margin-bottom: 35px;
   margin-top: 50px;
