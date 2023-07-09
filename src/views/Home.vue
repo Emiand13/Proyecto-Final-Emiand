@@ -41,10 +41,11 @@ onMounted(async () => {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap:25px
 }
 
 .background-container {
-  height: 1450px;
+  height: auto;
   width: 100%;
   background-size: cover;
   background-image: url("https://images2.alphacoders.com/100/1008542.jpg");

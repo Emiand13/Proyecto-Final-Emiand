@@ -24,8 +24,22 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/reloj">Reloj</router-link>
         </li>
-
+        </ul>
+        <ul>
+        <li class="log-out-welcome">
+          <p class="nav-link">
+            Welcome,
+            <span class="user-email">{{ getEmailPrefix(getUser.email) }}</span>
+          </p>
+          <!-- Comentario: Muestra el correo electrónico del usuario -->
+        </li>
+        <li>
+          <button @click="signOut" class="log-out">Log Out</button>
+          <!-- Comentario: Botón para cerrar sesión -->
+        </li>
       </ul>
+
+      
      
     </div>
   </div>

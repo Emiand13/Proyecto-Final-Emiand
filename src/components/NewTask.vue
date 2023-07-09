@@ -149,5 +149,77 @@ h1 {
 }
 
 
+
+
+/* =======================MEDIA QUERIES==================================== */
+@media (max-width: 768px) {
+  /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+
+  .header-title{
+  color:gold;
+  text-align: center;
+  font-size: 55px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.button {
+  margin-left: 10px;
+  width:280px;
+  background-color:#a504b7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.input-field textarea{
+  padding: 10px 10px;
+    height: 55px;
+    width: 280px;
+    border-radius: 5px;
+ 
+  margin-left: 10px;
+}
+
+.subtitle {
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.date{
+  color:gold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  margin-bottom: 10px;
+ 
+ 
+}
+
+.input-field input {
+  width: 280px;
+  height: 45px;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin-left: 10px;
+}
+
+}
+
 </style>
   
