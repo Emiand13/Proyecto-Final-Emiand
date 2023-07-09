@@ -7,7 +7,7 @@ style="text-align:center;padding:10em 0; ">
  <br />Barcelona, España</a>
  </h1> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=large&timezone=Europe%2FMadrid" width="100%" height="180" frameborder="0" class="center"></iframe>
   <!-- <div id="elemento"><img src=".//images/logo-ironhack-blue.png" class="image-ironhack"></div>  -->
-  <div id="elemento"><img src="./images/r.png" class="image-ironhack2"></div> 
+  <div id="elemento"><img src="./images/logo-ironhack-blue.png" class="image-ironhack2"></div> 
 
 </div>
 </template> 

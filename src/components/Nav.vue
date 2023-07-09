@@ -1,38 +1,38 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light px-3">
-    <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/>    -->
-    <div class="with-shadow">
-      <!-- <button class="navbar-toggler" type="button" @click="toggleMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-      <img src="../components/images/imagenNueva2.png" class="logo" />
-    </div>
-    <router-link to="/" class="nav-link"> Home </router-link>
+  <nav class="navbar navbar-expand-lg " style="display: flex; justify-content:space-between ;">
+  <div class="container-fluid">
+    <img src="../components/images/imagenNueva2.png" class="logo" />
 
-    <router-link to="/account" class="nav-link">Your Account</router-link>
-
-    <router-link to="/" class="nav-link">Your Tasks</router-link>
-
-    <router-link class="nav-link" to="/reloj">Reloj</router-link>
-
-    <div class="">
-      <ul>
-        <li class="log-out-welcome">
-          <p class="nav-link">
-            Welcome,
-            <span class="user-email">{{ getEmailPrefix(getUser.email) }}</span>
-          </p>
-          <!-- Comentario: Muestra el correo electrónico del usuario -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1 3.5A.5.5 0 0 1 1.5 3h13a.5.5 0 0 1 0 1H1.5A.5.5 0 0 1 1 3.5zM1 7.5A.5.5 0 0 1 1.5 7h13a.5.5 0 0 1 0 1H1.5A.5.5 0 0 1 1 7.5zM1 11.5A.5.5 0 0 1 1.5 11h13a.5.5 0 0 1 0 1H1.5A.5.5 0 0 1 1 11.5z"/>
+  </svg>
+</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <router-link to="/" class="nav-link"> Home </router-link>
         </li>
-        <li>
-          <button @click="signOut" class="log-out">Log Out</button>
-          <!-- Comentario: Botón para cerrar sesión -->
+        <li class="nav-item">
+          <router-link to="/account" class="nav-link">Account</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/" class="nav-link">Your Tasks</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/reloj">Reloj</router-link>
+        </li>
+
       </ul>
+     
     </div>
-  </nav>
-</template>
+  </div>
+</nav>
 
+  
+</template>
 <script setup>
 // import PersonalRouter from "./PersonalRouter.vue";
 import { useUserStore } from "../stores/user";
@@ -88,6 +88,28 @@ const getEmailPrefix = (email) => {
 </script>
 
 <style  scoped>
+/* ========================================================================= */
+
+
+
+
+
+
+/* 
+================================================================================ */
+
+.navbar-toggler{
+  padding: 0.05rem 0.10rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid #d4e608;
+    border-radius: 0.25rem;
+    transition: box-shadow .2s ease-in-out;
+    color:#d4e608;
+}
+
+
 .logo {
   height: 60px;
   width: 60px;
@@ -134,4 +156,26 @@ nav ul {
   cursor: pointer;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
+
+@media (max-width: 768px) {
+  /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+
+  .logo {
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 </style>

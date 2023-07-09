@@ -216,6 +216,15 @@ const toggleComplete = () => {
   border-radius: 100%;
   cursor: pointer;
 }
+
+
+
+
+
+@media (max-width: 768px) {
+  /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+
+}
 </style>
   
   <!--
