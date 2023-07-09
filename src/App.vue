@@ -24,8 +24,12 @@ onMounted(async () => {
       appReady.value = true;
       router.push({ path: "/auth/login" });
     } else {
-     // continuar al tablero
-      router.push({ path: "/" });
+      const currentRoute = router.currentRoute.value;
+      if (currentRoute) {
+        router.push(currentRoute.fullPath);
+      } else {
+        router.push({ path: "/" });
+      }
     }
   } catch (e) {
     console.log(e);

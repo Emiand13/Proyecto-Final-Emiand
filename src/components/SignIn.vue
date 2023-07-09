@@ -206,19 +206,9 @@ p {
 }
 @media (max-width: 475px) {
 
-.toggle-password {
-color: #467ffa;
-position: absolute;
-top: 80vh;
-right: 60px; /* Ajusta la posición del ícono */
-transform: translateY(-50%);
-cursor: pointer;
-z-index: 1; /* Asegura que el ícono esté por encima del input */
-/* … */
-}
 
 .background-container{
-  height: 110vh;
+  height: 120vh;
   width: 100%;
   background-size: cover;
   background-image: url('https://images2.alphacoders.com/100/1008542.jpg');

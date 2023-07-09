@@ -1,69 +1,102 @@
 <template>
-     <div class="background-container">
-    <div class="bodyclock">
-    <div id="clock">
-    <p class="date">{{ date }}</p>
-    <p class="time">{{ time }}</p>
-    <p class="text">DIGITAL CLOCK with Vue.js</p>
+
+<div 
+style="text-align:center;padding:10em 0; ">
+ <h1><a style="text-decoration:none;" class="titulo-reloj">
+ <span style="color:rgb(252, 194, 4);">Hora actual en</span>
+ <br />Barcelona, España</a>
+ </h1> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=large&timezone=Europe%2FMadrid" width="100%" height="180" frameborder="0" class="center"></iframe>
+  <!-- <div id="elemento"><img src=".//images/logo-ironhack-blue.png" class="image-ironhack"></div>  -->
+  <div id="elemento"><img src="./images/r.png" class="image-ironhack2"></div> 
 
 </div>
-</div>
-</div>
-
-</template>
-
-<script setup>
-import { useRouter } from "vue-router";
-
-import { ref, onMounted } from "vue";
+</template> 
 
 
+<script>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
+// export default {
+//   name: 'Reloj',
+//   setup() {
+//     const horaActual = ref('');
+//     let intervalId;
 
-// const redirect = useRouter();
+//     // Función para obtener la hora actual
+//     const obtenerHoraActual = () => {
+//       const date = new Date();
+//       horaActual.value = date.toLocaleTimeString();
+//     };
 
+//     // Obtener la hora actual al montar el componente
+//     onMounted(() => {
+//       obtenerHoraActual();
+//       // Actualizar la hora cada segundo
+//       intervalId = setInterval(obtenerHoraActual, 1000);
+//     });
 
+//     // Limpiar el intervalo al desmontar el componente
+//     onBeforeUnmount(() => {
+//       clearInterval(intervalId);
+//     });
 
-
-
-
-
-const date = ref("");
-const time = ref("");
-
-// Función para obtener la fecha y hora actual
-const getCurrentDateTime = () => {
-  const now = new Date();
-
-  // Obtener la fecha actual
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  date.value = now.toLocaleDateString(undefined, options);
-
-  // Obtener la hora actual
-  const hours = now.getHours().toString().padStart(2, "0");
-  const minutes = now.getMinutes().toString().padStart(2, "0");
-  const seconds = now.getSeconds().toString().padStart(2, "0");
-  time.value = `${hours}:${minutes}:${seconds}`;
-};
-
-onMounted(() => {
-  // Actualizar la fecha y hora cada segundo
-  getCurrentDateTime();
-  setInterval(getCurrentDateTime, 1000);
-});
-
-
-
-
+//     return {
+//       horaActual
+//     };
+//   }
+// }
 </script>
+
+
+
+
+
+
 
 <style scoped>
 
+.titulo-reloj{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.image-ironhack{
+  margin-top: 75px;
+width: 80px;
+
+}
+.image-ironhack2{
+margin-top: 75px;
+width: 150px;
 
 
+}
+
+
+#elemento {
+  position: absolute;
+  top: 65%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 .background-container{
-  height: 1450px;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
@@ -71,35 +104,8 @@ onMounted(() => {
   background-position: center;
 
 } 
-.bodyclock {
-  background: white;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-/* Resto de los estilos CSS para el reloj */
-#clock {
-  font-family: "Share Tech Mono", monospace;
-  color: #333;
-  text-align: center;
-}
 
-.time {
-  letter-spacing: 0.05em;
-  font-size: 80px;
-  padding: 5px 0;
-}
 
-.date {
-  letter-spacing: 0.1em;
-  font-size: 24px;
-}
 
-.text {
-  letter-spacing: 0.1em;
-  font-size: 12px;
-  padding: 20px 0 0;
-}
 </style>

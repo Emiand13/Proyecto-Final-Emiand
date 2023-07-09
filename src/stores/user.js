@@ -15,11 +15,9 @@ export const useUserStore = defineStore("user", {
         const { data: profile } = await supabase
         .from('profiles')
         .select()
-        .match({ user_id: this.user.id })
+        .match({ user_id: this.user.id });
 
         if (profile) this.profile = profile[0];
-        console.log('user in store: ', this.user);
-        console.log('profile in store: ', this.profile);
       }
     },
 
@@ -28,20 +26,34 @@ export const useUserStore = defineStore("user", {
         email: email,
         password: password,
       });
-      if (error) throw error;
+    
+      if (error) {
+        throw error;
+      }
+    
       if (user) {
         this.user = user;
-        console.log(this.user);
 
-        const { data: profile } = await supabase.from('profiles').insert([
-          {
-            user_id: this.user.id,
-            username: email
+        const { data: profile, error: profileError } = await supabase
+          .from('profiles')
+          .insert([
+            {
+              user_id: this.user.id,
+              username: email
+            }
+          ]);
+
+    
+        if (profileError) {
+          console.error(profileError);
+        } else {
+          if (profile) {
+            this.profile = profile[0];
           }
-        ])
+        }
       }
     },
-
+    
     async signIn(email, password) {
       const { user, error } = await supabase.auth.signIn({
         email: email,
@@ -59,7 +71,6 @@ export const useUserStore = defineStore("user", {
         .match({ user_id: this.user.id })
 
         if (profile) this.profile = profile[0];
-        console.log('profile in store: ', profile);
       }
     },
 
@@ -79,5 +90,3 @@ export const useUserStore = defineStore("user", {
     ],
   },
 });
-
-

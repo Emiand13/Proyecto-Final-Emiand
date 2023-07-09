@@ -2,8 +2,8 @@
   <div class="flex-container">
     <div class="card">
       <div :class="['card-header', { completed: task.is_complete }]">
-        <img src="../components/images/imagenNueva2.png" class="image" />
-        <span :class="['title', { completed: task.is_complete }]">{{
+        <!-- <img src="../components/images/imagenNueva2.png" class="image" /> -->
+     <span :class="['title', { completed: task.is_complete }]">{{
           task.title
         }}</span>
       </div>
@@ -18,7 +18,7 @@
             :class="['boton-complete', { completed: task.is_complete }]"
             @click="toggleComplete">
             <i class="fas fa-check fa-2x"></i>
-            {{ task.is_complete ? "Mark Incomplete" : "Mark Complete" }}
+            {{ task.is_complete ? "" : "" }}
           </button>
           <button @click="deleteTask" class="boton-delete">
             <i class="fas fa-trash fa-2x"></i>
@@ -28,7 +28,7 @@
           </button>
         </div>
         <div>
-          <form v-if="inputUpdate" class="update-form text-center">
+          <form v-if="inputUpdate && task.id === selectedTaskId" class="update-form text-center">
             <input
               type="text"
               v-model="name"
@@ -63,13 +63,10 @@ const description = ref("");
 const props = defineProps({
   task: Object,
 });
-
-
+const selectedTaskId = ref(null);
 const tasks = ref([
   // Aquí van tus tareas existentes
 ]);
-
-
 
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async () => {
@@ -82,6 +79,8 @@ const inputUpdate = ref(false);
 // funcion basica para hacer un toggle a traves de un boton @click para cambiar la variable inputUpdate de false a true y con esto dejar ver en el DOM dichos inputs y el boton para hacer el update
 const UpdateToggle = () => {
   inputUpdate.value = !inputUpdate.value;
+  selectedTaskId.value = props.task.id;
+
 };
 
 // funcion que llama a funcion de la store task.js que se encarga de hacer una actualizacion de los datos de la tarea.
@@ -99,8 +98,6 @@ const toggleComplete = () => {
 </script>
 
   <style scoped>
-
-
 .card-header.completed .title {
   text-decoration: line-through;
   overflow: hidden;
@@ -157,19 +154,24 @@ const toggleComplete = () => {
   justify-content: center;
 }
 .card-header {
+  white-space: wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   gap: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   display: flex;
   flex-wrap: wrap;
   border-radius: 20px 20px 0px 0px;
   background-color: gold;
+
 }
 .card {
   justify-content: space-around;
   width: 300px;
   border-radius: 20px;
   /* box-shadow: 2px 2px 2px 2px gold; */
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .card-header img {
   display: flex;

@@ -107,7 +107,7 @@
   };
   </script>
   
-  <style>
+  <style scoped>
   .edit-profile {
     color: black;
     display: flex;

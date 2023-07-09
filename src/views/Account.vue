@@ -1,83 +1,193 @@
 <template>
-  
-    <div class="background-container">
-    <Nav />
-    <div class="avatarProfile">
-    <img 
-      :src="
-        avatar_url
-          ? avatar_url
-          : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
-      "
-      alt="Profile picture"
-    />
-  </div>
-    <div>
-      <h2>Nombre de usuario: {{ username }}</h2>
-      <h2>Nombre completo: {{ name }}</h2>
-      <!-- <h2>Website: {{ website }}</h2> -->
-    </div>
-    <button class="avatarProfile" @click.prevent="editProfileButton">Edit your profile</button>
+  <div class="background-container">
+  <Nav />
+  <div class="container-account">
+  <div class="data"> 
+    <Profile @updateProfileEmit="hundleUpdateProfile"/>
+    <br>
+    <h1 class="titulo-data-perfil">YOUR PROFILE DATA</h1>
+     <h3>Name: {{username}}</h3>
+  <h3>Website: <a target="_blank" :href="website">{{website}}</a></h3>
+  <h3>Location: {{location}}</h3>
+  <h3>Byography: {{bio}}</h3>
 
-    <form class="form-widget" @submit.prevent="updateProfile">
-    <!-- Add to body -->
-    <!-- <Avatar v-model:path="avatar_url" @upload="updateProfile" size="10" /> -->
-
-    <!-- Other form elements -->
-  </form>
-   
-  </div>
-
+</div>
+<div>
+  <img :src="avatar_url" v-if="avatar_url" alt="Profile picture">
+  <h3 class="titulo-AVATAR-perfil">SELECT YOUR AVATAR IMAGE</h3>
+  <br>
+  <br>
+  <input @change="fileManager" type="file" class="boton-select-file" />
+  <button @click="uploadFile" class="boton-upload-file">Upload File</button>
+</div>
+</div>
+ 
+</div>
 </template>
 
 <script setup>
   import { supabase } from '../supabase'
-  import { onMounted, ref, toRefs } from 'vue'
+  import { onMounted, ref, toRefs, watch } from 'vue'
   import { useUserStore } from "../stores/user";
   import Nav from '../components/Nav.vue';
+  import Profile from '../components/Profile.vue';
 
-  const userStore = useUserStore();
 
-  const loading = ref(false);
-  const username = ref(null);
-  const website = ref(null);
-  const avatar_url = ref(null);
+// ================= AVATAR URL =======================================
 
-  onMounted(() => {
-    getProfile();
-  });
+const file = ref();
+const fileUrl = ref();
 
-  async function getProfile() {
-    await userStore.fetchUser();
-    username.value = userStore.profile.username;
-    avatar_url.value = userStore.profile.avatar_url;
+
+const fileManager = (event) => {
+  file.value = event.target.files[0];
+
+};
+
+const hundleUpdateProfile = (updatedProfileData) => {
+  username.value = updatedProfileData.full_name;
+  website.value = updatedProfileData.website;
+  location.value = updatedProfileData.location;
+  bio.value = updatedProfileData.bio;
+  avatar_url.value = updatedProfileData.avatar_url;
+};
+
+const uploadFile = async () => {
+  if (!file.value) return;
+  
+  const { data } = await supabase
+        .from('profiles')
+        .select("avatar_url")
+        .eq("user_id", supabase.auth.user().id);
+
+  const deleteUrl = data[0].avatar_url
+  const { error: urlDeleteError } = await supabase.storage
+    .from("profile-img")
+    .remove([deleteUrl]);
+
+  if (urlDeleteError) {
+    console.error("Error deleting file:", urlDeleteError);
+    return;
+  }
+  console.log("File succesfully upload.");
+
+
+
+ const timestamp = Date.now();
+  const filePath = `profiles/${timestamp}-${file.value.name}`;
+  const { error: uploadError } = await supabase.storage
+    .from("profile-img")
+    .upload(filePath, file.value);
+  if (uploadError) {
+    console.error("Error uploading file:", uploadError);
+    return;
+  }
+  console.log("File succesfully upload.");
+
+  const { data: urlData, error: urlError } = await supabase.storage
+    .from("profile-img")
+    .getPublicUrl(filePath);
+  console.log(urlData);
+  if (urlError) {
+    console.error("Error getting public URL:", urlError);
+    return;
   }
 
-  async function signOut() {
-    try {
-      loading.value = true
-      let { error } = await supabase.auth.signOut()
-      if (error) throw error
-    } catch (error) {
-      alert(error.message)
-    } finally {
-      loading.value = false
-    }
+  fileUrl.value = urlData.publicURL;
+  console.log(fileUrl.value);
+
+  const { error: updateError } = await supabase
+    .from("profiles")
+    .update({ avatar_url: fileUrl.value })
+    .eq("user_id", supabase.auth.user().id);
+
+  if (updateError) {
+    console.error("Error updating profile:", updateError);
+    return;
   }
+  console.log("Profile successfully updated.");
+
+  await userStore.fetchUser();
+};
+
+const userStore = useUserStore();
+
+const loading = ref(false);
+const username = ref(null);
+const website = ref(null);
+const avatar_url = ref(null);
+const location = ref(null);
+const bio = ref(null);
+
+async function getProfile() {
+  await userStore.fetchUser();
+  username.value = userStore.profile.full_name;
+  website.value = userStore.profile.website;
+  location.value = userStore.profile.location;
+  bio.value = userStore.profile.bio;
+  avatar_url.value = userStore.profile.avatar_url;
+}
+
+watch(
+  () => userStore.profile,
+  (updatedProfileData) => {
+    avatar_url.value = updatedProfileData.avatar_url;
+  },
+  { deep: true }
+);
+
+onMounted(() => {
+  getProfile();
+});
+
+  // =====================================================================
 </script>
 
 <style scoped>
-
-.account{
+.container-account{
+display: flex;
+justify-content: space-around;
+margin-top: 5vh;
+}
+.data{
 display: flex;
 justify-content: center;
+flex-direction: column;
+color: gold;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+}
+
+.titulo-data-perfil{
+  color: rgb(0, 132, 255);
+  font-size: 48px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+}
+.titulo-AVATAR-perfil{
+  color: rgb(0, 132, 255);
+  font-size: 48px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
 
 }
 
 
 
+.boton-upload-file{
+
+  padding: 10px 20px;
+  background-color: gold;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+
 .background-container{
-  height: 140vh;
+  height: 150vh;
   width: 100%;
   background-size: cover;
   background-image: url('https://images2.alphacoders.com/100/1008542.jpg');

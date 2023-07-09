@@ -84,26 +84,27 @@ The application provides functionalities such as user account registration, task
 
  <h3>Viernes 07/07/23</h3>
 
- - Implementar menu hamburguesa para versiones moviles<br>
- - Adaptar el diseño a la version movil<br>
+ - Implementar menu hamburguesa para versiones moviles ✅<br>
+ - Adaptar el diseño a la version movil ✅<br>
 
  <h3>Sabado 08/07/23</h3>
 
- - Implementar formulario para los perfiles de usuario <br>
- - Implementar funciones para almacenar los datos de perfil de usuario <br>
- - Añadir ultimos detalles Readme  <br>
+ - Implementar formulario para los perfiles de usuario ✅ <br>
+ - Implementar funciones para almacenar los datos de perfil de usuario ✅ <br>
+ - Añadir el diseño CSS del View Account ✅<br>
+ 
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
  <h3>Sabado 15/07/23</h3>
 
  - Terminar con el diseño CSS de todos los componentes <br>
- - Añadir el diseño CSS del View Account <br>
+ 
 
  <h3>Lunes 17/07/23</h3>
 
  - Implementar "drag and drop" con las cards de las Tasks <br>
 
  <h3>Martes 18/07/23</h3>
-
+ - Añadir ultimos detalles Readme  <br>
  - Repaso a la App y todas sus funcionalidades<br>
  - Preparar la presentacion del proyecto<br>
 

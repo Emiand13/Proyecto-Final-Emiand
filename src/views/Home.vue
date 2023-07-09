@@ -7,11 +7,13 @@
       <router-link to="/account">Account</router-link> -->
       </div>
       <NewTask />
+
       <div class="flex">
         <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
       </div>
     </div>
   </div>
+  <FormProfile/>
 </template>
 
 <script setup>
