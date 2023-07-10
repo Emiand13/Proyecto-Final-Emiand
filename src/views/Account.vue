@@ -187,7 +187,7 @@ text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
 
 
 .background-container{
-  height: 150vh;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
@@ -200,4 +200,70 @@ img {
   width: 200px;
   border-radius: 50%;
 }
+
+/* ==========MEDIA QUERIES========================================= */
+@media (max-width: 768px) {
+  /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+
+ .container-account{
+display: flex;
+justify-content:center;
+flex-direction: column;
+margin-top: 5vh;
+}
+.data{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+color: gold;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+margin-bottom: 50px;
+}
+
+.titulo-data-perfil{
+  color: rgb(0, 132, 255);
+  font-size: 48px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+}
+.titulo-AVATAR-perfil{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 132, 255);
+  font-size: 42px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+  margin-top: 25px;
+}
+
+.background-container{
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
+  background-repeat: no-repeat; 
+  background-position: center;
+
+}  
+
+
+
+  img {
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+}
+
+
+
 </style>

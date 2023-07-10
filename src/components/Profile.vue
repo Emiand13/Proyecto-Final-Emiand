@@ -151,8 +151,6 @@ onMounted(async () => {
 }
 
 .boton-edit-profile{
-
-
   padding: 10px 20px;
   background-color:gold; 
   color: #000000;
@@ -161,6 +159,40 @@ onMounted(async () => {
   cursor: pointer;
 
 }
+/* ==========MEDIA QUERIES========================================= */
+@media (max-width: 768px) {
+  /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
+  .boton-actualizar-perfil{
+padding: 10px 20px;
+background-color:gold; 
+color: #000000;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.text-center{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+.boton-edit-profile{
+padding: 10px 20px;
+background-color:gold; 
+color: #000000;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+
+}
+
+
+
+
+
+
+}
 
 </style>

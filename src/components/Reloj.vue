@@ -96,7 +96,7 @@ width: 150px;
 }
 
 .background-container{
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-size: cover;
   background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
@@ -106,6 +106,33 @@ width: 150px;
 } 
 
 
+/* ==========MEDIA QUERIES========================================= */
+@media (max-width: 768px) {
+  /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
 
+#elemento {
+  position: absolute;
+  top: 65%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+}
 </style>
