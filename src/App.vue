@@ -1,7 +1,8 @@
 <template>
-  <div>
+ 
     <router-view />
-  </div>
+
+
 </template>
 
 <script setup>
@@ -10,6 +11,8 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import { ref } from "vue";
+
+
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -38,6 +41,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+
 
 
 </style>

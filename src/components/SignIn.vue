@@ -36,7 +36,7 @@
               <i class="fa" :class="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"></i>
             </span>
         </div>
-        <button class="button" type="submit">Sign In</button>
+        <button class="button2" type="submit">Sign In</button>
       </div>
     </form>
 
@@ -89,6 +89,9 @@ const togglePasswordVisibility = (field) => {
 </script>
 
 <style scoped>
+
+
+/* ========== SIGNIN COMPONENT ============================================== */
  .background-container{
   height: 100vh;
   width: 100%;
@@ -164,14 +167,15 @@ const togglePasswordVisibility = (field) => {
   border-radius: 5px;
 }
 
-.button {
-  padding: 10px 20px;
+.button2 {
+ padding: 10px 20px; 
   background-color: gold;
   color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+
 }
 
 p {
@@ -204,7 +208,7 @@ p {
 }
 
 }
-@media (max-width: 475px) {
+@media (max-width: 768px) {
 
 
 .background-container{
@@ -218,6 +222,16 @@ p {
 }  
 
 
+.button {
+  padding: 10px 20px;
+  background-color: gold;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+
+}
 
 
 }

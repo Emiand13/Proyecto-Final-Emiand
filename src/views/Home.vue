@@ -1,7 +1,7 @@
 <template>
   <div class="background-container">
     <div class="wrapper">
-      <Nav />
+     <Nav /> 
       <div class="content">
         <!-- <h3>Your account:</h3>
       <router-link to="/account">Account</router-link> -->
@@ -12,8 +12,10 @@
         <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
       </div>
     </div>
+    <Footer/>
   </div>
-  <FormProfile/>
+  
+
 </template>
 
 <script setup>
@@ -22,6 +24,7 @@ import { useTaskStore } from "../stores/task";
 import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
+ import Footer from "../components/Footer.vue"
 
 const taskStore = useTaskStore();
 
@@ -36,7 +39,7 @@ onMounted(async () => {
 
 
 <style scoped>
-.flex {
+ .flex {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -45,12 +48,14 @@ onMounted(async () => {
 }
 
 .background-container {
-  height: auto;
+  height: 100%;
   width: 100%;
   background-size: cover;
   background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
+
+
 </style>
 

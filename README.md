@@ -94,6 +94,11 @@ The application provides functionalities such as user account registration, task
  - Añadir el diseño CSS del View Account ✅<br>
  
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+ <h3>Lunes 10/07/23</h3>
+
+ - Implementar el footer en todos los componentes ✅ <br>
+
  <h3>Sabado 15/07/23</h3>
 
  - Terminar con el diseño CSS de todos los componentes <br>
@@ -104,6 +109,7 @@ The application provides functionalities such as user account registration, task
  - Implementar "drag and drop" con las cards de las Tasks <br>
 
  <h3>Martes 18/07/23</h3>
+ 
  - Añadir ultimos detalles Readme  <br>
  - Repaso a la App y todas sus funcionalidades<br>
  - Preparar la presentacion del proyecto<br>

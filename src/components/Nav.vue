@@ -12,17 +12,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <router-link to="/" class="nav-link"> Home </router-link>
-        </li>
+         <li class="nav-item">
+          <router-link to="/" class="nav-link"> TaskPro </router-link>
+        </li> 
         <li class="nav-item">
           <router-link to="/account" class="nav-link">Account</router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link to="/" class="nav-link">Your Tasks</router-link>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <router-link class="nav-link" to="/reloj">Reloj</router-link>
+          <router-link class="nav-link" to="/reloj">Clock</router-link>
         </li>
         </ul>
         <ul>
@@ -116,7 +116,7 @@ const getEmailPrefix = (email) => {
   padding: 0.05rem 0.10rem;
     font-size: 1.25rem;
     line-height: 1;
-    background-color: transparent;
+    background-color: rgba(103, 39, 250, 0.377);
     border: 1px solid #d4e608;
     border-radius: 0.25rem;
     transition: box-shadow .2s ease-in-out;
@@ -135,6 +135,7 @@ nav {
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  background-color: rgba(103, 39, 250, 0.377);
 }
 
 nav ul {

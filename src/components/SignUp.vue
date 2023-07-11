@@ -73,7 +73,7 @@
               required
             />
           </div>
-          <button class="button" type="submit">Sign Up</button>
+          <button class="button2" type="submit">Sign Up</button>
           <p class="texto-have-Acount">
             Have an account?
             <PersonalRouter
@@ -88,7 +88,7 @@
       <div v-show="errorMsg">{{ errorMsg }}</div>
     </div>
   </div>
- 
+
 </template>
 
 <script setup>
@@ -165,7 +165,7 @@ const signUp = async () => {
 
 /* =========== IMAGEN BACKGROUND SIGN UP ================================== */
  .background-container{
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   background-size: cover;
   background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
@@ -253,7 +253,7 @@ const signUp = async () => {
   border-radius: 5px;
 }
 
-.button {
+.button2 {
   padding: 10px 20px;
   background-color: gold;
   color: #000000;

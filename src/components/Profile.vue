@@ -175,7 +175,7 @@ cursor: pointer;
 .text-center{
 display: flex;
 justify-content: center;
-flex-direction: column;
+flex-direction: row;
 }
 
 .boton-edit-profile{

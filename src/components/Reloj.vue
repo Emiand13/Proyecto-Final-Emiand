@@ -1,7 +1,6 @@
 <template>
-
-<div 
-style="text-align:center;padding:10em 0; ">
+<div class="background-container">
+<div style="text-align:center;padding:8em 0; ">
  <h1><a style="text-decoration:none;" class="titulo-reloj">
  <span style="color:rgb(252, 194, 4);">Hora actual en</span>
  <br />Barcelona, España</a>
@@ -10,10 +9,14 @@ style="text-align:center;padding:10em 0; ">
   <div id="elemento"><img src="./images/logo-ironhack-blue.png" class="image-ironhack2"></div> 
 
 </div>
+
+</div>
+
 </template> 
 
 
-<script>
+<script setup>
+import Footer from "../components/Footer.vue"
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 // export default {
@@ -59,11 +62,11 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
-.image-ironhack{
+/* .image-ironhack{
   margin-top: 75px;
 width: 80px;
 
-}
+} */
 .image-ironhack2{
 margin-top: 75px;
 width: 150px;
@@ -96,7 +99,7 @@ width: 150px;
 }
 
 .background-container{
-  height: auto;
+  height: auto; 
   width: 100%;
   background-size: cover;
   background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
@@ -109,7 +112,15 @@ width: 150px;
 /* ==========MEDIA QUERIES========================================= */
 @media (max-width: 768px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+  .image-ironhack2{
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+    margin-top: 70px;
+    width: 80px;
 
+
+}
 
 #elemento {
   position: absolute;

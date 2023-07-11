@@ -87,11 +87,12 @@ onMounted(() => {
 <style scooped >
 
 .header-title{
-  color:gold;
+  color:rgba(255, 217, 0, 0.952);
   text-align: center;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgb(250, 250, 250);
 
-  font-size: 70px;
+  font-size: 75px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 .subtitle {

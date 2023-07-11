@@ -12,7 +12,7 @@
         <h5 :class="['card-title', { completed: task.is_complete }]">
           {{ task.is_complete ? "Task completed" : "Task incompleted" }}
         </h5>
-        <p class="card-text">{{ task.description }}</p>
+        <p class="card-text" :class="{ completed: task.is_complete }">{{ task.description }}</p>
         <div class="icons">
           <button
             :class="['boton-complete', { completed: task.is_complete }]"
@@ -48,6 +48,7 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <!-- ===================== COMIENZA EL SCRIPT ================================= -->
@@ -98,13 +99,19 @@ const toggleComplete = () => {
 </script>
 
   <style scoped>
-.card-header.completed .title {
+ .card-header.completed .title{
+  text-decoration: line-through;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} 
+
+.card-text.completed{
   text-decoration: line-through;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 .boton-complete.completed {
   background-color: green;
 }
@@ -150,11 +157,11 @@ const toggleComplete = () => {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap; 
   justify-content: center;
 }
 .card-header {
-  /* white-space: wrap; */
+   white-space: wrap;
   text-overflow: ellipsis;
   overflow: hidden;
   gap: 10px;
@@ -173,18 +180,11 @@ const toggleComplete = () => {
   /* box-shadow: 2px 2px 2px 2px gold; */
   background-color: rgba(255, 255, 255, 0.6);
 }
-.card-header img {
-  display: flex;
-  flex-wrap: wrap;
-  height: 50px;
-  width: 50px;
-  border-radius: 5px;
-}
 .icons {
   display: flex;
   justify-content: space-around;
-  /* margin-bottom: 15px; */
 }
+
 .boton-complete {
   text-decoration: underline;
   height: 58px;

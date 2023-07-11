@@ -1,37 +1,41 @@
 <template>
   <div class="background-container">
-  <Nav />
-  <div class="container-account">
-  <div class="data"> 
-    <Profile @updateProfileEmit="hundleUpdateProfile"/>
-    <br>
-    <h1 class="titulo-data-perfil">YOUR PROFILE DATA</h1>
-     <h3>Name: {{username}}</h3>
-  <h3>Website: <a target="_blank" :href="website">{{website}}</a></h3>
-  <h3>Location: {{location}}</h3>
-  <h3>Byography: {{bio}}</h3>
-
-</div>
-<div>
-  <img :src="avatar_url" v-if="avatar_url" alt="Profile picture">
-  <h3 class="titulo-AVATAR-perfil">SELECT YOUR AVATAR IMAGE</h3>
-  <br>
-  <br>
-  <input @change="fileManager" type="file" class="boton-select-file" />
-  <button @click="uploadFile" class="boton-upload-file">Upload File</button>
-</div>
-</div>
- 
-</div>
+    <Nav />
+    <div class="container-account">
+      <div class="data">
+        <br />
+        <h1 class="titulo-data-perfil">Your profile</h1>
+        <h3>Name: {{ username }}</h3>
+        <h3>
+          Website: <a target="_blank" :href="website">{{ website }}</a>
+        </h3>
+        <h3>Location: {{ location }}</h3>
+        <h3>Byography: {{ bio }}</h3>
+      </div>
+      <Profile @updateProfileEmit="hundleUpdateProfile" />
+      <div>
+        <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" class="imagen-avatar"/>
+        <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
+        <br />
+        <br />
+        <input @change="fileManager" type="file" class="boton-select-file" />
+        <button @click="uploadFile" class="boton-upload-file">
+          Upload File
+        </button>
+      </div>
+    </div>
+    <br />
+    <!-- <Footer class="footer2" /> -->
+  </div>
 </template>
 
 <script setup>
-  import { supabase } from '../supabase'
-  import { onMounted, ref, toRefs, watch } from 'vue'
-  import { useUserStore } from "../stores/user";
-  import Nav from '../components/Nav.vue';
-  import Profile from '../components/Profile.vue';
-
+import { supabase } from "../supabase";
+import { ref, watch, onMounted } from "vue";
+import { useUserStore } from "../stores/user";
+import Nav from "../components/Nav.vue";
+import Profile from "../components/Profile.vue";
+// import Footer from "../components/Footer.vue";
 
 // ================= AVATAR URL =======================================
 
@@ -140,61 +144,65 @@ onMounted(() => {
   getProfile();
 });
 
-  // =====================================================================
+// =====================================================================
 </script>
 
 <style scoped>
-.container-account{
-display: flex;
-justify-content: space-around;
-margin-top: 5vh;
-}
-.data{
-display: flex;
-justify-content: center;
-flex-direction: column;
-color: gold;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
-}
+/* .footer2 {
+  position: inherit;
+  margin-top: 55vh; 
+} */
 
-.titulo-data-perfil{
-  color: rgb(0, 132, 255);
-  font-size: 48px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.imagen-avatar{
+margin-bottom: 10px;
+float: inline-end;
+}
+.container-account {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20vh;
+}
+.data {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
 }
-.titulo-AVATAR-perfil{
-  color: rgb(0, 132, 255);
-  font-size: 48px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
 
+.titulo-data-perfil {
+  color: rgb(255, 255, 255);
+  font-size: 48px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+}
+.titulo-AVATAR-perfil {
+  color: rgb(255, 255, 255);
+  font-size: 48px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
 }
 
-
-
-.boton-upload-file{
-
+.boton-upload-file {
   padding: 10px 20px;
-  background-color: gold;
+  background-color:    gold;
   color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
 }
 
-
-.background-container{
-  height: 100vh;
+.background-container {
+  height: 115vh;
   width: 100%;
   background-size: cover;
-  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
-  background-repeat: no-repeat; 
+  background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
+  background-repeat: no-repeat;
   background-position: center;
-
-}  
+}
 
 img {
   width: 200px;
@@ -205,65 +213,56 @@ img {
 @media (max-width: 768px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
- .container-account{
-display: flex;
-justify-content:center;
-flex-direction: column;
-margin-top: 5vh;
-}
-.data{
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-color: gold;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
-margin-bottom: 50px;
-}
+  .container-account {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5vh;
+  }
+  .data {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: gold;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+    margin-bottom: 50px;
+  }
 
-.titulo-data-perfil{
-  color: rgb(0, 132, 255);
-  font-size: 48px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
-}
-.titulo-AVATAR-perfil{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  color: rgb(0, 132, 255);
-  font-size: 42px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
-  margin-top: 25px;
-}
+  .titulo-data-perfil {
+    color: rgb(0, 132, 255);
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+  }
+  .titulo-AVATAR-perfil {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(0, 132, 255);
+    font-size: 42px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+    margin-top: 25px;
+  }
 
-.background-container{
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-  background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
-  background-repeat: no-repeat; 
-  background-position: center;
-
-}  
-
-
+  .background-container {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
   img {
-  width: 100px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-
-
-}
-
-
-
 </style>

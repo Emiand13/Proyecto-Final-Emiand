@@ -8,6 +8,42 @@
     --fontBody: 'Helvetica';
 } */
 
+
+
+/* body{
+    height: 200vh; 
+    width: 100%;
+    background-size: cover;
+    background-image: url('https://images2.alphacoders.com/100/1008542.jpg');
+    background-repeat: no-repeat; 
+    background-position: center;
+}  */
+
+
+
+
+
+/* ========================================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* SignIn Component */
 
 /* h1 {
@@ -15,7 +51,76 @@
 } */
 
 /* SignUp Component */
+/* ==================================================================================== */
 
-/* Home view */
+
+
+
+/* ===== Home view ================================================================================ */
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px
+}
+
+.background-container {
+    height: 1600px;
+    width: 100%;
+    background-size: cover;
+    background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer {
+
+    width: 100vw;
+    position: relative;
+    background-color: rgba(46, 15, 250, 0.377);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+}
+
+.footer-image img {
+    margin-left: 230px;
+    width: 40px;
+    border-radius: 10px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer h6 {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+
+/* ======================================================================================================= */
+
+
+
+
+
+
+
+
+
 
 /* Account View */
