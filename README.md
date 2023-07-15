@@ -145,7 +145,7 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
 <p>I am sincerely grateful for the exceptional collaboration and teamwork we have experienced. From the bottom of my heart, thank you all for being an invaluable part of this project!
 
 
-<img src="https://avatars.githubusercontent.com/u/131525843?v=4" width="100px"/><a href="https://github.com/FacundoDM-dev">Facundo del Medico </a>
+<img src="https://avatars.githubusercontent.com/u/131525843?v=4" width="100px"/><p align="center"><a href="https://github.com/FacundoDM-dev">Facundo del Medico </a></p>
 
 <h2>Build Process</h2>
 
