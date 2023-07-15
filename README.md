@@ -145,18 +145,24 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
 <p>I am sincerely grateful for the exceptional collaboration and teamwork we have experienced. From the bottom of my heart, thank you all for being an invaluable part of this project!
 
 
-<p align="center">
-  <img src="https://avatars.githubusercontent.com/u/131525843?v=4" width="100px" alt="Avatar de Facundo del Medico">
-  <br>
-  <a href="https://github.com/FacundoDM-dev">Facundo del Medico</a>
-</p>
-
-<p align="center">
-  <img src="https://avatars.githubusercontent.com/u/48628102?v=4" width="100px" alt="Avatar de Nicolas D'Alessandro">
-  <br>
-  <a href="https://github.com/nicodalessandro11">Nicolas D'Alessandro</a>
-</p>
-
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/FacundoDM-dev">
+        <img src="https://avatars.githubusercontent.com/u/131525843?v=4" width="100px" alt="Avatar de Facundo del Medico">
+        <br>
+        Facundo del Medico
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/nicodalessandro11">
+        <img src="https://avatars.githubusercontent.com/u/48628102?v=4" width="100px" alt="Avatar de Nicolas D'Alessandro">
+        <br>
+        Nicolas D'Alessandro
+      </a>
+    </td>
+  </tr>
+</table>
 
 
 
