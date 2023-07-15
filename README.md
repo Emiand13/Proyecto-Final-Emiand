@@ -151,6 +151,16 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
   <a href="https://github.com/FacundoDM-dev">Facundo del Medico</a>
 </p>
 
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/48628102?v=4" width="100px" alt="Avatar de Nicolas D'Alessandro">
+  <br>
+  <a href="https://github.com/nicodalessandro11">Nicolas D'Alessandro</a>
+</p>
+
+
+
+
+
 <h2>Build Process</h2>
 
 <!-- Proceso de construcción -->
