@@ -7,17 +7,24 @@
         <h1 class="titulo-data-perfil">Your profile</h1>
         <h3>Name: {{ username }}</h3>
         <h3>
-          Website: <a target="_blank" :href="website">{{ website }}</a>
+          Website:
+          <a target="_blank" :href="website" class="link-website">{{
+            website
+          }}</a>
         </h3>
         <h3>Location: {{ location }}</h3>
         <h3>Byography: {{ bio }}</h3>
       </div>
       <Profile @updateProfileEmit="hundleUpdateProfile" />
       <div>
-        <img :src="avatar_url" v-if="avatar_url" alt="Profile picture" class="imagen-avatar"/>
+        <img
+          :src="avatar_url"
+          v-if="avatar_url"
+          alt="Profile picture"
+          class="imagen-avatar"
+        />
         <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
-        <br />
-        <br />
+
         <input @change="fileManager" type="file" class="boton-select-file" />
         <button @click="uploadFile" class="boton-upload-file">
           Upload File
@@ -25,7 +32,6 @@
       </div>
     </div>
     <br />
-    <!-- <Footer class="footer2" /> -->
   </div>
 </template>
 
@@ -35,19 +41,26 @@ import { ref, watch, onMounted } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 import Profile from "../components/Profile.vue";
-// import Footer from "../components/Footer.vue";
 
 // ================= AVATAR URL =======================================
 
+const userStore = useUserStore();
+
 const file = ref();
 const fileUrl = ref();
+const loading = ref(false);
+const username = ref(null);
+const website = ref(null);
+const avatar_url = ref(null);
+const location = ref(null);
+const bio = ref(null);
 
-
+// Esta función permite capturar el archivo seleccionado por el usuario y almacenarlo en la referencia file.value para su posterior procesamiento, como en el caso de cargar el archivo en un servicio de almacenamiento en la nube.
 const fileManager = (event) => {
   file.value = event.target.files[0];
-
 };
 
+// Esta función se encarga de asignar los valores actualizados del perfil del usuario a las referencias correspondientes. Es probable que estas referencias estén vinculadas a elementos en la interfaz de usuario para mostrar los datos actualizados del perfil.
 const hundleUpdateProfile = (updatedProfileData) => {
   username.value = updatedProfileData.full_name;
   website.value = updatedProfileData.website;
@@ -56,15 +69,20 @@ const hundleUpdateProfile = (updatedProfileData) => {
   avatar_url.value = updatedProfileData.avatar_url;
 };
 
+// Esta verificación condicional al comienzo de la función uploadFile garantiza que no se realice la carga del archivo si no hay ningún archivo seleccionado
 const uploadFile = async () => {
   if (!file.value) return;
-  
-  const { data } = await supabase
-        .from('profiles')
-        .select("avatar_url")
-        .eq("user_id", supabase.auth.user().id);
 
-  const deleteUrl = data[0].avatar_url
+  // Este fragmento de código realiza una consulta a la tabla "profiles" en la base de datos utilizando supabase, para obtener la URL del avatar del usuario actualmente autenticado. Los resultados de la consulta se almacenan en la variable data.
+  const { data } = await supabase
+    .from("profiles")
+    .select("avatar_url")
+    .eq("user_id", supabase.auth.user().id);
+
+  // Esta línea de código extrae la URL del avatar del primer elemento de los resultados de la consulta y la asigna a la variable deleteUrl para su posterior uso.
+  const deleteUrl = data[0].avatar_url;
+
+  // Este bloque de código se encarga de eliminar un archivo en el almacenamiento utilizando supabase.storage. Si se produce algún error durante la eliminación, se muestra un mensaje de error. Si la eliminación es exitosa, se muestra un mensaje de éxito en la consola.
   const { error: urlDeleteError } = await supabase.storage
     .from("profile-img")
     .remove([deleteUrl]);
@@ -75,31 +93,40 @@ const uploadFile = async () => {
   }
   console.log("File succesfully upload.");
 
+  // Esta línea de código se utiliza para obtener la marca de tiempo actual en milisegundos y almacenarla en la variable timestamp.
+  const timestamp = Date.now();
 
-
- const timestamp = Date.now();
+  // Esta línea de código construye una ruta de archivo combinando el directorio "profiles", la marca de tiempo actual y el nombre del archivo seleccionado
   const filePath = `profiles/${timestamp}-${file.value.name}`;
+
+  // Este bloque de código se encarga de cargar un archivo en el almacenamiento utilizando supabase.storage.
   const { error: uploadError } = await supabase.storage
     .from("profile-img")
     .upload(filePath, file.value);
+  // Si se produce algún error durante la carga, se muestra un mensaje de error
   if (uploadError) {
     console.error("Error uploading file:", uploadError);
     return;
   }
+  // Si la carga es exitosa, se muestra un mensaje de éxito en la consola.
   console.log("File succesfully upload.");
 
+  // Este bloque de código se utiliza para obtener la URL pública de un archivo en el almacenamiento utilizando supabase.storage
   const { data: urlData, error: urlError } = await supabase.storage
     .from("profile-img")
     .getPublicUrl(filePath);
-  console.log(urlData);
+  // console.log(urlData);
+  // Si se produce algún error al obtener la URL, se muestra un mensaje de error.
   if (urlError) {
     console.error("Error getting public URL:", urlError);
     return;
   }
 
+  // Este bloque de código asigna la URL pública obtenida a la referencia fileUrl.value y la imprime en la consola para verificar su valor.
   fileUrl.value = urlData.publicURL;
   console.log(fileUrl.value);
 
+  // Este bloque de código actualiza el perfil del usuario en la tabla "profiles" con la nueva URL del avatar.
   const { error: updateError } = await supabase
     .from("profiles")
     .update({ avatar_url: fileUrl.value })
@@ -109,20 +136,13 @@ const uploadFile = async () => {
     console.error("Error updating profile:", updateError);
     return;
   }
-  console.log("Profile successfully updated.");
+  // console.log("Profile successfully updated.");
 
+  // Luego, se actualizan los datos del perfil del usuario en algún almacén utilizando userStore.fetchUser().
   await userStore.fetchUser();
 };
 
-const userStore = useUserStore();
-
-const loading = ref(false);
-const username = ref(null);
-const website = ref(null);
-const avatar_url = ref(null);
-const location = ref(null);
-const bio = ref(null);
-
+// Esta función asincrónica se utiliza para obtener los datos del perfil del usuario y asignarlos a las referencias correspondientes. Esto permite actualizar los valores en la interfaz de usuario para reflejar los datos del perfil actualizados obtenidos de algún origen de datos.
 async function getProfile() {
   await userStore.fetchUser();
   username.value = userStore.profile.full_name;
@@ -132,6 +152,7 @@ async function getProfile() {
   avatar_url.value = userStore.profile.avatar_url;
 }
 
+// Esta parte del código establece una observación en la propiedad userStore.profile y, cada vez que cambie, asigna el valor de updatedProfileData.avatar_url a avatar_url.value. Esto permite mantener actualizada la referencia avatar_url con el valor más reciente de la URL del avatar del perfil.
 watch(
   () => userStore.profile,
   (updatedProfileData) => {
@@ -140,6 +161,7 @@ watch(
   { deep: true }
 );
 
+// Este bloque de código utiliza onMounted para ejecutar getProfile() cuando el componente se monte por primera vez. Esto asegura que los datos del perfil se obtengan y asignen inicialmente para su uso en el componente o vista.
 onMounted(() => {
   getProfile();
 });
@@ -148,14 +170,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* .footer2 {
-  position: inherit;
-  margin-top: 55vh; 
-} */
-
-.imagen-avatar{
-margin-bottom: 10px;
-float: inline-end;
+.imagen-avatar {
+  margin-bottom: 10px;
+  float: inline-end;
 }
 .container-account {
   display: flex;
@@ -164,35 +181,56 @@ float: inline-end;
   align-items: center;
   margin-top: 20vh;
 }
+
+.link-website {
+  color: blue;
+  text-decoration: none;
+}
 .data {
   display: flex;
   justify-content: center;
   flex-direction: column;
   color: rgb(255, 255, 255);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .titulo-data-perfil {
   color: rgb(255, 255, 255);
   font-size: 48px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
 }
 .titulo-AVATAR-perfil {
   color: rgb(255, 255, 255);
   font-size: 48px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
-.boton-upload-file {
-  padding: 10px 20px;
-  background-color:    gold;
+.boton-select-file {
+  padding: 8px 15px;
+  background-color: rgba(251, 0, 255, 0.49);
+
   color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-right: 25px;
+}
+.boton-upload-file {
+  padding: 10px 20px;
+  background-color: rgba(255, 217, 0, 0.675);
+
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .background-container {
@@ -210,7 +248,7 @@ img {
 }
 
 /* ==========MEDIA QUERIES========================================= */
-@media (max-width: 768px) {
+@media (max-width: 765px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
   .container-account {
@@ -223,33 +261,41 @@ img {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    color: gold;
+    align-items: start;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 50px;
+    margin-left: 30px;
+    color: rgb(255, 255, 255);
+
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
 
   .titulo-data-perfil {
-    color: rgb(0, 132, 255);
-    font-size: 48px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
+      -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
   }
+
   .titulo-AVATAR-perfil {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    color: rgb(0, 132, 255);
-    font-size: 42px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    text-shadow: 2px 2px 4px rgba(107, 243, 191, 0.4);
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
+      -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
     margin-top: 25px;
   }
 
   .background-container {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-size: cover;
     background-image: url("https://images2.alphacoders.com/100/1008542.jpg");

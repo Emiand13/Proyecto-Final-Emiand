@@ -1,68 +1,73 @@
 <template>
   <div class="add-task-form">
     <h2 class="header-title">Add a new Task</h2>
-    <p class="subtitle">Keep your tasks in order, reach your goals: Act today!</p>
+    <p class="subtitle">
+      Keep your tasks in order, reach your goals: Act today!
+    </p>
     <div>
-      <p class="date"><strong>Today's date is {{ formattedDate }}</strong></p>
+      <p class="date">
+        <strong>Today's date is {{ formattedDate }}</strong>
+      </p>
     </div>
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>
     <div>
       <div class="input-field">
-        <input type="text" placeholder="Add a Task Title - Listen to Snoop Dog" v-model="name">
+        <input
+          type="text"
+          placeholder="Add a Task Title - Listen to Snoop Dog"
+          v-model="name"
+        />
       </div>
       <div class="input-field">
-        <textarea placeholder="Add a Task Description - We are going to the concert next week" v-model="description" class="input-field"></textarea>
+        <textarea
+          placeholder="Add a Task Description - We are going to the concert next week"
+          v-model="description"
+          class="input-field"
+        ></textarea>
       </div>
       <button @click="addTask" class="button">Add</button>
     </div>
-    </div>
-  
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
-import { useTaskStore } from "../stores/task"   
+import { useTaskStore } from "../stores/task";
 
 const taskStore = useTaskStore();
 
-// variables para los valors de los inputs
-const name = ref('');
-const description = ref('');
+// variables para los valores de los inputs
+const name = ref("");
+const description = ref("");
 
-
-
-// constante para guardar una variable que contiene un valor booleano falso inicial para el contenedor de mensaje de error que se muestra condicionalmente dependiendo de si el campo de entrada está vacío
+// La referencia showErrorMessage se puede utilizar en el componente para realizar un seguimiento y controlar la visibilidad de un mensaje de error en la interfaz de usuario. Al cambiar el valor de showErrorMessage, se puede mostrar u ocultar el mensaje de error según sea necesario.
 const showErrorMessage = ref(false);
 
-//   constante para guardar una variable que contiene el valor del mensaje de error
+// La referencia  errorMessage se puede utilizar en el componente para almacenar y mostrar mensajes de error en la interfaz de usuario. Al asignar un valor al errorMessage, se puede mostrar el mensaje de error correspondiente y actualizar dinámicamente en función de las acciones o eventos en el componente.
 const errorMessage = ref(null);
 
-
-
-
+// La referencia tasks se puede utilizar en el componente para almacenar y manipular una lista de tareas. Al modificar el contenido del array asignado a tasks, se puede realizar un seguimiento de los cambios y actualizar la interfaz de usuario de forma reactiva.
 const tasks = ref([]);
 
 // Arrow function para crear tareas.
 const addTask = () => {
   if (name.value.length === 0 || description.value.length === 0) {
     showErrorMessage.value = true;
-    errorMessage.value = 'The task title or description is empty';
+    errorMessage.value = "The task title or description is empty";
     setTimeout(() => {
       showErrorMessage.value = false;
-    }, 5000);
+    }, 3000);
   } else {
     taskStore.addTask(name.value, description.value);
-    name.value = '';
-    description.value = '';
+    name.value = "";
+    description.value = "";
   }
 };
 
-
-
-//Variables y funciones para inyectar la fecha en el dom 
+//Variables y funciones para inyectar la fecha en el dom
 
 const currentDate = ref(new Date());
 
@@ -75,25 +80,35 @@ onMounted(() => {
   setInterval(updateCurrentDate, 24 * 60 * 60 * 1000); // Actualizar cada día (24 horas * 60 minutos * 60 segundos * 1000 milisegundos)
 });
 
-const formattedDate = ref('');
+const formattedDate = ref("");
 
 onMounted(() => {
-  const options = { day: 'numeric', month: 'long', year: 'numeric' };
-  const formatter = new Intl.DateTimeFormat('en', options);
+  const options = { day: "numeric", month: "long", year: "numeric" };
+  const formatter = new Intl.DateTimeFormat("en", options);
   formattedDate.value = formatter.format(currentDate.value);
 });
 </script>
 
 <style scooped >
+.error-text {
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  border-radius: 15px;
+}
 
-.header-title{
-  color:rgba(255, 217, 0, 0.952);
+.header-title {
+  color: rgba(255, 217, 0, 0.952);
   text-align: center;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgb(250, 250, 250);
 
   font-size: 75px;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .subtitle {
   color: white;
@@ -103,8 +118,8 @@ onMounted(() => {
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.date{
-  color:gold;
+.date {
+  color: gold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -123,8 +138,6 @@ h1 {
 
 .input-field {
   margin-bottom: 10px;
- 
- 
 }
 
 .input-field input {
@@ -133,94 +146,87 @@ h1 {
   border-radius: 5px;
   padding: 10px 10px;
 }
-.input-field textarea{
+.input-field textarea {
   padding: 10px 10px;
-    height: 55px;
-    width: 500px;
-    border-radius: 5px;
+  height: 55px;
+  width: 500px;
+  border-radius: 5px;
 }
 .button {
-  width:500px;
+  width: 500px;
   padding: 10px 20px;
-  background-color:#a504b7;
+  background-color: #a504b7;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-
-
-
 
 /* =======================MEDIA QUERIES==================================== */
 @media (max-width: 768px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
-  .header-title{
-  color:gold;
-  text-align: center;
-  font-size: 55px;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-}
+  .header-title {
+    color: gold;
+    text-align: center;
+    font-size: 55px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
 
-.button {
-  margin-left: 10px;
-  width:280px;
-  background-color:#a504b7;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.input-field textarea{
-  padding: 10px 10px;
+  .button {
+    margin-left: 10px;
+    width: 280px;
+    background-color: #a504b7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .input-field textarea {
+    padding: 10px 10px;
     height: 55px;
     width: 280px;
     border-radius: 5px;
- 
-  margin-left: 10px;
-}
 
-.subtitle {
-  color: white;
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.date{
-  color:gold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    margin-left: 10px;
+  }
 
-.add-task-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 65vh;
-}
+  .subtitle {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .date {
+    color: gold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
 
-h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
+  .add-task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+  }
 
-.input-field {
-  margin-bottom: 10px;
- 
- 
-}
+  h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
 
-.input-field input {
-  width: 280px;
-  height: 45px;
-  border-radius: 5px;
-  padding: 10px 10px;
-  margin-left: 10px;
-}
+  .input-field {
+    margin-bottom: 10px;
+  }
 
+  .input-field input {
+    width: 280px;
+    height: 45px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-left: 10px;
+  }
 }
-
 </style>
   

@@ -15,6 +15,7 @@
             <p class="subtitle ">
               Ready to create your tasks in TaskPro!!!
             </p>
+            <div v-show="errorMsg" class="error">{{ errorMsg }}</div>
           </div>
         </div>
       </div>
@@ -79,13 +80,13 @@
             <PersonalRouter
               :route="route"
               :buttonText="buttonText"
-              class="sign-up-link"
+              class="router-link"
             />
           </p>
         </div>
       </form>
 
-      <div v-show="errorMsg">{{ errorMsg }}</div>
+   
     </div>
   </div>
 
@@ -108,13 +109,14 @@ const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
 
-//=========================================================
-
-
-
 const passwordVisible = ref(false);
 const confirmPasswordVisible = ref(false);
 
+// Error Message
+const errorMsg = ref("");
+
+
+// Esta función togglePasswordVisibility se utiliza para alternar la visibilidad de los campos de contraseña y confirmación de contraseña.
 const togglePasswordVisibility = (field) => {
   if (field === 'password') {
     passwordVisible.value = !passwordVisible.value;
@@ -122,45 +124,40 @@ const togglePasswordVisibility = (field) => {
     confirmPasswordVisible.value = !confirmPasswordVisible.value;
   }
 };
-//========================================================
 
-// Error Message
-const errorMsg = ref("");
 
-// Router to push user once SignedUp to Log In
+
+
+// Enrutador para empujar al usuario una vez que se haya registrado para iniciar sesión
 const redirect = useRouter();
 
-// Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
+// Función de tipo flecha para registrar al usuario en supaBase con un método timeOut() para mostrar el error
 const signUp = async () => {
   if (password.value === confirmPassword.value) {
     try {
-      // calls the user store and send the users info to backend to logIn
+      // llama al almacén de usuarios y envía la información de los usuarios al backend para iniciar sesión
       await useUserStore().signUp(email.value, password.value);
-      // redirects user to the homeView
+      // redirige al usuario a homeView
       redirect.push({ path: "/auth/login" });
     } catch (error) {
-      // displays error message
+   // muestra mensaje de error
       errorMsg.value = error.message;
-      // hides error message
+     // oculta el mensaje de error
       setTimeout(() => {
         errorMsg.value = null;
-      }, 5000);
+      }, 3000);
     }
     return;
   }
   errorMsg.value = "Los datos introducidos no son correctos!!!";
+  // oculta el mensaje de error
+  setTimeout(() => {
+        errorMsg.value = null;
+      }, 3000);
 };
 </script>
 
 <style  scoped>
-/* .form-input-label {
-  display: flex;
-  align-items: center;
-} */
-/* ========================================================================== */
-
-
-
 
 
 /* =========== IMAGEN BACKGROUND SIGN UP ================================== */
@@ -203,10 +200,15 @@ const signUp = async () => {
 }
 
 /* ======= INPUT WRAPPER =================================================================== */
+.error{
+font-size: 16px ;
+color: rgb(255, 255, 255);
+background-color: rgb(255, 0, 0);
+border-radius: 15px;
 
+}
 .container {
   max-width: 450px;
-  
 }
 
 .header-title {
@@ -234,7 +236,6 @@ const signUp = async () => {
   width: 120px;
 }
 .form-sign-in {
-  /* border: 1px solid #ccc; */
   padding: 20px 20px 20px 20px;
 }
 
@@ -275,11 +276,13 @@ color:white;
 
 }
 .router-link {
+  font-size: 16px;
   align-items: center;
   color: #007bff;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
+
 </style>
 
 

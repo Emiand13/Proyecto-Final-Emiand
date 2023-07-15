@@ -7,7 +7,8 @@
     
     <p class="subtitle">Ready to create your tasks in TaskPro!!!</p>
   </div>
-    
+  <div v-show="errorMsg" class="error">{{ errorMsg }}</div>
+  
     <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">
         <div class="form-input">
@@ -40,7 +41,7 @@
       </div>
     </form>
 
-    <p class="texto-have-acount">Don't have an account? <router-link to="/auth/signup">Sign Up</router-link></p>
+    <p class="texto-have-acount">Don't have an account? <router-link to="/auth/signup" class="router-link">Sign Up</router-link></p>
   </div>
 </div>
 </template>
@@ -60,6 +61,9 @@ const password = ref("");
 const redirect = useRouter();
 const userStore = useUserStore();
 
+// Error Message
+const errorMsg = ref("");
+
 const signIn = async () => {
   try {
     await userStore.signIn(email.value, password.value);
@@ -67,8 +71,17 @@ const signIn = async () => {
   } catch (error) {
     console.error(error);
     // Mostrar mensaje de error al usuario si es necesario
+    errorMsg.value = "Error al iniciar sesión. Por favor, verifica tus credenciales.";
+    setTimeout(() => {
+      errorMsg.value = null;
+    }, 3000);
   }
-};
+    return;
+  }
+  
+  
+
+  
 
 //=========================================================
 
@@ -92,7 +105,26 @@ const togglePasswordVisibility = (field) => {
 
 
 /* ========== SIGNIN COMPONENT ============================================== */
- .background-container{
+
+.router-link {
+  font-size: 16px;
+  align-items: center;
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.error{
+ display: flex;
+ justify-content: center;
+  font-size: 14px;
+  color:rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
+  border-radius: 15px;
+}
+
+
+
+.background-container{
   height: 100vh;
   width: 100%;
   background-size: cover;
@@ -125,7 +157,6 @@ const togglePasswordVisibility = (field) => {
   color:gold;
   text-align: center;
   margin-bottom: 20px;
-
   font-size: 50px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
@@ -143,22 +174,16 @@ const togglePasswordVisibility = (field) => {
   margin-bottom:20px ;
   height: 120px;
   width: 120px;
-
 }
 
 
 .form-sign-in {
-  /* border: 1px solid #ccc; */
    padding:20px 20px 20px 20px; 
 }
 
 .form-input {
   margin-bottom: 10px;
 }
-
-/* .input-field-label {
-  font-weight: bold;
-} */
 
 .input-field {
   width: 100%;

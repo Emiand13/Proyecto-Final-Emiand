@@ -2,7 +2,6 @@
   <div class="flex-container">
     <div class="card">
       <div :class="['card-header', { completed: task.is_complete }]">
-        <!-- <img src="../components/images/imagenNueva2.png" class="image" /> -->
      <span :class="['title', { completed: task.is_complete }]">{{
           task.title
         }}</span>
@@ -65,26 +64,24 @@ const props = defineProps({
   task: Object,
 });
 const selectedTaskId = ref(null);
-const tasks = ref([
-  // Aquí van tus tareas existentes
-]);
+const tasks = ref([]);
 
-// Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
+// Este código define una función asincrónica deleteTask que utiliza taskStore para eliminar una tarea específica mediante su ID. El uso de await asegura que la función asincrónica espere a que se complete la operación de eliminación antes de continuar con el resto del código.
 const deleteTask = async () => {
   await taskStore.deleteTask(props.task.id);
 };
 
-// variable inputUpdate la utilizo en false para luego utilizarla en el dom para mantener ocultos los inputs para hacer un update
+// Esta línea de código crea una referencia reactiva llamada inputUpdate con un valor inicial de false. Esta referencia se puede utilizar para realizar un seguimiento del estado de actualización de un input en una aplicación y activar o desactivar ciertas funcionalidades o comportamientos según el valor de inputUpdate.
 const inputUpdate = ref(false);
 
-// funcion basica para hacer un toggle a traves de un boton @click para cambiar la variable inputUpdate de false a true y con esto dejar ver en el DOM dichos inputs y el boton para hacer el update
+// Esta función UpdateToggle se utiliza para cambiar el valor de la referencia reactiva inputUpdate y asignar el ID de la tarea a la referencia reactiva selectedTaskId.
 const UpdateToggle = () => {
   inputUpdate.value = !inputUpdate.value;
   selectedTaskId.value = props.task.id;
 
 };
 
-// funcion que llama a funcion de la store task.js que se encarga de hacer una actualizacion de los datos de la tarea.
+// Esta función updateTask se utiliza para actualizar una tarea en taskStore con los nuevos valores del nombre y la descripción. Luego, se restablecen los valores del nombre y la descripción a cadenas vacías, y se llama a UpdateToggle para realizar alguna acción adicional relacionada con la actualización de la tarea.
 const updateTask = () => {
   taskStore.updateTask(props.task.id, name.value, description.value);
   name.value = "";
@@ -92,11 +89,18 @@ const updateTask = () => {
   UpdateToggle();
 };
 
+// Esta función toggleComplete se utiliza para alternar el estado de completitud de una tarea entre completa e incompleta. Actualiza el valor de la propiedad is_complete de la tarea en props y luego llama a taskStore.completeTask() para reflejar ese cambio en taskStore.
 const toggleComplete = () => {
   props.task.is_complete = !props.task.is_complete;
   taskStore.completeTask(props.task.id, props.task.is_complete);
 };
+
+
 </script>
+
+
+<!-- ================= STYLES TASKITEM ======================================= -->
+
 
   <style scoped>
  .card-header.completed .title{

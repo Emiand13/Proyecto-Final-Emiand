@@ -5,6 +5,7 @@ import Reloj from "../components/Reloj.vue";
 import Footer from "../components/Footer.vue"
 
 
+
 import { useRouter } from "vue-router";
 
 // const mensaje = ref('');
@@ -15,11 +16,14 @@ import { useRouter } from "vue-router";
 </script>
 
 <template>
-   <div class="background-container"> 
+   <div class="background-container">  
     <Nav />
+    
     <Reloj />
     <!-- Uso del componente "Reloj.vue" -->
-   </div> 
+
+   
+   </div>  
    <Footer/>
 </template>
 

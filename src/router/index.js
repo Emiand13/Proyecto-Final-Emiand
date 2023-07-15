@@ -20,6 +20,7 @@ const routes = [
   { path: "/", component: Home },
   { path: "/account", component: Account },
   { path: "/reloj", component: Reloj },
+
  
   
 ];

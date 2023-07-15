@@ -1,7 +1,10 @@
 <template>
-  <div class="background-container">
+    <div class="background-container"> 
+   
     <div class="wrapper">
-     <Nav /> 
+     <Nav />
+    
+
       <div class="content">
         <!-- <h3>Your account:</h3>
       <router-link to="/account">Account</router-link> -->
@@ -13,8 +16,9 @@
       </div>
     </div>
     <Footer/>
-  </div>
-  
+  </div> 
+
+
 
 </template>
 
@@ -26,6 +30,10 @@ import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
  import Footer from "../components/Footer.vue"
 
+
+
+
+
 const taskStore = useTaskStore();
 
 const tasks = computed(() => taskStore.tasksArr);
@@ -35,6 +43,13 @@ onMounted(async () => {
   await taskStore.fetchTasks();
   console.log("taskOnmouted:", tasks.value);
 });
+
+
+
+
+
+
+
 </script>
 
 
@@ -56,6 +71,15 @@ onMounted(async () => {
   background-position: center;
 }
 
+body {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
 
 </style>
 

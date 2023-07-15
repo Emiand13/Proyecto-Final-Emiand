@@ -97,7 +97,7 @@ The application provides functionalities such as user account registration, task
 
  <h3>Lunes 10/07/23</h3>
 
- - Implementar el footer en todos los componentes ✅ <br>
+ - Implementar el footer ✅ <br>
 
  <h3>Sabado 15/07/23</h3>
 

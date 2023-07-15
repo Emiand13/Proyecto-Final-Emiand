@@ -70,8 +70,11 @@ import { ref, reactive, onMounted, computed } from "vue";
 import { useUserStore } from "../stores/user";
 import { supabase } from "../supabase";
 
+// defineEmits se utiliza para definir los eventos que puede emitir el componente. 
 const emit = defineEmits(["updateProfileEmit"])
 
+
+// Utilizamos la función defineProps para definir las propiedades del componente
 const props = defineProps({
   profile: {
     type: Object,
@@ -80,12 +83,6 @@ const props = defineProps({
     type: Boolean,
   },
 });
-
-
-
-
-
-
 
 
 // Esta línea declara una variable llamada userStore y la inicializa con el resultado de la función useUserStore(). Probablemente, useUserStore() es una función que devuelve una instancia del almacén de usuarios utilizado en este código.
@@ -136,13 +133,13 @@ onMounted(async () => {
   
   <style scoped>
 .boton-actualizar-perfil{
-
   padding: 10px 20px;
-  background-color:gold; 
+  background-color:   rgba(255, 217, 0, 0.675);
   color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .text-center{
@@ -152,11 +149,12 @@ onMounted(async () => {
 
 .boton-edit-profile{
   padding: 10px 20px;
-  background-color:gold; 
+  background-color:   rgba(255, 217, 0, 0.763);
   color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
 /* ==========MEDIA QUERIES========================================= */
@@ -170,6 +168,7 @@ color: #000000;
 border: none;
 border-radius: 5px;
 cursor: pointer;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .text-center{
@@ -185,7 +184,7 @@ color: #000000;
 border: none;
 border-radius: 5px;
 cursor: pointer;
-
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 
