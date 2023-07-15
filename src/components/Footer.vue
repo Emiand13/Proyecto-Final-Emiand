@@ -39,5 +39,42 @@ footer {
   font-size: 1rem;
   color: rgb(255, 255, 255);
 }
+
+
+
+@media (max-width: 768px) {
+
+  footer {
+  height: 8%;
+  width: 100vw;
+  background-color: rgba(46, 15, 250, 0.377); 
+  padding: 10px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 250px;
+}
+
+.footer-image img {
+  margin-left: 120px;
+  width: 40px;
+  border-radius: 10px;
+}
+.footer p {
+  font-size: 0.6rem;
+}
+.footer h6 {
+  margin-top: 10px;
+  font-size: 0.6rem;
+  color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+}
 </style>
 

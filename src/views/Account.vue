@@ -48,7 +48,7 @@ const userStore = useUserStore();
 
 const file = ref();
 const fileUrl = ref();
-const loading = ref(false);
+// const loading = ref(false);
 const username = ref(null);
 const website = ref(null);
 const avatar_url = ref(null);

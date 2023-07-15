@@ -101,7 +101,7 @@ The application provides functionalities such as user account registration, task
 
  <h3>Sabado 15/07/23</h3>
 
- - Terminar con el diseño CSS de todos los componentes <br>
+ - Terminar con el diseño CSS de todos los componentes  ✅  <br>
  
 
  <h3>Lunes 17/07/23</h3>
@@ -142,7 +142,10 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
 
 <h2>Contributors</h2>
 
-<!-- Todos los que han aportado algo en el proyecto -->
+<p>I am sincerely grateful for the exceptional collaboration and teamwork we have experienced. From the bottom of my heart, thank you all for being an invaluable part of this project!
+
+
+<img src="https://avatars.githubusercontent.com/u/131525843?v=4" width="100px"/><br/><sub><b>Facundo del Medico</b></sub><br/>
 
 <h2>Build Process</h2>
 
