@@ -208,6 +208,7 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
       </a>
     </td>
     <td align="center">
+     <a href="https://www.ironhack.com/es/es">
         <img src="https://th.bing.com/th/id/OIP.PIKDbADaGWcwE1940GOvkQHaHa?pid=ImgDet&rs=1" width="100px" alt="Imagen Ironhack logo">
         <br>
         Ironhack
