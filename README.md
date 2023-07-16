@@ -238,15 +238,15 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
   </tr>
 </table>
 
-I am pleased to express my sincere thanks to _Amazon_ for providing me with this invaluable opportunity to learn and grow in the field of Front-End development. Through your support and resources, I have been privileged to acquire knowledge and skills that have enriched my professional career.
+I am pleased to express my sincere thanks to __Amazon__ for providing me with this invaluable opportunity to learn and grow in the field of Front-End development. Through your support and resources, I have been privileged to acquire knowledge and skills that have enriched my professional career.
 
-In addition, I want to extend my gratitude to Ironhack, a leading educational institution in the technological arena. Thanks to your training program, I have received a quality education and a solid foundation in web development. Ironhack has been instrumental in my ability to advance in this exciting career.
+In addition, I want to extend my gratitude to __Ironhack__, a leading educational institution in the technological arena. Thanks to your training program, I have received a quality education and a solid foundation in web development. Ironhack has been instrumental in my ability to advance in this exciting career.
 
-I cannot fail to mention my special thanks to Professor _Diego Zito_, whose experience and dedication have been invaluable in my learning journey. His expert guidance, patience, and constant motivation have helped me overcome challenges and reach new levels of excellence.
+I cannot fail to mention my special thanks to Professor __Diego Zito__, whose experience and dedication have been invaluable in my learning journey. His expert guidance, patience, and constant motivation have helped me overcome challenges and reach new levels of excellence.
 
-Last but not least, I want to thank my classmates, Facu and Nico in particular. Your support, collaboration and camaraderie have made this experience even more enriching. Together we have shared knowledge, overcome obstacles and celebrated achievements, creating an invaluable network of learning and friendship.
+Last but not least, I want to thank my classmates, __Facu__ and __Nico__ in particular. Your support, collaboration and camaraderie have made this experience even more enriching. Together we have shared knowledge, overcome obstacles and celebrated achievements, creating an invaluable network of learning and friendship.
 
-In short, I am deeply grateful to Amazon, Ironhack, Professor Diego Zito, and my classmates for their significant contribution to my professional and personal development. These experiences and connections have propelled me forward and provided me with a solid foundation to continue growing in the exciting field of Front-End development.
+In short, I am deeply grateful to __Amazon__, __Ironhack__, Professor __Diego Zito__, and my __classmates__ for their significant contribution to my professional and personal development. These experiences and connections have propelled me forward and provided me with a solid foundation to continue growing in the exciting field of Front-End development.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
