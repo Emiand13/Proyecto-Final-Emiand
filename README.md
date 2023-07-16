@@ -134,7 +134,7 @@ The application provides functionalities such as user account registration, task
  - Register and create your own account in TaskPro.<br>
  - Manage all your tasks efficiently.<br>
  - Edit and delete: Customize your tasks according to your needs.<br>
- - Tasks with due dates: Set and track tasks by date.<br>
+
 
 With TaskPro, you will have a simple and effective tool to manage your tasks in a practical way.<br>
 
