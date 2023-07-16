@@ -106,7 +106,6 @@ onMounted(() => {
   text-align: center;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgb(250, 250, 250);
-
   font-size: 75px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

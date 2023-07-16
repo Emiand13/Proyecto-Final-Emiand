@@ -1,29 +1,31 @@
 <template>
   <footer class="footer">
-    <div class="container-flex">
+    <!-- <div class="container-flex"> -->
       <div class="footer-image">
         <img src="../components/images/imagenNueva2.png" alt="logo" />
         <h6>
           © 2023 TasksPro App. All rights reserved. Built with ❤️ by Emiand13
         </h6>
       </div>
-    </div>
+    <!-- </div> -->
   </footer>
 </template>
 
 
 
 <style scoped>
-.footer {
-  height: 8%;
+footer {
+ 
+  bottom: 0px;
+  height: 12%; 
   width: 100vw;
   background-color: rgba(46, 15, 250, 0.377); 
- padding: 10px ; 
+  padding: 10px ; 
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  gap: 250px;
+  align-items: center; 
+  gap: 250px; 
 }
 
 .footer-image img {

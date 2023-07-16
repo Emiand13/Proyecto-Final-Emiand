@@ -103,6 +103,10 @@ The application provides functionalities such as user account registration, task
 
  - Terminar con el diseño CSS de todos los componentes  ✅  <br>
  
+ <h3>Domingo 16/07/23</h3>
+
+ - Repaso general de la app y detalles <br>
+
 
  <h3>Lunes 17/07/23</h3>
 
@@ -192,20 +196,35 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
 </ol>
 
 
+<h2> 💚️Acknowledgments💚️</h2>
 
 
+<table>
+  <tr>
+    <td align="center">
+        <img src="https://logodownload.org/wp-content/uploads/2014/04/amazon-logo-0.png" width="100px" alt="Imagen Amazon logo">
+        <br>
+        Amazon
+      </a>
+    </td>
+    <td align="center">
+        <img src="https://th.bing.com/th/id/OIP.PIKDbADaGWcwE1940GOvkQHaHa?pid=ImgDet&rs=1" width="100px" alt="Imagen Ironhack logo">
+        <br>
+        Ironhack
+      </a>
+    </td>
+  </tr>
+</table>
 
+I am pleased to express my sincere thanks to Amazon for providing me with this invaluable opportunity to learn and grow in the field of Front-End development. Through your support and resources, I have been privileged to acquire knowledge and skills that have enriched my professional career.
 
+In addition, I want to extend my gratitude to Ironhack, a leading educational institution in the technological arena. Thanks to your training program, I have received a quality education and a solid foundation in web development. Ironhack has been instrumental in my ability to advance in this exciting career.
 
+I cannot fail to mention my special thanks to Professor Diego Zito, whose experience and dedication have been invaluable in my learning journey. His expert guidance, patience, and constant motivation have helped me overcome challenges and reach new levels of excellence.
 
+Last but not least, I want to thank my classmates, Facu and Nico in particular. Your support, collaboration and camaraderie have made this experience even more enriching. Together we have shared knowledge, overcome obstacles and celebrated achievements, creating an invaluable network of learning and friendship.
 
-
-<!-- Proceso de construcción -->
-
-
-<h2> Acknowledgments</h2>
-
-<!-- Aqui los agradecimientos -->
+In short, I am deeply grateful to Amazon, Ironhack, Professor Diego Zito, and my classmates for their significant contribution to my professional and personal development. These experiences and connections have propelled me forward and provided me with a solid foundation to continue growing in the exciting field of Front-End development.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
