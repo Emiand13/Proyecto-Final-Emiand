@@ -213,6 +213,27 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
         Ironhack
       </a>
     </td>
+     <td align="center">
+     <a href="https://github.com/dzc1">
+        <img src="https://avatars.githubusercontent.com/u/35953639?v=4" width="100px" alt="Imagen github Dzc1">
+        <br>
+        Diego Zito
+      </a>
+    </td>
+  <td align="center">
+      <a href="https://github.com/FacundoDM-dev">
+        <img src="https://avatars.githubusercontent.com/u/131525843?v=4" width="100px" alt="Avatar de Facundo del Medico">
+        <br>
+        Facundo del Medico
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/nicodalessandro11">
+        <img src="https://avatars.githubusercontent.com/u/48628102?v=4" width="100px" alt="Avatar de Nicolas D'Alessandro">
+        <br>
+        Nicolas D'Alessandro
+      </a>
+    </td>
   </tr>
 </table>
 
