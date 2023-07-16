@@ -169,6 +169,37 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
 
 <h2>Build Process</h2>
 
+<ol>
+<li>I set up my project using Vite, which is a fast and efficient development tool for Vue.js based web applications. I installed Vue.js, Vue Router and Pinia as my project dependencies using npm or yarn. I organized the basic structure of the project, including the folders for the components, the paths and the Pinia store.</li>
+<br>
+<li>For the UI, I designed and built the necessary Vue components for my task app. I used Vue Router to define the routes and views corresponding to the different sections of my application. I've implemented navigation between views using the features provided by Vue Router, such as <router-link> and <router-view> .
+</li>
+<br>
+<li>For data storage, I set up the Pinia store to manage my application state related to tasks. I defined the necessary modules in the Pinia store to store and manipulate my task data, such as the task list and its completion status.
+</li>
+<br>
+<li>I integrated my app with Supabase, a backend platform as a service. I have configured the connection to Supabase using the Supabase client in my project. I used the functions provided by the Supabase client to perform CRUD operations on the Supabase database. I've implemented the necessary logic in my Pinia actions to interact with Supabase and keep my task data in sync between the database and my application.
+</li>
+<br>
+<li>I've implemented additional functionality in my task app, providing a way to edit existing tasks, update their status, and delete them. I used the functions and actions of the Pinia store to perform these actions and maintain the state of the tasks in a reactive way. Also, I updated the UI to reflect the changes made to the tasks.
+</li>
+<br>
+<li> I've implemented a user profile form that allows me to upload an avatar image. I used Supabase to handle updating the profile data, including the avatar image URL. While editing the profile and selecting a new avatar image, I uploaded the image using Supabase Storage. Then I updated my profile data in the Supabase database, including the new avatar image URL. The user interface is automatically updated to show the changes made.
+</li>
+<br>
+<li>I have implemented a clock component in another link in my app to display the current date and time in real time. This makes it easy to edit and manage tasks by providing an accurate reference to the current date and time. In addition, the automatic update capability of the clock improves the user experience by keeping the information always up-to-date without the need for manual reloads.</li>
+<br>
+</ol>
+
+
+
+
+
+
+
+
+
+
 <!-- Proceso de construcción -->
 
 

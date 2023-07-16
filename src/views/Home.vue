@@ -3,7 +3,7 @@
     <div class="wrapper">
       <Nav />
 
-      <div class="content"></div>
+      <!-- <div class="content"></div> -->
       <NewTask />
 
       <div class="flex">

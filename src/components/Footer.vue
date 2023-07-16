@@ -14,11 +14,11 @@
 
 
 <style scoped>
-footer {
+.footer {
   height: 8%;
   width: 100vw;
   background-color: rgba(46, 15, 250, 0.377); 
-  padding: 10px ;
+ padding: 10px ; 
   display: flex;
   flex-direction: row;
   justify-content: center;
