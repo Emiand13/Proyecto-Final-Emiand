@@ -171,6 +171,16 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
         Nicolas D'Alessandro
       </a>
     </td>
+   <td align="center">
+      <a href="https://github.com/gabrielberarducci">
+        <img src="https://avatars.githubusercontent.com/u/97935674?v=4" width="100px" alt="Avatar de Gabriel Berarducci">
+        <br>
+       Gabriel Berarducci
+      </a>
+    </td>
+
+
+
   </tr>
 </table>
 
@@ -243,7 +253,7 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
     </td>
     <td align="center">
       <a href="https://github.com/gabrielberarducci">
-        <img src="https://avatars.githubusercontent.com/u/97935674?v=4" width="100px" alt="Avatar de Nicolas D'Alessandro">
+        <img src="https://avatars.githubusercontent.com/u/97935674?v=4" width="100px" alt="Avatar de Gabriel Berarducci">
         <br>
        Gabriel Berarducci
       </a>
