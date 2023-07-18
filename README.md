@@ -257,7 +257,7 @@ In addition, I want to extend my gratitude to __Ironhack__, a leading educationa
 
 I cannot fail to mention my special thanks to Professor __Diego Zito__, whose experience and dedication have been invaluable in my learning journey. His expert guidance, patience, and constant motivation have helped me overcome challenges and reach new levels of excellence.
 
-Last but not least, I want to thank my classmates, __Facu__ and __Nico__ in particular. Your support, collaboration and camaraderie have made this experience even more enriching. Together we have shared knowledge, overcome obstacles and celebrated achievements, creating an invaluable network of learning and friendship.
+Last but not least, I want to thank my classmates, __Facu__, __Nico__ and __Gabi__ in particular. Your support, collaboration and camaraderie have made this experience even more enriching. Together we have shared knowledge, overcome obstacles and celebrated achievements, creating an invaluable network of learning and friendship.
 
 In short, I am deeply grateful to _Amazon_, _Ironhack_, Professor _Diego Zito_, and my _classmates_ for their significant contribution to my professional and personal development. These experiences and connections have propelled me forward and provided me with a solid foundation to continue growing in the exciting field of Front-End development.
 
