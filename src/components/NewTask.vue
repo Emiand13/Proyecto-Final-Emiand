@@ -105,7 +105,7 @@ onMounted(() => {
   color: rgba(255, 217, 0, 0.952);
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgb(250, 250, 250);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   font-size: 75px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

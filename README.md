@@ -65,9 +65,9 @@ The application provides functionalities such as user account registration, task
 
  <h3>Martes 03/07/23</h3>
 
- - Implentar HTML y CSS del Sign Up y Sing In ✅  <br>
- - Implentar la logica para el Sign Up, Sign In y Sing Out ✅  <br>
- - Implementar la funcion de ocultar/mostrar contraseña a la hora de hacer Sign In y Sing Out ✅  <br>
+ - Implementar HTML y CSS del Sign Up y Sing In ✅  <br>
+ - Implementar la logica para el Sign Up, Sign In y Sing Out ✅  <br>
+ - Implementar la funcion de ocultar/mostrar contraseña a la hora de hacer Sign In y Sing Up ✅  <br>
 
  <h3>Miercoles 05/07/23</h3>
 

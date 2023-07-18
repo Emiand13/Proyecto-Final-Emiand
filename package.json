@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.1",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
     "vite": "^3.0.4"
   }
 }

@@ -12,17 +12,20 @@
             website
           }}</a>
         </h3>
-        <h3>Location: {{ location }}</h3>
         <h3>Byography: {{ bio }}</h3>
+        <h3>Location: {{ location }}</h3>
       </div>
       <Profile @updateProfileEmit="hundleUpdateProfile" />
       <div>
+        <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" />
+<!-- 
+        
         <img
           :src="avatar_url"
           v-if="avatar_url"
           alt="Profile picture"
           class="imagen-avatar"
-        />
+        />  -->
         <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
 
         <input @change="fileManager" type="file" class="boton-select-file" />
@@ -55,12 +58,34 @@ const avatar_url = ref(null);
 const location = ref(null);
 const bio = ref(null);
 
+
+const defaultAvatarUrl = 'https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0';
+// const currentAvatarUrl = ref(null);
+
+
+// watch(avatar_url, (newAvatarUrl) => {
+//     currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
+//   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Esta función permite capturar el archivo seleccionado por el usuario y almacenarlo en la referencia file.value para su posterior procesamiento, como en el caso de cargar el archivo en un servicio de almacenamiento en la nube.
 const fileManager = (event) => {
   file.value = event.target.files[0];
 };
 
-// Esta función se encarga de asignar los valores actualizados del perfil del usuario a las referencias correspondientes. Es probable que estas referencias estén vinculadas a elementos en la interfaz de usuario para mostrar los datos actualizados del perfil.
+// Esta función se encarga de asignar los valores actualizados del perfil del usuario a las referencias correspondientes. 
 const hundleUpdateProfile = (updatedProfileData) => {
   username.value = updatedProfileData.full_name;
   website.value = updatedProfileData.website;
