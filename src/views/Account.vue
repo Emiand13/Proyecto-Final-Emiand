@@ -17,15 +17,14 @@
       </div>
       <Profile @updateProfileEmit="hundleUpdateProfile" />
       <div>
-        <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" />
-<!-- 
+         <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" /> 
         
-        <img
+        <!-- <img
           :src="avatar_url"
           v-if="avatar_url"
           alt="Profile picture"
           class="imagen-avatar"
-        />  -->
+        />   -->
         <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
 
         <input @change="fileManager" type="file" class="boton-select-file" />
@@ -60,23 +59,12 @@ const bio = ref(null);
 
 
 const defaultAvatarUrl = 'https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0';
-// const currentAvatarUrl = ref(null);
+//  const currentAvatarUrl = ref(null);
 
 
-// watch(avatar_url, (newAvatarUrl) => {
-//     currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
+//  watch(avatar_url, (newAvatarUrl) => {
+//      currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
 //   });
-
-
-
-
-
-
-
-
-
-
-
 
 
 

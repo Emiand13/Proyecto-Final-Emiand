@@ -105,18 +105,24 @@ The application provides functionalities such as user account registration, task
  
  <h3>Domingo 16/07/23</h3>
 
- - Repaso general de la app y detalles <br>
+ - Repaso general de la app y detalles ✅ <br>
 
 
  <h3>Lunes 17/07/23</h3>
 
- - Implementar "drag and drop" con las cards de las Tasks <br>
+ - Repaso general de la app y detalles ✅ <br>
 
  <h3>Martes 18/07/23</h3>
  
  - Añadir ultimos detalles Readme  <br>
  - Repaso a la App y todas sus funcionalidades<br>
- - Preparar la presentacion del proyecto<br>
+ 
+
+ <h3>Miercoles 19/07/23</h3>
+ 
+ - Añadir ultimos detalles Readme  <br>
+ - Repaso a la App y todas sus funcionalidades<br>
+
 
 
 <h2>Technologies</h2>
@@ -233,6 +239,13 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
         <img src="https://avatars.githubusercontent.com/u/48628102?v=4" width="100px" alt="Avatar de Nicolas D'Alessandro">
         <br>
         Nicolas D'Alessandro
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/gabrielberarducci">
+        <img src="https://avatars.githubusercontent.com/u/97935674?v=4" width="100px" alt="Avatar de Nicolas D'Alessandro">
+        <br>
+       Gabriel Berarducci
       </a>
     </td>
   </tr>
