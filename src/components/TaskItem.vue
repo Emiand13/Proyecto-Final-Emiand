@@ -164,8 +164,8 @@ const toggleComplete = () => {
   justify-content: center;
 }
 .card-header {
-   white-space: wrap;
-  text-overflow: ellipsis;
+  white-space: wrap;
+  text-overflow: ellipsis; 
   overflow: hidden;
   gap: 10px;
   align-items: center;
@@ -180,7 +180,6 @@ const toggleComplete = () => {
   justify-content: space-around;
   width: 300px;
   border-radius: 20px;
-  /* box-shadow: 2px 2px 2px 2px gold; */
   background-color: rgba(255, 255, 255, 0.6);
 }
 .icons {

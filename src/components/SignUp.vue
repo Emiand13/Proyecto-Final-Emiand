@@ -168,7 +168,7 @@ const signUp = async () => {
 /* ICONO1 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password1 {
   position: absolute;
-  top: 58.5vh;
+  top: 62.8vh;
   right: 600px;
   transform: translateY(-50%);
   cursor: pointer;
@@ -182,7 +182,7 @@ const signUp = async () => {
 /* ICONO2 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password2 {
   position: absolute;
-  top: 67.5vh;
+  top: 71.3vh;
   right: 600px;
   transform: translateY(-50%);
   cursor: pointer;
@@ -270,6 +270,44 @@ p {
   color: #007bff;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+
+
+  .toggle-password1 {
+  position: absolute;
+  top: 83.5vh;
+  right: 50px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1; /* Asegura que el ícono esté por encima del input */
+
+  color: #467ffa;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* ICONO2 OJO VISIBLE / NO VISIBLE PASSWORD*/
+.toggle-password2 {
+  position: absolute;
+  top: 93vh;
+  right: 50px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1; /* Asegura que el ícono esté por encima del input */
+
+  color: #467ffa;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
 }
 </style>
 

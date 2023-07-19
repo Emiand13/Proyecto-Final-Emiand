@@ -104,6 +104,7 @@ onMounted(() => {
 .header-title {
   color: rgba(255, 217, 0, 0.952);
   text-align: center;
+  margin-top: 2rem;
   margin-bottom: 20px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   font-size: 75px;
@@ -112,7 +113,7 @@ onMounted(() => {
 .subtitle {
   color: white;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
   margin-bottom: 10px;
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -127,7 +128,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 65vh;
+  height: 55vh;
 }
 
 h1 {
@@ -166,6 +167,7 @@ h1 {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
   .header-title {
+    margin-top: 1.5rem;
     color: gold;
     text-align: center;
     font-size: 55px;
@@ -207,7 +209,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 65vh;
+    height: 60vh;
   }
 
   h1 {

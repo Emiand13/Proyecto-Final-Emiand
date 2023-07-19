@@ -67,6 +67,7 @@
 
 .titulo-reloj {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 /* .image-ironhack{
   margin-top: 75px;
@@ -75,13 +76,13 @@ width: 80px;
 } */
 .image-ironhack2 {
   margin-top: 75px;
-  width: 150px;
+  width: 100px;
 }
 
 #elemento {
   position: absolute;
   top: 65%;
-  left: 45%;
+  left: 46%;
   transform: translate(-50%, -50%);
   animation: pulse 2s ease-in-out infinite;
 }
@@ -116,9 +117,9 @@ width: 80px;
   .image-ironhack2 {
     display: flex;
     justify-content: center;
-    margin-left: 15px;
-    margin-top: 70px;
-    width: 80px;
+    margin-left: 25px;
+    margin-top: 100px;
+    width: 70px;
   }
 
   #elemento {
@@ -142,6 +143,15 @@ width: 80px;
       transform: scale(1);
       opacity: 1;
     }
+  }
+}
+
+
+@media (max-width: 375px) {
+
+  .image-ironhack2 {
+    display: none;
+  
   }
 }
 </style>

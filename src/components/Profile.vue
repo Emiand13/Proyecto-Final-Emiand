@@ -4,7 +4,7 @@
     <div class="col">
       <!-- <div class="container">
     <div class="row"> -->
-      <button @click="editToggleProfile" class="boton-edit-profile">Create & Edit Profile</button>
+      <button @click="editToggleProfile" class="boton-edit-profile">Edit Profile</button>
  
       <form v-if="inputUpdate" class="col g-3" action="">
         <div class="col-md-12">

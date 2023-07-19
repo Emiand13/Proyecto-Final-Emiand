@@ -4,7 +4,7 @@
     style="display: flex; justify-content: space-between"
   >
     <div class="container-fluid">
-      <img src="../components/images/imagenNueva2.png" class="logo" />
+      <img src="../components/images/Task-Logo-fullcol-Copy.png" class="logo" />
 
       <button
         class="navbar-toggler"
@@ -123,7 +123,7 @@ const getEmailPrefix = (email) => {
   padding: 0.05rem 0.1rem;
   font-size: 1.25rem;
   line-height: 1;
-  background-color: rgba(103, 39, 250, 0.377);
+  background-color: rgb(46, 15, 250); 
   border: 1px solid #d4e608;
   border-radius: 0.25rem;
   transition: box-shadow 0.2s ease-in-out;
@@ -132,7 +132,7 @@ const getEmailPrefix = (email) => {
 
 .logo {
   height: 60px;
-  width: 60px;
+  width: 90px;
   border-radius: 15px;
 }
 
@@ -141,7 +141,7 @@ nav {
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  background-color: rgba(103, 39, 250, 0.377);
+  background-color: rgba(46, 15, 250); 
 }
 
 nav ul {
@@ -150,6 +150,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .user-email {
@@ -157,6 +158,7 @@ nav ul {
 }
 .log-out-welcome p {
   margin: 0;
+ 
 }
 
 .nav-link {
@@ -164,6 +166,7 @@ nav ul {
   text-decoration: none;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 18px;
+ 
 }
 
 .log-out {
@@ -177,6 +180,7 @@ nav ul {
   border-radius: 5px;
   cursor: pointer;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 @media (max-width: 768px) {
@@ -187,5 +191,44 @@ nav ul {
     width: 35px;
     border-radius: 5px;
   }
+  .log-out {
+  height: 35px;
+  width: 100px;
+  align-content: center;
+  padding: 5px 5px;
+  background-color: #a504b7ac;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+.user-email {
+  color: gold;
+  font-size: 16px;
+}
+.log-out-welcome p {
+  margin: 0;
+  font-size: 16px;
+ 
+}
+
+.nav-link {
+  margin-left: 2rem;
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 16px;
+
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(46, 15, 250); 
+}
+
 }
 </style>

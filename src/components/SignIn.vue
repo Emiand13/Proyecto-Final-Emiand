@@ -224,7 +224,7 @@ p {
   .toggle-password {
   color: #467ffa;
   position: absolute;
-  top: 58.5vh;
+  top: 62.5vh;
   right: 600px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;
@@ -235,7 +235,16 @@ p {
 }
 @media (max-width: 768px) {
 
-
+  .toggle-password {
+  color: #467ffa;
+  position: absolute;
+  top: 83.5vh;
+  right: 50px; /* Ajusta la posición del ícono */
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1; /* Asegura que el ícono esté por encima del input */
+  /* … */
+}
 .background-container{
   height: 120vh;
   width: 100%;

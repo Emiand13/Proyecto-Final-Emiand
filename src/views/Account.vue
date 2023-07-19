@@ -1,9 +1,14 @@
 <template>
   <div class="background-container">
     <Nav />
-    <div class="container-account">
+    <div class="container-account text-center">
       <div class="data">
-        <br />
+        <img
+          :src="avatar_url"
+          v-if="avatar_url"
+          alt="Profile picture"
+          class="imagen-avatar"
+        />
         <h1 class="titulo-data-perfil">Your profile</h1>
         <h3>Name: {{ username }}</h3>
         <h3>
@@ -17,16 +22,10 @@
       </div>
       <Profile @updateProfileEmit="hundleUpdateProfile" />
       <div>
-         <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" /> 
-        
-        <!-- <img
-          :src="avatar_url"
-          v-if="avatar_url"
-          alt="Profile picture"
-          class="imagen-avatar"
-        />   -->
-        <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
+         <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" />  
 
+        <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
+        <br />
         <input @change="fileManager" type="file" class="boton-select-file" />
         <button @click="uploadFile" class="boton-upload-file">
           Upload File
@@ -35,6 +34,7 @@
     </div>
     <br />
   </div>
+  <Footer/>
 </template>
 
 <script setup>
@@ -43,6 +43,7 @@ import { ref, watch, onMounted } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 import Profile from "../components/Profile.vue";
+import Footer from "../components/Footer.vue"
 
 // ================= AVATAR URL =======================================
 
@@ -50,30 +51,25 @@ const userStore = useUserStore();
 
 const file = ref();
 const fileUrl = ref();
-// const loading = ref(false);
 const username = ref(null);
 const website = ref(null);
 const avatar_url = ref(null);
 const location = ref(null);
 const bio = ref(null);
 
+ const defaultAvatarUrl = 'https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0';
+  const currentAvatarUrl = ref(null);
 
-const defaultAvatarUrl = 'https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0';
-//  const currentAvatarUrl = ref(null);
-
-
-//  watch(avatar_url, (newAvatarUrl) => {
-//      currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
-//   });
-
-
+  watch(avatar_url, (newAvatarUrl) => {
+     currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
+   });
 
 // Esta función permite capturar el archivo seleccionado por el usuario y almacenarlo en la referencia file.value para su posterior procesamiento, como en el caso de cargar el archivo en un servicio de almacenamiento en la nube.
 const fileManager = (event) => {
   file.value = event.target.files[0];
 };
 
-// Esta función se encarga de asignar los valores actualizados del perfil del usuario a las referencias correspondientes. 
+// Esta función se encarga de asignar los valores actualizados del perfil del usuario a las referencias correspondientes.
 const hundleUpdateProfile = (updatedProfileData) => {
   username.value = updatedProfileData.full_name;
   website.value = updatedProfileData.website;
@@ -184,15 +180,20 @@ onMounted(() => {
 
 <style scoped>
 .imagen-avatar {
+  margin-top: 1rem;
+  margin-left: 4rem;
   margin-bottom: 10px;
   float: inline-end;
+  max-height: 250px;
+  max-width: 200px;
 }
 .container-account {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
-  margin-top: 20vh;
+  margin-top: 15vh;
+
 }
 
 .link-website {
@@ -206,9 +207,13 @@ onMounted(() => {
   color: rgb(255, 255, 255);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.726);
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px;
 }
 
 .titulo-data-perfil {
+  margin-top: 1rem;
   color: rgb(255, 255, 255);
   font-size: 48px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -264,6 +269,11 @@ img {
 @media (max-width: 765px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
+  .imagen-avatar {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
   .container-account {
     display: flex;
     justify-content: center;
@@ -323,5 +333,20 @@ img {
     justify-content: center;
     align-items: center;
   }
+
+  
+.boton-upload-file {
+  padding: 10px 20px;
+  background-color: rgba(255, 217, 0, 0.675);
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+margin-left: 8rem;
+}
 }
 </style>

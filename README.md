@@ -4,7 +4,7 @@
 
 <br>
 <div align="center">
-  <img src="./src/components/images/imagenNueva2.png" alt="Logo" width="200" height="200">
+  <img src="./src/components/images/Task-Logo-fullcol-Copy.png" alt="Logo" width="200" height="200">
   <h3 align="center">Final Project TaskPro App</h3>
   <a href="https://proyecto-final-emiand.vercel.app/auth/login">Visit Website</a>
 </div>
@@ -103,10 +103,6 @@ The application provides functionalities such as user account registration, task
 
  - Terminar con el diseño CSS de todos los componentes  ✅  <br>
  
- <h3>Domingo 16/07/23</h3>
-
- - Repaso general de la app y detalles ✅ <br>
-
 
  <h3>Lunes 17/07/23</h3>
 
@@ -122,6 +118,11 @@ The application provides functionalities such as user account registration, task
  
  - Añadir ultimos detalles Readme  <br>
  - Repaso a la App y todas sus funcionalidades<br>
+ - Repaso del manejo de errores en edición de tareas<br>
+
+ <h3>Jueves 20/07/23</h3>
+
+ - Seguir probando la funcionabilidad de la app<br>
 
 
 
@@ -178,9 +179,6 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
        Gabriel Berarducci
       </a>
     </td>
-
-
-
   </tr>
 </table>
 
@@ -255,7 +253,7 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
       <a href="https://github.com/gabrielberarducci">
         <img src="https://avatars.githubusercontent.com/u/97935674?v=4" width="100px" alt="Avatar de Gabriel Berarducci">
         <br>
-       Gabriel Berarducci
+        Gabriel Berarducci
       </a>
     </td>
   </tr>

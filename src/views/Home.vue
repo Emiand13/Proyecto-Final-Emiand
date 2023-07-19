@@ -1,17 +1,16 @@
 <template>
-  <div class="background-container">
+   <div class="background-container"> 
     <div class="wrapper">
       <Nav />
 
-      <!-- <div class="content"></div> -->
       <NewTask />
 
       <div class="flex">
         <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
       </div>
     </div>
-    <Footer />
-  </div>
+   </div> 
+  <Footer />
 </template>
 
 <script setup>
@@ -43,14 +42,14 @@ onMounted(async () => {
   gap: 25px;
 }
 
-.background-container {
+  .background-container {
   height: 100%; 
   width: 100%;
   background-size: cover;
   background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
   background-repeat: no-repeat;
-  background-position: center; 
-}
+  /* background-position: center;  */
+}  
 
 </style>
 
