@@ -168,7 +168,7 @@ const signUp = async () => {
 /* ICONO1 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password1 {
   position: absolute;
-  top: 62.8vh;
+  top: 63.8vh;
   right: 600px;
   transform: translateY(-50%);
   cursor: pointer;
@@ -182,7 +182,7 @@ const signUp = async () => {
 /* ICONO2 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password2 {
   position: absolute;
-  top: 71.3vh;
+  top: 72.3vh;
   right: 600px;
   transform: translateY(-50%);
   cursor: pointer;

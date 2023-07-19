@@ -224,7 +224,7 @@ p {
   .toggle-password {
   color: #467ffa;
   position: absolute;
-  top: 62.5vh;
+  top: 63.7vh;
   right: 600px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;

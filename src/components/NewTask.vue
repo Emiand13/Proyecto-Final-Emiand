@@ -104,7 +104,7 @@ onMounted(() => {
 .header-title {
   color: rgba(255, 217, 0, 0.952);
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 20px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   font-size: 75px;
@@ -128,7 +128,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 55vh;
+  height: 60vh;
 }
 
 h1 {

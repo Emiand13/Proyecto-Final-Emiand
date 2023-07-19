@@ -25,8 +25,8 @@ width:2em;
 
 .footer {
  
-  bottom: 0px;
-  height: 90px; 
+  bottom: 0;
+  height: 100px; 
   width: 100%;
   background-color: rgb(46, 15, 250); 
    padding: 10px ;  
@@ -47,7 +47,7 @@ width:2em;
   font-size: 1rem;
 }
 .footer h6 {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 1rem;
   color: rgb(255, 255, 255);
 }
