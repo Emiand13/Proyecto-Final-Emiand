@@ -1,5 +1,6 @@
 <template>
   <div class="add-task-form">
+  
     <h2 class="header-title">Add a new Task</h2>
     <p class="subtitle">
       Keep your tasks in order, reach your goals: Act today!

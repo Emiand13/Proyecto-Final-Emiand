@@ -3,6 +3,7 @@
     <Nav />
     <div class="container-account text-center">
       <div class="data">
+        <!-- <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" />   -->
         <img
           :src="avatar_url"
           v-if="avatar_url"
@@ -17,14 +18,15 @@
             website
           }}</a>
         </h3>
-        <h3>Byography: {{ bio }}</h3>
+        <!-- <h3>Byography: {{ bio }}</h3> -->
         <h3>Location: {{ location }}</h3>
       </div>
       <Profile @updateProfileEmit="hundleUpdateProfile" />
-      <div>
-         <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" />  
+      <div class="select-avatar">
+        <!-- <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" />    -->
 
         <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
+        <img src="../components/images/th.jpg" class="img-avatar-default">
         <br />
         <input @change="fileManager" type="file" class="boton-select-file" />
         <button @click="uploadFile" class="boton-upload-file">
@@ -34,7 +36,7 @@
     </div>
     <br />
   </div>
-  <Footer/>
+  <Footer />
 </template>
 
 <script setup>
@@ -43,7 +45,7 @@ import { ref, watch, onMounted } from "vue";
 import { useUserStore } from "../stores/user";
 import Nav from "../components/Nav.vue";
 import Profile from "../components/Profile.vue";
-import Footer from "../components/Footer.vue"
+import Footer from "../components/Footer.vue";
 
 // ================= AVATAR URL =======================================
 
@@ -57,12 +59,13 @@ const avatar_url = ref(null);
 const location = ref(null);
 const bio = ref(null);
 
- const defaultAvatarUrl = 'https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0';
-  const currentAvatarUrl = ref(null);
+const defaultAvatarUrl =
+  "https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0";
+const currentAvatarUrl = ref(null);
 
-  watch(avatar_url, (newAvatarUrl) => {
-     currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
-   });
+watch(avatar_url, (newAvatarUrl) => {
+  currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
+});
 
 // Esta función permite capturar el archivo seleccionado por el usuario y almacenarlo en la referencia file.value para su posterior procesamiento, como en el caso de cargar el archivo en un servicio de almacenamiento en la nube.
 const fileManager = (event) => {
@@ -75,7 +78,8 @@ const hundleUpdateProfile = (updatedProfileData) => {
   website.value = updatedProfileData.website;
   location.value = updatedProfileData.location;
   bio.value = updatedProfileData.bio;
-  avatar_url.value = updatedProfileData.avatar_url;
+  // avatar_url.value = updatedProfileData.avatar_url;
+  //Esto es lo que hace que cuando edites la imagen tambien haga el update profile de todo
 };
 
 // Esta verificación condicional al comienzo de la función uploadFile garantiza que no se realice la carga del archivo si no hay ningún archivo seleccionado
@@ -179,21 +183,43 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+
+
+.img-avatar-default{
+height: 100px;
+width: 100px;
+border-radius: 5px;
+margin-bottom: 15px;
+
+}
+.select-avatar {
+  padding: 15px;
+  background-color: #00000086;
+  border-radius: 15px;
+}
+
+/* =================== foto ============================ */
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+}
 .imagen-avatar {
   margin-top: 1rem;
-  margin-left: 4rem;
+  margin-left: 1rem;
   margin-bottom: 10px;
   float: inline-end;
   max-height: 250px;
   max-width: 200px;
 }
+/* =============================================================== */
 .container-account {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
   margin-top: 15vh;
-
 }
 
 .link-website {
@@ -206,10 +232,11 @@ onMounted(() => {
   flex-direction: column;
   color: rgb(255, 255, 255);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  background-color: rgba(0, 0, 0, 0.726);
+  text-shadow: 2px 2px 4px rgba(187, 255, 0, 0.4);
+  background-color: #00000086;
   padding: 15px 15px 15px 15px;
   border-radius: 15px;
+  max-width: 320px;
 }
 
 .titulo-data-perfil {
@@ -217,9 +244,6 @@ onMounted(() => {
   color: rgb(255, 255, 255);
   font-size: 48px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
-    -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
 }
 .titulo-AVATAR-perfil {
   color: rgb(255, 255, 255);
@@ -260,16 +284,25 @@ onMounted(() => {
   background-position: center;
 }
 
-img {
-  width: 200px;
-  border-radius: 50%;
-}
-
 /* ==========MEDIA QUERIES========================================= */
 @media (max-width: 765px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+  .img-avatar-default{
+height: 100px;
+width: 100px;
+border-radius: 5px;
+margin-bottom: 15px;
+
+}
+.select-avatar {
+  margin-top: 1rem;
+  padding: 15px;
+  background-color: #00000086;
+  border-radius: 15px;
+}
 
   .imagen-avatar {
+    height: 100px;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
@@ -279,8 +312,11 @@ img {
     justify-content: center;
     flex-direction: column;
     margin-top: 5vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .data {
+
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -289,9 +325,7 @@ img {
     font-size: 16px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 50px;
-    margin-left: 30px;
     color: rgb(255, 255, 255);
-
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
 
@@ -334,19 +368,18 @@ img {
     align-items: center;
   }
 
-  
-.boton-upload-file {
-  padding: 10px 20px;
-  background-color: rgba(255, 217, 0, 0.675);
-  color: #000000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-margin-left: 8rem;
-}
+  .boton-upload-file {
+    padding: 10px 20px;
+    background-color: rgba(255, 217, 0, 0.675);
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: 8rem;
+  }
 }
 </style>

@@ -1,7 +1,11 @@
 <template>
+  
    <div class="background-container"> 
+    
     <div class="wrapper">
       <Nav />
+      
+   
 
       <NewTask />
 
@@ -9,7 +13,8 @@
         <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
       </div>
     </div>
-   </div> 
+   </div>
+ 
   <Footer />
 </template>
 
@@ -30,10 +35,23 @@ onMounted(async () => {
   await taskStore.fetchTasks();
   console.log("taskOnmouted:", tasks.value);
 });
+
+
+
+
+
+
+
+
+
 </script>
 
 
 <style scoped>
+
+
+
+
 .flex {
   display: flex;
   flex-direction: row;

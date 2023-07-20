@@ -119,116 +119,121 @@ const getEmailPrefix = (email) => {
 
 
 <style  scoped>
+
 .navbar-toggler {
-  padding: 0.05rem 0.1rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: rgb(46, 15, 250); 
-  border: 1px solid #d4e608;
-  border-radius: 0.25rem;
-  transition: box-shadow 0.2s ease-in-out;
-  color: #d4e608;
-}
-
-.logo {
-  height: 60px;
-  width: 90px;
-  border-radius: 15px;
-}
-
-nav {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgba(46, 15, 250); 
-}
-
-nav ul {
-  list-style: none;
-  margin-top: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-}
-
-.user-email {
-  color: gold;
-}
-.log-out-welcome p {
-  margin: 0;
- 
-}
-
-.nav-link {
-  margin-left: 2rem;
-  text-decoration: none;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 18px;
- 
-}
-
-.log-out {
-  height: 45px;
-  width: 100px;
-  align-content: center;
-  padding: 10px 15px;
-  background-color: #a504b7ac;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-}
-
-@media (max-width: 768px) {
-  /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
-
-  .logo {
-    height: 35px;
-    width: 35px;
-    border-radius: 5px;
+    padding: 0.05rem 0.1rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: rgb(46, 15, 250); 
+    border: 1px solid #d4e608;
+    border-radius: 0.25rem;
+    transition: box-shadow 0.2s ease-in-out;
+    color: #d4e608;
   }
+  
+  .logo {
+    height: 60px;
+    width: 90px;
+    border-radius: 15px;
+  }
+  
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(46, 15, 250); 
+  }
+  
+  nav ul {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
+  
+  .user-email {
+    color: gold;
+  }
+  .log-out-welcome p {
+    margin: 0;
+   
+  }
+  
+  .nav-link {
+    margin-left: 2rem;
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 18px;
+   
+  }
+  
   .log-out {
-  height: 35px;
-  width: 100px;
-  align-content: center;
-  padding: 5px 5px;
-  background-color: #a504b7ac;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-}
-.user-email {
-  color: gold;
-  font-size: 16px;
-}
-.log-out-welcome p {
-  margin: 0;
-  font-size: 16px;
- 
-}
-
-.nav-link {
-  margin-left: 2rem;
-  text-decoration: none;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 16px;
-
-}
-
-nav {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgb(46, 15, 250); 
-}
-
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 45px;
+    width: 100px;
+    align-content: center;
+    padding: 10px 15px;
+    background-color: #a504b7ac;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
+  
+  @media (max-width: 768px) {
+    /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+  
+    .logo {
+      height: 35px;
+      width: 35px;
+      border-radius: 5px;
+    }
+    .log-out {
+    height: 35px;
+    width: 100px;
+    align-content: center;
+    padding: 5px 5px;
+    background-color: #a504b7ac;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
+  .user-email {
+    color: gold;
+    font-size: 16px;
+  }
+  .log-out-welcome p {
+    margin: 0;
+    font-size: 16px;
+   
+  }
+  
+  .nav-link {
+    margin-left: 2rem;
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 16px;
+  
+  }
+  
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(46, 15, 250); 
+  }
+  
+  }
 </style>

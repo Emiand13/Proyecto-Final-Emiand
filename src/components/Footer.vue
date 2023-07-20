@@ -39,9 +39,9 @@ width:2em;
 
 .footer-image img {
   margin-left: 200px;
-  width: 80px;
+  width: 85px;
   border-radius: 10px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 .footer p {
   font-size: 1rem;

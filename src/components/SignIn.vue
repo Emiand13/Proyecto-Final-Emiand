@@ -137,17 +137,17 @@ const togglePasswordVisibility = (field) => {
   padding-right: 30px; /* Ajusta el espaciado para el ícono */
   position: relative;
 }
-
+/* 
 .toggle-password {
   flex-wrap: wrap;
   color: #467ffa;
   position: fixed;
-  top: 55%;
-  right: 700px; /* Ajusta la posición del ícono */
+  top: 50vh;
+  right: 700px; 
   transform: translateY(-50%);
   cursor: pointer;
-  z-index: 1; /* Asegura que el ícono esté por encima del input */
-}
+  z-index: 1; 
+} */
 .container {
   max-width: 450px;
 
@@ -224,7 +224,7 @@ p {
   .toggle-password {
   color: #467ffa;
   position: absolute;
-  top: 63.7vh;
+  top: 64.2vh;
   right: 600px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;

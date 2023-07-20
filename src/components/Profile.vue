@@ -6,7 +6,7 @@
     <div class="row"> -->
       <button @click="editToggleProfile" class="boton-edit-profile">Edit Profile</button>
  
-      <form v-if="inputUpdate" class="col g-3" action="">
+      <form v-if="inputUpdate" class="col g-3 form" action="">
         <div class="col-md-12">
           <!-- <label for="">Full name</label> -->
           <br>
@@ -30,14 +30,14 @@
         <br>
         <!-- <label for="">Biography</label> -->
         <div class="col-md-12">
-          <textarea
+          <!-- <textarea
             rows="10"
             cols="50"
             v-model="profile.bio"
             placeholder="Biography"
             type="text-area"
             class="form-control"
-          ></textarea>
+          ></textarea> -->
         </div>
         <br>
         <!-- <label for="">Location</label> -->
@@ -155,7 +155,14 @@ onMounted(async () => {
   border-radius: 5px;
   cursor: pointer;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+margin-bottom: 0.8rem;
+}
 
+
+.form{
+padding: 15px;
+  background-color: #00000086;
+  border-radius: 15px;
 }
 /* ==========MEDIA QUERIES========================================= */
 @media (max-width: 768px) {

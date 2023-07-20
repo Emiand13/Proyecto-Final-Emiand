@@ -1,12 +1,12 @@
 <template>
   <div class="flex-container">
-    <div class="card">
+  
+    <div class="card" draggable="true">
       <div :class="['card-header', { completed: task.is_complete }]">
      <span :class="['title', { completed: task.is_complete }]">{{
           task.title
         }}</span>
       </div>
-
       <div class="card-body">
         <h5 :class="['card-title', { completed: task.is_complete }]">
           {{ task.is_complete ? "Task completed" : "Task incompleted" }}
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
 </template>
 
 <!-- ===================== COMIENZA EL SCRIPT ================================= -->
@@ -176,7 +176,33 @@ const toggleComplete = () => {
   background-color: gold;
 
 }
+/* ==============prueba drag and drop===================== */
+
+ .empty{
+
+display: inline-block;
+
+width:320px;
+margin: 10px;
+border: 3px black;
+background-color: white; 
+
+}
+.hold{
+border: solid #fc0000 4px;
+
+}
+.hovered{
+ background: #e40000;
+ border-style:dashed;
+
+
+}
+.invisible{
+    display: none;
+} 
 .card {
+  position: relative;
   justify-content: space-around;
   width: 300px;
   border-radius: 20px;

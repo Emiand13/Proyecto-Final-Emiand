@@ -1,115 +1,138 @@
-/* :root {
-    --colorWhite: #ffffff;
-    --colorBlack: #000000;
-    --colorRed: red;
-    --fontSize-sm: 16px;
-    --fontFamily: 'Arial, Helvetica, sans-serif';
-    --fontTitle: 'Arial';
-    --fontBody: 'Helvetica';
-} */
- 
-
-
-
-
-/* ========================================================================= */
 
 
 
 
 
+/* ================ NAV ===================== */
+
+/* ===================== FIN NAV ================================ */
 
 
+/* ============================================================== */
+
+/* ===================== NEW TASK =============================== */
+
+  /* ======================= MEDIA QUERIES NEW TASK ==================================== */
 
 
+/* ================== FIN NEW TASK =============================== */
+
+/* =============================================================== */
+
+/* =================== PROFILE =================================== */
+
+  
+/* ======================= FIN PROFILE ============================= */
+
+/* ================================================================= */
+
+/* ======================= CLOCK ============================= */
 
 
-
-
-
-
-
-
-
-
-
-/* SignIn Component */
-
-/* h1 {
-    color: var(--colorRed);
-} */
-
-/* SignUp Component */
-/* ==================================================================================== */
-
-
-
-
-/* ===== Home view ================================================================================ */
-.flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 25px
-}
-
-.background-container {
-    height: 1600px;
+.titulo-reloj {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+      1px 1px 0 black;
+  }
+  
+  .image-ironhack2 {
+    margin-top: 75px;
+    width: 100px;
+  }
+  
+  #elemento {
+    position: absolute;
+    top: 65%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .background-container {
+    height: auto;
     width: 100%;
     background-size: cover;
     background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
     background-repeat: no-repeat;
     background-position: center;
-}
+  }
+  
+  /* ========== MEDIA QUERIES CLOCK ================================ */
 
-.footer {
+  @media (max-width: 768px) {
+    /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+    .image-ironhack2 {
+      display: flex;
+      justify-content: center;
+      margin-left: 25px;
+      margin-top: 100px;
+      width: 70px;
+    }
+  
+    #elemento {
+      position: absolute;
+      top: 65%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      animation: pulse 2s ease-in-out infinite;
+    }
+  
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .image-ironhack2 {
+      display: none;
+    }
+  }
 
-    width: 100vw;
-    position: relative;
-    background-color: rgba(46, 15, 250, 0.377);
-    padding: 10px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 250px;
-}
+/* ================= FIN CLOCK ============================== */
 
-.footer-image img {
-    margin-left: 230px;
-    width: 40px;
-    border-radius: 10px;
-}
+/* ========================================================== */
 
-footer p {
-    font-size: 1rem;
-}
-
-footer h6 {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
-}
+/* ================= SIGN IN ============================== */
 
 
+/* ================= FIN SIGN IN ============================== */
+
+/* ============================================================ */
 
 
+/* ================= SIGN UP ============================== */
+
+/* ==================================================================================== */
 
 
+/* ===== Home view ================================================================================ */
 
-
-
-
-/* ======================================================================================================= */
-
-
-
-
-
-
-
-
-
+/* ======================================================================================================= *
 
 /* Account View */
