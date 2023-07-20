@@ -192,8 +192,8 @@ const getEmailPrefix = (email) => {
     /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
   
     .logo {
-      height: 35px;
-      width: 35px;
+      height:50px;
+      width: 60px;
       border-radius: 5px;
     }
     .log-out {

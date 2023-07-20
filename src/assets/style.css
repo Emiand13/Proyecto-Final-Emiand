@@ -42,8 +42,8 @@
   
   #elemento {
     position: absolute;
-    top: 65%;
-    left: 46%;
+    top: 60%;
+    left: 46.5%;
     transform: translate(-50%, -50%);
     animation: pulse 2s ease-in-out infinite;
   }
@@ -112,6 +112,9 @@
     .image-ironhack2 {
       display: none;
     }
+      
+
+  
   }
 
 /* ================= FIN CLOCK ============================== */

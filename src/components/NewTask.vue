@@ -129,7 +129,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 75vh;
 }
 
 h1 {

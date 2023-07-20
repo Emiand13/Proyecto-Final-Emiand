@@ -18,7 +18,7 @@
             website
           }}</a>
         </h3>
-        <!-- <h3>Byography: {{ bio }}</h3> -->
+         <h3>Byography: {{ bio }}</h3> 
         <h3>Location: {{ location }}</h3>
       </div>
       <Profile @updateProfileEmit="hundleUpdateProfile" />
@@ -59,13 +59,13 @@ const avatar_url = ref(null);
 const location = ref(null);
 const bio = ref(null);
 
-const defaultAvatarUrl =
-  "https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0";
-const currentAvatarUrl = ref(null);
+// const defaultAvatarUrl =
+//   "https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0";
+// const currentAvatarUrl = ref(null);
 
-watch(avatar_url, (newAvatarUrl) => {
-  currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
-});
+// watch(avatar_url, (newAvatarUrl) => {
+//   currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
+// });
 
 // Esta función permite capturar el archivo seleccionado por el usuario y almacenarlo en la referencia file.value para su posterior procesamiento, como en el caso de cargar el archivo en un servicio de almacenamiento en la nube.
 const fileManager = (event) => {
@@ -215,11 +215,16 @@ img {
 }
 /* =============================================================== */
 .container-account {
-  display: flex;
+   display: flex; 
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
   margin-top: 15vh;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  
 }
 
 .link-website {
@@ -227,8 +232,9 @@ img {
   text-decoration: none;
 }
 .data {
-  display: flex;
-  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: normal;  
   flex-direction: column;
   color: rgb(255, 255, 255);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -236,7 +242,8 @@ img {
   background-color: #00000086;
   padding: 15px 15px 15px 15px;
   border-radius: 15px;
-  max-width: 320px;
+  width: 350PX;
+
 }
 
 .titulo-data-perfil {
@@ -256,7 +263,6 @@ img {
 .boton-select-file {
   padding: 8px 15px;
   background-color: rgba(251, 0, 255, 0.49);
-
   color: #000000;
   border: none;
   border-radius: 5px;
@@ -267,7 +273,6 @@ img {
 .boton-upload-file {
   padding: 10px 20px;
   background-color: rgba(255, 217, 0, 0.675);
-
   color: #000000;
   border: none;
   border-radius: 5px;
@@ -276,7 +281,7 @@ img {
 }
 
 .background-container {
-  height: 115vh;
+  height: 100%;
   width: 100%;
   background-size: cover;
   background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
@@ -292,6 +297,7 @@ height: 100px;
 width: 100px;
 border-radius: 5px;
 margin-bottom: 15px;
+margin-left: 8.2rem;
 
 }
 .select-avatar {

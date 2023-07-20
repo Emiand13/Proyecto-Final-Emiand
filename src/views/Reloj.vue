@@ -31,7 +31,7 @@ import { useRouter } from "vue-router";
 
 <style scoped>
 .background-container {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-size: cover;
   background-image: url("https://images2.alphacoders.com/100/1008542.jpg");

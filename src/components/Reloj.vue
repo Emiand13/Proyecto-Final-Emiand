@@ -1,6 +1,5 @@
 <template>
   <div class="background-container">
-    
     <div style="text-align: center; padding: 8em 0">
       <h1>
         <a style="text-decoration: none" class="titulo-reloj">

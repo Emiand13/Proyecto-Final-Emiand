@@ -30,14 +30,14 @@
         <br>
         <!-- <label for="">Biography</label> -->
         <div class="col-md-12">
-          <!-- <textarea
+           <textarea
             rows="10"
             cols="50"
             v-model="profile.bio"
             placeholder="Biography"
             type="text-area"
             class="form-control"
-          ></textarea> -->
+          ></textarea> 
         </div>
         <br>
         <!-- <label for="">Location</label> -->

@@ -24,12 +24,11 @@ width:2em;
 
 
 .footer {
- 
-  bottom: 0;
+  
   height: 100px; 
   width: 100%;
   background-color: rgb(46, 15, 250); 
-   padding: 10px ;  
+  padding: 10px ;   
   display: flex;
   flex-direction: row;
   justify-content: center;

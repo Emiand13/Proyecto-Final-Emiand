@@ -1,9 +1,8 @@
 <template>
   <div class="flex-container">
-  
     <div class="card" draggable="true">
       <div :class="['card-header', { completed: task.is_complete }]">
-     <span :class="['title', { completed: task.is_complete }]">{{
+        <span :class="['title', { completed: task.is_complete }]">{{
           task.title
         }}</span>
       </div>
@@ -11,11 +10,14 @@
         <h5 :class="['card-title', { completed: task.is_complete }]">
           {{ task.is_complete ? "Task completed" : "Task incompleted" }}
         </h5>
-        <p class="card-text" :class="{ completed: task.is_complete }">{{ task.description }}</p>
+        <p class="card-text" :class="{ completed: task.is_complete }">
+          {{ task.description }}
+        </p>
         <div class="icons">
           <button
             :class="['boton-complete', { completed: task.is_complete }]"
-            @click="toggleComplete">
+            @click="toggleComplete"
+          >
             <i class="fas fa-check fa-2x"></i>
             {{ task.is_complete ? "" : "" }}
           </button>
@@ -27,26 +29,30 @@
           </button>
         </div>
         <div>
-          <form v-if="inputUpdate && task.id === selectedTaskId" class="update-form text-center">
+          <form
+            v-if="inputUpdate && task.id === selectedTaskId"
+            class="update-form text-center"
+          >
             <input
               type="text"
               v-model="name"
               class="input1"
-              placeholder="New Title"/>
+              placeholder="New Title"
+            />
             <textarea
               type="text"
               v-model="description"
               class="input2"
-              placeholder="New Description">
+              placeholder="New Description"
+            >
             </textarea>
-            <button @click="updateTask" class="boton-save">
-              Update task
-            </button>
+            <button @click="updateTask" class="boton-save">Update task</button>
+             <p v-if="error" class="error-message">{{ error }}</p>
           </form>
         </div>
       </div>
     </div>
-    </div>
+  </div>
 </template>
 
 <!-- ===================== COMIENZA EL SCRIPT ================================= -->
@@ -63,7 +69,7 @@ const props = defineProps({
   task: Object,
 });
 const selectedTaskId = ref(null);
-const tasks = ref([]);
+// const tasks = ref([]);
 
 // Este código define una función asincrónica deleteTask que utiliza taskStore para eliminar una tarea específica mediante su ID. El uso de await asegura que la función asincrónica espere a que se complete la operación de eliminación antes de continuar con el resto del código.
 const deleteTask = async () => {
@@ -77,7 +83,6 @@ const inputUpdate = ref(false);
 const UpdateToggle = () => {
   inputUpdate.value = !inputUpdate.value;
   selectedTaskId.value = props.task.id;
-
 };
 
 // Esta función updateTask se utiliza para actualizar una tarea en taskStore con los nuevos valores del nombre y la descripción. Luego, se restablecen los valores del nombre y la descripción a cadenas vacías, y se llama a UpdateToggle para realizar alguna acción adicional relacionada con la actualización de la tarea.
@@ -93,8 +98,6 @@ const toggleComplete = () => {
   props.task.is_complete = !props.task.is_complete;
   taskStore.completeTask(props.task.id, props.task.is_complete);
 };
-
-
 </script>
 
 
@@ -102,14 +105,20 @@ const toggleComplete = () => {
 
 
   <style scoped>
- .card-header.completed .title{
+.card-header.completed .title {
   text-decoration: line-through;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-} 
+  max-width: 100%;
+}
 
-.card-text.completed{
+.card-header {
+  border-radius: 20px 20px 0px 0px;
+  background-color: gold;
+}
+
+.card-text.completed {
   text-decoration: line-through;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -160,25 +169,13 @@ const toggleComplete = () => {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: center;
 }
-.card-header {
-  white-space: wrap;
-  text-overflow: ellipsis; 
-  overflow: hidden;
-  gap: 10px;
-  align-items: center;
-  justify-content: start;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 20px 20px 0px 0px;
-  background-color: gold;
 
-}
 /* ==============prueba drag and drop===================== */
 
- .empty{
+/* .empty{
 
 display: inline-block;
 
@@ -200,10 +197,10 @@ border: solid #fc0000 4px;
 }
 .invisible{
     display: none;
-} 
+}  */
 .card {
   position: relative;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   width: 300px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.6);
@@ -245,13 +242,8 @@ border: solid #fc0000 4px;
   cursor: pointer;
 }
 
-
-
-
-
 @media (max-width: 768px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
-
 }
 </style>
   
