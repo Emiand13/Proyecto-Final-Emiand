@@ -36,6 +36,9 @@
          <li>
     <a href="#acknowledgments">Acknowledgments</a>
     </li>
+    <li>
+    <a href="#about me">About me</a>
+    </li>
   </ol>
   </details>
 
@@ -286,12 +289,11 @@ In short, I am deeply grateful to _Amazon_, _Ironhack_, Professor _Diego Zito_, 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<h3>Acerca de mi</h3>
+<h2>⚜️About me⚜️</h2>
 
+My name is Emilio Carrasco, I am 36 years old, I am a junior web developer and I have been passionate about this world since day one that I started this adventure almost two years ago, every day I learn something new and there is a phrase that I want to share with you Never Master Always Student, being humble and hardworking is a characteristic that defines me.
 
-Mi nombre es Emilio Carrasco tengo 35 años soy desarrollador web junior y me apasiona este mundo desde el día uno que empecé esta aventura hace ya casi dos años, cada día aprendo algo nuevo y hay una frase que quiero compartir con vosotros Never Master Always Student, ser humilde y trabajador es una característica que me define, espero algun dia tener un trabajo de programador y poder cumplir un sueño. 
-
-Espero poder ayudaros en todo lo que este de mi mano, si teneis algun problema con el proyecto o puedo ayudaros con algo mi correo estara justo aqui debajo, gracias... y nos vemos pronto...
+I hope I can help you in everything I can, if you have any problem with the project or I can help you with something my email will be right below, thanks... and see you soon...
 
 ⚜️life is for the living⚜️
 
