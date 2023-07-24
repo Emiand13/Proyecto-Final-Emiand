@@ -31,13 +31,13 @@
     <a href="#contributors">Contributors</a>
     </li>
      <li>
-    <a href="#build Process">Build Process</a>
+    <a href="#buildProcess">Build Process</a>
     </li>
          <li>
     <a href="#acknowledgments">Acknowledgments</a>
     </li>
     <li>
-    <a href="#about me">About me</a>
+    <a href="#aboutme">About me</a>
     </li>
   </ol>
   </details>
