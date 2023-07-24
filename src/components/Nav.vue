@@ -41,12 +41,13 @@
               >Your Account</router-link
             >
           </li>
-          <!-- <li class="nav-item">
-          <router-link to="/" class="nav-link">Your Tasks</router-link>
-        </li> -->
           <li class="nav-item">
             <router-link class="nav-link" to="/reloj">Clock</router-link>
           </li>
+           <li class="nav-item">
+          <router-link to="/about" class="nav-link">About</router-link>
+        </li> 
+        
         </ul>
       </div>
       <ul>
@@ -58,7 +59,7 @@
           <!-- Comentario: Muestra el correo electrónico del usuario -->
         </li>
         <li>
-          <button @click="signOut" class="log-out">Log Out</button>
+          <button @click="signOut" class="log-out fade-in-button">Log Out</button>
           <!-- Comentario: Botón para cerrar sesión -->
         </li>
       </ul>
@@ -166,8 +167,13 @@ const getEmailPrefix = (email) => {
     margin-left: 2rem;
     text-decoration: none;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 18px;
-   
+    font-size: 20px;
+    color:rgba(255, 217, 0, 0.897);
+  }
+
+  .nav-link:hover{
+
+color:#a504b7;
   }
   
   .log-out {
@@ -179,8 +185,8 @@ const getEmailPrefix = (email) => {
     width: 100px;
     align-content: center;
     padding: 10px 15px;
-    background-color: #a504b7ac;
-    color: white;
+    background-color: #ff0800d7;
+    color: rgba(250, 238, 238, 0.952);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -188,6 +194,16 @@ const getEmailPrefix = (email) => {
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   }
   
+  
+.fade-in-button {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  /* Otras propiedades de diseño de los botones (tamaño, color, bordes, etc.) */
+}
+
+.fade-in-button:hover {
+  opacity: 0.7;
+}
   @media (max-width: 768px) {
     /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
   
@@ -201,7 +217,7 @@ const getEmailPrefix = (email) => {
     width: 100px;
     align-content: center;
     padding: 5px 5px;
-    background-color: #a504b7ac;
+    background-color: #a504b7;
     color: white;
     border: none;
     border-radius: 5px;

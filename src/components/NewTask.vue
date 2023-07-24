@@ -1,10 +1,11 @@
 <template>
   <div class="add-task-form">
-  
     <h2 class="header-title">Add a new Task</h2>
+
     <p class="subtitle">
       Keep your tasks in order, reach your goals: Act today!
     </p>
+    <h3><router-link to="/reloj" class="link-clock">Clock</router-link></h3>
     <div>
       <p class="date">
         <strong>Today's date is {{ formattedDate }}</strong>
@@ -26,9 +27,10 @@
           placeholder="Add a Task Description - We are going to the concert next week"
           v-model="description"
           class="input-field"
+          style="max-height: 15rem"
         ></textarea>
       </div>
-      <button @click="addTask" class="button">Add</button>
+      <button @click="addTask" class="button fade-in-button">Add</button>
     </div>
   </div>
 </template>
@@ -91,6 +93,21 @@ onMounted(() => {
 </script>
 
 <style scooped >
+
+.fade-in-button {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in-button:hover {
+  opacity: 0.7;
+}
+.link-clock {
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
 .error-text {
   display: flex;
   justify-content: center;
@@ -107,7 +124,8 @@ onMounted(() => {
   text-align: center;
   margin-top: 2.5rem;
   margin-bottom: 20px;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
   font-size: 75px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
@@ -168,7 +186,7 @@ h1 {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
   .header-title {
-    margin-top: 1.5rem;
+    margin-top: 3rem;
     color: gold;
     text-align: center;
     font-size: 55px;
@@ -210,7 +228,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60vh;
+    height: 75vh;
   }
 
   h1 {

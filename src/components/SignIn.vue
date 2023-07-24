@@ -37,7 +37,7 @@
               <i class="fa" :class="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"></i>
             </span>
         </div>
-        <button class="button2" type="submit">Sign In</button>
+        <button class="button2 fade-in-button" type="submit">Sign In</button>
       </div>
     </form>
 
@@ -106,6 +106,15 @@ const togglePasswordVisibility = (field) => {
 
 /* ========== SIGNIN COMPONENT ============================================== */
 
+.fade-in-button {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  /* Otras propiedades de diseño de los botones (tamaño, color, bordes, etc.) */
+}
+
+.fade-in-button:hover {
+  opacity: 0.7;
+}
 .router-link {
   font-size: 16px;
   align-items: center;
@@ -200,8 +209,17 @@ const togglePasswordVisibility = (field) => {
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
-
 }
+
+
+
+
+
+
+
+
+
+
 
 p {
   text-align: center;
@@ -238,7 +256,7 @@ p {
   .toggle-password {
   color: #467ffa;
   position: absolute;
-  top: 83.5vh;
+  top: 572px;
   right: 50px; /* Ajusta la posición del ícono */
   transform: translateY(-50%);
   cursor: pointer;

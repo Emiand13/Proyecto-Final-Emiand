@@ -73,7 +73,7 @@
               required
             />
           </div>
-          <button class="button2" type="submit">Sign Up</button>
+          <button class="button2 fade-in-button" type="submit">Sign Up</button>
           <p class="texto-have-Acount">
             Have an account?
             <PersonalRouter
@@ -155,6 +155,22 @@ const signUp = async () => {
 </script>
 
 <style  scoped>
+.fade-in-button {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  /* Otras propiedades de diseño de los botones (tamaño, color, bordes, etc.) */
+}
+
+.fade-in-button:hover {
+  opacity: 0.7;
+}
+.router-link {
+  font-size: 16px;
+  align-items: center;
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
 /* =========== IMAGEN BACKGROUND SIGN UP ================================== */
 .background-container {
   height: 120vh;
@@ -168,12 +184,11 @@ const signUp = async () => {
 /* ICONO1 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password1 {
   position: absolute;
-  top: 64.3vh;
+  top: 485px;
   right: 600px;
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 1; /* Asegura que el ícono esté por encima del input */
-
   color: #467ffa;
   margin-left: 5px;
   cursor: pointer;
@@ -182,7 +197,7 @@ const signUp = async () => {
 /* ICONO2 OJO VISIBLE / NO VISIBLE PASSWORD*/
 .toggle-password2 {
   position: absolute;
-  top: 73vh;
+  top: 550px;
   right: 600px;
   transform: translateY(-50%);
   cursor: pointer;
@@ -208,7 +223,8 @@ const signUp = async () => {
   color: gold;
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
   font-size: 50px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
@@ -272,42 +288,29 @@ p {
   cursor: pointer;
 }
 
-
-
 @media (max-width: 768px) {
-
-
   .toggle-password1 {
-  position: absolute;
-  top: 83.5vh;
-  right: 50px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 1; /* Asegura que el ícono esté por encima del input */
-
-  color: #467ffa;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-/* ICONO2 OJO VISIBLE / NO VISIBLE PASSWORD*/
-.toggle-password2 {
-  position: absolute;
-  top: 93vh;
-  right: 50px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 1; /* Asegura que el ícono esté por encima del input */
-
-  color: #467ffa;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-
-
-
-
+    position: absolute;
+    top: 572px;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1; /* Asegura que el ícono esté por encima del input */
+    color: #467ffa;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .toggle-password2 {
+    position: absolute;
+    top: 636px;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1; /* Asegura que el ícono esté por encima del input */
+    color: #467ffa;
+    margin-left: 5px;
+    cursor: pointer;
+  }
 }
 </style>
 

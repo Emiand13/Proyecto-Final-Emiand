@@ -1,78 +1,83 @@
 <template>
   <div class="text-center">
-  <div class="row g-3">
-    <div class="col">
-      <!-- <div class="container">
+    <div class="row g-3">
+      <div class="col">
+        <!-- <div class="container">
     <div class="row"> -->
-      <button @click="editToggleProfile" class="boton-edit-profile">Edit Profile</button>
- 
-      <form v-if="inputUpdate" class="col g-3 form" action="">
-        <div class="col-md-12">
-          <!-- <label for="">Full name</label> -->
-          <br>
-          <input
-            v-model="profile.full_name"
-            placeholder="Full name"
-            type="text"
-            class="form-control"
-          />
-        </div>
-        <br />
-        <!-- <label for="">Website</label> -->
-        <div class="col-md-12">
-          <input
-            v-model="profile.website"
-            placeholder="Website"
-            type="text"
-            class="form-control"
-          />
-        </div>
-        <br>
-        <!-- <label for="">Biography</label> -->
-        <div class="col-md-12">
-           <textarea
-            rows="10"
-            cols="50"
-            v-model="profile.bio"
-            placeholder="Biography"
-            type="text-area"
-            class="form-control"
-          ></textarea> 
-        </div>
-        <br>
-        <!-- <label for="">Location</label> -->
-        <div class="col-md-12">
-          <input
-           v-model="profile.location"
-            placeholder="Location"
-             type="text" 
-             class="form-control"/>
-            </div>
-        
-            <br>
         <button
-          type="button"
-          @click.prevent="updateProfile"
-          class="boton-actualizar-perfil "
+          @click="editToggleProfile"
+          class="boton-edit-profile fade-in-button"
         >
-          Update profile
+          Edit Profile
         </button>
-      </form>
+
+        <form v-if="inputUpdate" class="col g-3 form" action="">
+          <div class="col-md-12">
+            <!-- <label for="">Full name</label> -->
+            <br />
+            <input
+              v-model="profile.full_name"
+              placeholder="Full name"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <br />
+          <!-- <label for="">Website</label> -->
+          <div class="col-md-12">
+            <input
+              v-model="profile.website"
+              placeholder="Website"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <br />
+          <!-- <label for="">Biography</label> -->
+          <div class="col-md-12">
+            <textarea
+              rows="10"
+              cols="50"
+              v-model="profile.bio"
+              placeholder="Biography"
+              type="text-area"
+              class="form-control"
+            ></textarea>
+          </div>
+          <br />
+          <!-- <label for="">Location</label> -->
+          <div class="col-md-12">
+            <input
+              v-model="profile.location"
+              placeholder="Location"
+              type="text"
+              class="form-control"
+            />
+          </div>
+
+          <br />
+          <button
+            type="button"
+            @click.prevent="updateProfile"
+            class="boton-actualizar-perfil fade-in-button"
+          >
+            Update profile
+          </button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
   <!-- </div>
   </div> -->
 </template>
   
 <script setup>
-import { ref, reactive, onMounted, computed } from "vue";
+import { ref,  onMounted, computed } from "vue";
 import { useUserStore } from "../stores/user";
 import { supabase } from "../supabase";
 
-// defineEmits se utiliza para definir los eventos que puede emitir el componente. 
-const emit = defineEmits(["updateProfileEmit"])
-
+// defineEmits se utiliza para definir los eventos que puede emitir el componente.
+const emit = defineEmits(["updateProfileEmit"]);
 
 // Utilizamos la función defineProps para definir las propiedades del componente
 const props = defineProps({
@@ -83,7 +88,6 @@ const props = defineProps({
     type: Boolean,
   },
 });
-
 
 // Esta línea declara una variable llamada userStore y la inicializa con el resultado de la función useUserStore(). Probablemente, useUserStore() es una función que devuelve una instancia del almacén de usuarios utilizado en este código.
 const userStore = useUserStore();
@@ -121,8 +125,7 @@ const updateProfile = async () => {
     console.error(error);
   } else {
     console.log("Perfil actualizado correctamente");
-    emit('updateProfileEmit', updatedProfileData)
-
+    emit("updateProfileEmit", updatedProfileData);
   }
 };
 // Aquí se utiliza el hook onMounted de Vue.js para ejecutar una función asíncrona cuando el componente se monta en el DOM. Dentro de la función, se llama a userStore.fetchUser() para recuperar los datos del usuario. Es posible que fetchUser() sea un método del almacén de usuarios que realiza una solicitud para obtener los datos del usuario actual.
@@ -132,35 +135,43 @@ onMounted(async () => {
 </script>
   
   <style scoped>
-.boton-actualizar-perfil{
+.fade-in-button {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  /* Otras propiedades de diseño de los botones (tamaño, color, bordes, etc.) */
+}
+
+.fade-in-button:hover {
+  opacity: 0.7;
+}
+.boton-actualizar-perfil {
   padding: 10px 20px;
-  background-color:   rgba(255, 217, 0, 0.675);
+  background-color: rgba(255, 217, 0, 0.675);
   color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-.text-center{
+.text-center {
   display: flex;
   justify-content: center;
 }
 
-.boton-edit-profile{
+.boton-edit-profile {
   padding: 10px 20px;
-  background-color:   rgba(255, 217, 0, 0.763);
+  background-color: rgba(255, 217, 0, 0.763);
   color: #000000;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-margin-bottom: 0.8rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-bottom: 0.8rem;
 }
 
-
-.form{
-padding: 15px;
+.form {
+  padding: 15px;
   background-color: #00000086;
   border-radius: 15px;
 }
@@ -168,37 +179,30 @@ padding: 15px;
 @media (max-width: 768px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
-  .boton-actualizar-perfil{
-padding: 10px 20px;
-background-color:gold; 
-color: #000000;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  .boton-actualizar-perfil {
+    padding: 10px 20px;
+    background-color: gold;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+
+  .text-center {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .boton-edit-profile {
+    padding: 10px 20px;
+    background-color: gold;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
 }
-
-.text-center{
-display: flex;
-justify-content: center;
-flex-direction: row;
-}
-
-.boton-edit-profile{
-padding: 10px 20px;
-background-color:gold; 
-color: #000000;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-
-
-
-
-
-}
-
 </style>

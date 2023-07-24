@@ -1,42 +1,74 @@
 <template>
-  <div class="background-container">
-    <Nav />
-    <div class="container-account text-center">
-      <div class="data">
-        <!-- <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" />   -->
-        <img
-          :src="avatar_url"
-          v-if="avatar_url"
-          alt="Profile picture"
-          class="imagen-avatar"
-        />
-        <h1 class="titulo-data-perfil">Your profile</h1>
-        <h3>Name: {{ username }}</h3>
-        <h3>
-          Website:
-          <a target="_blank" :href="website" class="link-website">{{
-            website
-          }}</a>
-        </h3>
-         <h3>Byography: {{ bio }}</h3> 
-        <h3>Location: {{ location }}</h3>
-      </div>
-      <Profile @updateProfileEmit="hundleUpdateProfile" />
-      <div class="select-avatar">
-        <!-- <img :src="avatar_url ? avatar_url : defaultAvatarUrl" alt="Profile picture" class="imagen-avatar" />    -->
-
-        <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
-        <img src="../components/images/th.jpg" class="img-avatar-default">
-        <br />
-        <input @change="fileManager" type="file" class="boton-select-file" />
-        <button @click="uploadFile" class="boton-upload-file">
-          Upload File
-        </button>
+  <!-- <div class="background-container"> -->
+  <Nav />
+ 
+  <div
+    v-if="loading"
+    class="container d-flex justify-content-center align-items-center mb-5 gap-15 flex-column"
+    style="height: 460px"
+  >
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="container-account text-center" v-else>
+    <div class="data">
+      <h1 class="titulo-data-perfil">Your profile</h1>
+      <div class="datos">
+        <h4 class="name">
+          <p>{{ username }}</p>
+        </h4>
+        <h4>
+          <p>
+            <a target="_blank" :href="website" class="link-website">{{
+              website
+            }}</a>
+          </p>
+        </h4>
+        <h4>
+          <p>{{ bio }}</p>
+        </h4>
+        <h4>
+          <p>{{ location }}</p>
+        </h4>
       </div>
     </div>
-    <br />
+    <Profile @updateProfileEmit="hundleUpdateProfile" />
+    <div class="select-avatar">
+      <img
+        :src="avatar_url"
+        v-if="avatar_url"
+        alt="Profile picture"
+        class="imagen-avatar"
+      />
+      <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
+      <!-- <img src="../components/images/th.jpg" class="img-avatar-default">  -->
+      <br />
+      <input
+        @change="fileManager"
+        type="file"
+        class="boton-select-file fade-in-button"
+      />
+      <button @click="uploadFile" class="boton-upload-file fade-in-button">
+        Upload File
+      </button>
+    </div>
   </div>
-  <Footer />
+
+  <br />
+  <!-- </div> -->
+  <div><Footer /></div>
 </template>
 
 <script setup>
@@ -49,23 +81,23 @@ import Footer from "../components/Footer.vue";
 
 // ================= AVATAR URL =======================================
 
+const modoClaro = ref(false);
+
+const alternarModoClaro= () => {
+  modoClaro.value = !modoClaro.value;
+};
+
 const userStore = useUserStore();
 
 const file = ref();
 const fileUrl = ref();
+
+const loading = ref(true);
 const username = ref(null);
 const website = ref(null);
 const avatar_url = ref(null);
 const location = ref(null);
 const bio = ref(null);
-
-// const defaultAvatarUrl =
-//   "https://th.bing.com/th/id/R.44feaafc87215076e5eb5df5328d38a5?rik=LnvSxRkC79zMmw&pid=ImgRaw&r=0";
-// const currentAvatarUrl = ref(null);
-
-// watch(avatar_url, (newAvatarUrl) => {
-//   currentAvatarUrl.value = newAvatarUrl || defaultAvatarUrl;
-// });
 
 // Esta función permite capturar el archivo seleccionado por el usuario y almacenarlo en la referencia file.value para su posterior procesamiento, como en el caso de cargar el archivo en un servicio de almacenamiento en la nube.
 const fileManager = (event) => {
@@ -128,7 +160,6 @@ const uploadFile = async () => {
   const { data: urlData, error: urlError } = await supabase.storage
     .from("profile-img")
     .getPublicUrl(filePath);
-  // console.log(urlData);
   // Si se produce algún error al obtener la URL, se muestra un mensaje de error.
   if (urlError) {
     console.error("Error getting public URL:", urlError);
@@ -137,7 +168,7 @@ const uploadFile = async () => {
 
   // Este bloque de código asigna la URL pública obtenida a la referencia fileUrl.value y la imprime en la consola para verificar su valor.
   fileUrl.value = urlData.publicURL;
-  console.log(fileUrl.value);
+  // console.log(fileUrl.value);
 
   // Este bloque de código actualiza el perfil del usuario en la tabla "profiles" con la nueva URL del avatar.
   const { error: updateError } = await supabase
@@ -163,6 +194,12 @@ async function getProfile() {
   location.value = userStore.profile.location;
   bio.value = userStore.profile.bio;
   avatar_url.value = userStore.profile.avatar_url;
+  // loading.value = false;
+
+ // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba 
+   setTimeout(() => {
+     loading.value = false;
+   }, 1200);
 }
 
 // Esta parte del código establece una observación en la propiedad userStore.profile y, cada vez que cambie, asigna el valor de updatedProfileData.avatar_url a avatar_url.value. Esto permite mantener actualizada la referencia avatar_url con el valor más reciente de la URL del avatar del perfil.
@@ -185,13 +222,91 @@ onMounted(() => {
 <style scoped>
 
 
+/* ========================================= */
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: rgb(255, 238, 0);
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
-.img-avatar-default{
-height: 100px;
-width: 100px;
-border-radius: 5px;
-margin-bottom: 15px;
-
+/* ================================================================= */
+.datos {
+  padding: 10px;
+  background-color: rgba(190, 190, 190, 0.49);
+  border-radius: 15px;
 }
 .select-avatar {
   padding: 15px;
@@ -215,7 +330,7 @@ img {
 }
 /* =============================================================== */
 .container-account {
-   display: flex; 
+  display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
@@ -224,7 +339,6 @@ img {
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%;
-  
 }
 
 .link-website {
@@ -233,17 +347,16 @@ img {
 }
 .data {
   overflow: hidden;
-  text-overflow: ellipsis; 
-  white-space: normal;  
-  flex-direction: column;
+  text-overflow: ellipsis;
+  white-space: normal;
   color: rgb(255, 255, 255);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-shadow: 2px 2px 4px rgba(187, 255, 0, 0.4);
   background-color: #00000086;
   padding: 15px 15px 15px 15px;
   border-radius: 15px;
-  width: 350PX;
-
+  width: 350px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
 }
 
 .titulo-data-perfil {
@@ -281,7 +394,7 @@ img {
 }
 
 .background-container {
-  height: 100%;
+  height: 120vh;
   width: 100%;
   background-size: cover;
   background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
@@ -292,26 +405,20 @@ img {
 /* ==========MEDIA QUERIES========================================= */
 @media (max-width: 765px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
-  .img-avatar-default{
-height: 100px;
-width: 100px;
-border-radius: 5px;
-margin-bottom: 15px;
-margin-left: 8.2rem;
 
-}
-.select-avatar {
-  margin-top: 1rem;
-  padding: 15px;
-  background-color: #00000086;
-  border-radius: 15px;
-}
+  .select-avatar {
+    margin-top: 1rem;
+    padding: 15px;
+    background-color: #00000086;
+    border-radius: 15px;
+  }
 
   .imagen-avatar {
     height: 100px;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
+    margin-left: 130px;
   }
   .container-account {
     display: flex;
@@ -322,7 +429,6 @@ margin-left: 8.2rem;
     text-overflow: ellipsis;
   }
   .data {
-
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -332,7 +438,6 @@ margin-left: 8.2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 50px;
     color: rgb(255, 255, 255);
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
 
   .titulo-data-perfil {
@@ -342,6 +447,7 @@ margin-left: 8.2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
       -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
+    margin-left: 70px;
   }
 
   .titulo-AVATAR-perfil {

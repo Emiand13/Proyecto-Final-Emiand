@@ -2,6 +2,10 @@
   <div class="flex-container">
     <div class="card" draggable="true">
       <div :class="['card-header', { completed: task.is_complete }]">
+        <img
+          src=".//images/Task-Logo-fullcol-Copy.png"
+          class="imagen-titulo-card"
+        />
         <span :class="['title', { completed: task.is_complete }]">{{
           task.title
         }}</span>
@@ -47,7 +51,7 @@
             >
             </textarea>
             <button @click="updateTask" class="boton-save">Update task</button>
-             <p v-if="error" class="error-message">{{ error }}</p>
+            <p v-if="error" class="error-message">{{ error }}</p>
           </form>
         </div>
       </div>
@@ -58,9 +62,9 @@
 <!-- ===================== COMIENZA EL SCRIPT ================================= -->
 
 <script setup>
-import { ref, onUpdated, defineProps } from "vue";
+import { ref, defineProps } from "vue";
 import { useTaskStore } from "../stores/task";
-import { supabase } from "../supabase";
+ import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
 const name = ref("");
@@ -69,7 +73,7 @@ const props = defineProps({
   task: Object,
 });
 const selectedTaskId = ref(null);
-// const tasks = ref([]);
+const tasks = ref([]);
 
 // Este código define una función asincrónica deleteTask que utiliza taskStore para eliminar una tarea específica mediante su ID. El uso de await asegura que la función asincrónica espere a que se complete la operación de eliminación antes de continuar con el resto del código.
 const deleteTask = async () => {
@@ -116,6 +120,11 @@ const toggleComplete = () => {
 .card-header {
   border-radius: 20px 20px 0px 0px;
   background-color: gold;
+}
+
+.imagen-titulo-card {
+  height: 40px;
+  width: 60px;
 }
 
 .card-text.completed {

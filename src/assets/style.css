@@ -1,6 +1,13 @@
+ body{
 
 
-
+  height:auto;
+  width: 100%;
+  background-size: cover;
+  background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+} 
 
 
 /* ================ NAV ===================== */
@@ -63,15 +70,7 @@
     }
   }
   
-  .background-container {
-    height: auto;
-    width: 100%;
-    background-size: cover;
-    background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
+ 
   /* ========== MEDIA QUERIES CLOCK ================================ */
 
   @media (max-width: 768px) {
@@ -86,7 +85,7 @@
   
     #elemento {
       position: absolute;
-      top: 65%;
+      top: 80%;
       left: 35%;
       transform: translate(-50%, -50%);
       animation: pulse 2s ease-in-out infinite;
@@ -120,6 +119,24 @@
 /* ================= FIN CLOCK ============================== */
 
 /* ========================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ================= SIGN IN ============================== */
 
