@@ -13,28 +13,28 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#Introduction">Introduction</a>
+      <a href="#introduction">Introduction</a>
     </li>
      <li>
-      <a href="#Description">Description</a>
+      <a href="#description">Description</a>
     </li>
     <li>
-    <a href="#Roadmap">Roadmap</a>
+    <a href="#roadmap">Roadmap</a>
     </li>
       <li>
-    <a href="#Technologies">Technologies</a>
+    <a href="#technologies">Technologies</a>
     </li>
        <li>
-    <a href="#Features">Features</a>
+    <a href="#features">Features</a>
     </li>
     <li>
-    <a href="#Contributors">Contributors</a>
+    <a href="#contributors">Contributors</a>
     </li>
      <li>
-    <a href="#Build Process">Build Process</a>
+    <a href="#build Process">Build Process</a>
     </li>
          <li>
-    <a href="#Acknowledgments">Acknowledgments</a>
+    <a href="#acknowledgments">Acknowledgments</a>
     </li>
   </ol>
   </details>
@@ -43,7 +43,7 @@
 
 With TaskPro, we aim to get a centralized space to create, edit and manage all your tasks, whether they are pending, in progress or completed.
 
-<img src="./src/components/images/capturaReadme.png" alt="CapturaApp" >
+<img src="./src/components/images/capturaReadmeNueva.png" alt="CapturaApp" >
 
 <h2> Description </h2>
 
@@ -110,19 +110,32 @@ The application provides functionalities such as user account registration, task
 
  <h3>Martes 18/07/23</h3>
  
- - Añadir ultimos detalles Readme  <br>
- - Repaso a la App y todas sus funcionalidades<br>
+ - Añadir ultimos detalles Readme ✅ <br>
+ - Repaso a la App y todas sus funcionalidades ✅ <br>
  
 
  <h3>Miercoles 19/07/23</h3>
  
- - Añadir ultimos detalles Readme  <br>
- - Repaso a la App y todas sus funcionalidades<br>
- - Repaso del manejo de errores en edición de tareas<br>
+ - Añadir ultimos detalles Readme ✅ <br>
+ - Repaso a la App y todas sus funcionalidades ✅ <br>
 
  <h3>Jueves 20/07/23</h3>
 
- - Seguir probando la funcionabilidad de la app<br>
+ - Seguir probando la funcionabilidad de la app ✅ <br>
+
+  <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<h3>Lunes 24/07/23</h3>
+
+- EXTRAS
+- Implementar el About con card-flip y datos DEV ✅ <br>
+- Implementar loading en el componente Account para evitar delay de supabase ✅ <br>
+- Implementar ModoClaro "EXTRA" en el componente Home ✅ <br>
+
+<h3>Martes 25/07/23</h3>
+
+- Ultimos detalles app <br>
+- Preparar presentación del proyecto <br>
 
 
 
@@ -269,6 +282,20 @@ Last but not least, I want to thank my classmates, __Facu__, __Gabi__ and __Nico
 
 In short, I am deeply grateful to _Amazon_, _Ironhack_, Professor _Diego Zito_, and my _classmates_ for their significant contribution to my professional and personal development. These experiences and connections have propelled me forward and provided me with a solid foundation to continue growing in the exciting field of Front-End development.
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<h3>Acerca de mi</h3>
+
+
+Mi nombre es Emilio Carrasco tengo 35 años soy desarrollador web junior y me apasiona este mundo desde el día uno que empecé esta aventura hace ya casi dos años, cada día aprendo algo nuevo y hay una frase que quiero compartir con vosotros Never Master Always Student, ser humilde y trabajador es una característica que me define, espero algun dia tener un trabajo de programador y poder cumplir un sueño. 
+
+Espero poder ayudaros en todo lo que este de mi mano, si teneis algun problema con el proyecto o puedo ayudaros con algo mi correo estara justo aqui debajo, gracias... y nos vemos pronto...
+
+⚜️life is for the living⚜️
+
+Emilio Carrasco - 13emiand@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
