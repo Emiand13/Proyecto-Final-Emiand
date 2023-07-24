@@ -291,6 +291,18 @@ In short, I am deeply grateful to _Amazon_, _Ironhack_, Professor _Diego Zito_, 
 
 <h2>⚜️About me⚜️</h2>
 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Emiand13">
+        <img src="https://avatars.githubusercontent.com/u/130839086?v=4" width="100px" alt="Avatar de Emiand13">
+        <br>
+        Emiand13
+      </a>
+    </td>
+  </tr>
+</table>
+
 My name is Emilio Carrasco, I am 36 years old, I am a junior web developer and I have been passionate about this world since day one that I started this adventure almost two years ago, every day I learn something new and there is a phrase that I want to share with you Never Master Always Student, being humble and hardworking is a characteristic that defines me.
 
 I hope I can help you in everything I can, if you have any problem with the project or I can help you with something my email will be right below, thanks... and see you soon...
