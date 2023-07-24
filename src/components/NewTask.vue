@@ -5,7 +5,7 @@
     <p class="subtitle">
       Keep your tasks in order, reach your goals: Act today!
     </p>
-    <h3><router-link to="/reloj" class="link-clock">Clock</router-link></h3>
+    <h3><router-link to="/reloj" class="link-clock1">Clock</router-link></h3>
     <div>
       <p class="date">
         <strong>Today's date is {{ formattedDate }}</strong>
@@ -102,7 +102,8 @@ onMounted(() => {
 .fade-in-button:hover {
   opacity: 0.7;
 }
-.link-clock {
+.link-clock1 {
+  color:gold;
   text-decoration: none;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 20px;

@@ -37,6 +37,8 @@
 
 
 <style scoped>
+
+
 .titulo-about {
 	margin-top: 10px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -80,7 +82,7 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
+} 
 
 .tarjeta-wrap {
   margin: 10px;
@@ -90,7 +92,7 @@
 
 .tarjeta {
   width: 460px;
-  height: 400px;
+  height: 460px;
   background: #20baf2;
   position: relative;
   -webkit-transform-style: preserve-3d;
@@ -155,26 +157,25 @@
 }
 
 .container {
-	margin-top: 100px;
-  height: 530px;
-  margin-left: 5rem;
+	display: flex;
+	justify-content: center;
+  margin-top: 50px;
+  height: 600px;
+ 
 }
 
 @media (max-width: 768px) {
-  body {
-    background-color: blue;
-  }
-
-  * {
+ 
+ * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  }
+  } 
 
   .wrap {
-    width: 50px;
+    width: 150px;
     margin: 50px auto;
     display: -webkit-box;
     display: -webkit-flex;
@@ -192,8 +193,8 @@
     perspective: 800;
   }
   .tarjeta {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     background: #20baf2;
     position: relative;
     -webkit-transform-style: preserve-3d;
@@ -213,6 +214,7 @@
     left: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+
   }
 
   .adelante {
@@ -223,7 +225,7 @@
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 
-    padding: 15px;
+    padding: 15px 15px 15px 15px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -237,9 +239,7 @@
     -ms-flex-align: center;
     align-items: center;
 
-    text-align: center;
-    color: #fff;
-    font-family: "open sans";
+  
   }
 
   .tarjeta-wrap:hover .tarjeta {
@@ -255,7 +255,31 @@
   }
 
   .container {
-    height: 200px;
+    height: 450px;
+	
   }
+  .titulo-about {
+	margin-top: 10px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: gold;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+.parrafo-about-2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+.parrafo-about {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+
+.link-emiand13 {
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 48px;
+}
 }
 </style>

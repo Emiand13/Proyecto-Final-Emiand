@@ -22,7 +22,7 @@
             height="16"
             fill="currentColor"
             class="bi bi-list"
-            viewBox="0 0 16 16"
+            viewBox="0 0 12 12"
           >
             <path
               fill-rule="evenodd"
@@ -38,14 +38,14 @@
           </li>
           <li class="nav-item">
             <router-link to="/account" class="nav-link"
-              >Your Account</router-link
+              > Account</router-link
             >
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/reloj">Clock</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/about" class="nav-link">About Me</router-link>
+            <router-link to="/about" class="nav-link">About</router-link>
           </li>
         </ul>
       </div>
@@ -212,8 +212,8 @@ nav ul {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
   .logo {
-    height: 50px;
-    width: 60px;
+    height: 60px;
+    width: 75px;
     border-radius: 5px;
   }
   .log-out {

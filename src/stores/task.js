@@ -15,12 +15,12 @@ export const useTaskStore = defineStore("tasks", () => {
       .select("*")
       .order("id", { ascending: false });
     tasksArr.value = tasks;
-    console.log(tasksArr.value);
+    // console.log(tasksArr.value);
   };
 
   // Añadir tarea a supabase
   const addTask = async (title, description) => {
-    console.log(useUserStore().user.id);
+    // console.log(useUserStore().user.id);
     const { data, error } = await supabase.from("tasks").insert([
       {
         user_id: useUserStore().user.id,
@@ -32,7 +32,7 @@ export const useTaskStore = defineStore("tasks", () => {
     await fetchTasks();
   };
 
-  // Borrar tarea de supabase
+  // Borrar tarea de supabase y la alerta de eliminar
   const deleteTask = async (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -49,7 +49,7 @@ export const useTaskStore = defineStore("tasks", () => {
         });
         await fetchTasks();
 
-        Swal.fire("Deleted!", "Your task has been deleted.", "success");
+         Swal.fire("Deleted!", "Your task has been deleted.", "success");
       }
     });
   };

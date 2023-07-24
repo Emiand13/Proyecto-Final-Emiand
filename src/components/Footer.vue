@@ -8,9 +8,9 @@
           class="logo"
         />
         <h6>
-          © 2023 TasksPro App. All rights reserved. Built with ⚜️ by
+          © 2023 TasksPro App. All rights reserved. Built by
           <a href="https://github.com/Emiand13" class="link-footer">
-            Emiand13</a
+            ⚜️Emiand13⚜️</a
           >
         </h6>
       </div>
@@ -75,7 +75,7 @@
   }
 
   .footer-image img {
-    margin-left: 120px;
+    margin-left: 100px;
     width: 80px;
     border-radius: 10px;
     margin-top: 15px;

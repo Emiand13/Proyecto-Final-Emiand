@@ -69,7 +69,13 @@
       opacity: 1;
     }
   }
-  
+  .link-clock2 {
+    
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 20px;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  }
  
   /* ========== MEDIA QUERIES CLOCK ================================ */
 

@@ -3,7 +3,7 @@
       <h1>
         <h3><router-link 
           to="/" 
-          class="link-clock">
+          class="link-clock2">
           TaskPro</router-link> 
         </h3>
         <a style="text-decoration: none"
