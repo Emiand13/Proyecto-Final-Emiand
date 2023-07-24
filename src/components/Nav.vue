@@ -44,10 +44,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/reloj">Clock</router-link>
           </li>
-           <li class="nav-item">
-          <router-link to="/about" class="nav-link">About Me</router-link>
-        </li> 
-        
+          <li class="nav-item">
+            <router-link to="/about" class="nav-link">About Me</router-link>
+          </li>
         </ul>
       </div>
       <ul>
@@ -59,7 +58,9 @@
           <!-- Comentario: Muestra el correo electrónico del usuario -->
         </li>
         <li>
-          <button @click="signOut" class="log-out fade-in-button">Log Out</button>
+          <button @click="signOut" class="log-out fade-in-button">
+            Log Out
+          </button>
           <!-- Comentario: Botón para cerrar sesión -->
         </li>
       </ul>
@@ -120,81 +121,84 @@ const getEmailPrefix = (email) => {
 
 
 <style  scoped>
-
 .navbar-toggler {
-    padding: 0.05rem 0.1rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: rgb(46, 15, 250); 
-    border: 1px solid #d4e608;
-    border-radius: 0.25rem;
-    transition: box-shadow 0.2s ease-in-out;
-    color: #d4e608;
-  }
-  
-  .logo {
-    height: 60px;
-    width: 90px;
-    border-radius: 15px;
-  }
-  
-  nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgba(46, 15, 250); 
-  }
-  
-  nav ul {
-    list-style: none;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  }
-  
-  .user-email {
-    color: gold;
-  }
-  .log-out-welcome p {
-    margin: 0;
-   
-  }
-  
-  .nav-link {
-    margin-left: 2rem;
-    text-decoration: none;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 20px;
-    color:rgba(255, 217, 0, 0.897);
-  }
+  padding: 0.05rem 0.1rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: rgb(46, 15, 250);
+  border: 1px solid #d4e608;
+  border-radius: 0.25rem;
+  transition: box-shadow 0.2s ease-in-out;
+  color: #d4e608;
+}
 
-  .nav-link:hover{
+.logo {
+  height: 60px;
+  width: 90px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
 
-color:#a504b7;
-  }
-  
-  .log-out {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: 45px;
-    width: 100px;
-    align-content: center;
-    padding: 10px 15px;
-    background-color: #ff0800d7;
-    color: rgba(250, 238, 238, 0.952);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  }
-  
-  
+.logo:hover {
+  transform: scale(1.2);
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(46, 15, 250);
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+.user-email {
+  color: gold;
+}
+.log-out-welcome p {
+  margin: 0;
+}
+
+.nav-link {
+  margin-left: 2rem;
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  color: rgba(255, 217, 0, 0.897);
+}
+
+.nav-link:hover {
+  color: #a504b7;
+}
+
+.log-out {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 45px;
+  width: 100px;
+  align-content: center;
+  padding: 10px 15px;
+  background-color: #ff0800d7;
+  color: rgba(250, 238, 238, 0.952);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
 .fade-in-button {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
@@ -204,15 +208,15 @@ color:#a504b7;
 .fade-in-button:hover {
   opacity: 0.7;
 }
-  @media (max-width: 768px) {
-    /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
-  
-    .logo {
-      height:50px;
-      width: 60px;
-      border-radius: 5px;
-    }
-    .log-out {
+@media (max-width: 768px) {
+  /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
+
+  .logo {
+    height: 50px;
+    width: 60px;
+    border-radius: 5px;
+  }
+  .log-out {
     height: 35px;
     width: 100px;
     align-content: center;
@@ -223,7 +227,8 @@ color:#a504b7;
     border-radius: 5px;
     cursor: pointer;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+      1px 1px 0 black;
   }
   .user-email {
     color: gold;
@@ -232,24 +237,21 @@ color:#a504b7;
   .log-out-welcome p {
     margin: 0;
     font-size: 16px;
-   
   }
-  
+
   .nav-link {
     margin-left: 2rem;
     text-decoration: none;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: 16px;
-  
   }
-  
+
   nav {
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(46, 15, 250); 
+    background-color: rgb(46, 15, 250);
   }
-  
-  }
+}
 </style>

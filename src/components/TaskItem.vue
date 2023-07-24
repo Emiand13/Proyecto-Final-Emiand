@@ -64,7 +64,7 @@
 <script setup>
 import { ref, defineProps } from "vue";
 import { useTaskStore } from "../stores/task";
- import { supabase } from "../supabase";
+import { supabase } from "../supabase";
 
 const taskStore = useTaskStore();
 const name = ref("");
@@ -125,6 +125,11 @@ const toggleComplete = () => {
 .imagen-titulo-card {
   height: 40px;
   width: 60px;
+  transition: transform 0.3s;
+}
+
+.imagen-titulo-card:hover {
+  transform: scale(1.2);
 }
 
 .card-text.completed {

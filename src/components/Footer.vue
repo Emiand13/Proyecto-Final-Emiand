@@ -24,8 +24,12 @@
 .logo {
   height: 55px;
   width: 2em;
+  transition: transform 0.3s;
 }
 
+.logo:hover {
+  transform: scale(1.2);
+}
 .footer {
   height: 135px;
   width: 100%;

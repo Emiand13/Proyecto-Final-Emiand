@@ -6,7 +6,7 @@
           <div class="adelante card1"></div>
           <div class="atras">
             <div>
-              <br />
+              <br>
               <h2 class="titulo-about">⚜️About Me⚜️</h2>
               <br />
               <p class="parrafo-about">
@@ -17,12 +17,12 @@
                 share with you Never Master Always Student, being humble and
                 hardworking is a characteristic that defines me.
               </p>
-              <br />
+              <br>
               <a href="https://github.com/Emiand13" class="link-emiand13"
                 >Emiand13</a
               >
               <p class="parrafo-about-2">⚜️Life is for the living⚜️</p>
-              <br />
+              <br>
             </div>
           </div>
         </div>
@@ -38,9 +38,11 @@
 
 <style scoped>
 .titulo-about {
+	margin-top: 10px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-
-  color: rgb(0, 0, 0);
+  color: gold;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
 }
 .parrafo-about-2 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -153,6 +155,7 @@
 }
 
 .container {
+	margin-top: 100px;
   height: 530px;
   margin-left: 5rem;
 }
@@ -187,11 +190,6 @@
     margin: 10px;
     -webkit-perspective: 800;
     perspective: 800;
-  }
-
-  .imagen-emiand13 {
-    width: 550px;
-    height: 400px;
   }
   .tarjeta {
     width: 250px;
