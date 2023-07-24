@@ -8,7 +8,7 @@
           class="logo"
         />
         <h6>
-          © 2023 TasksPro App. All rights reserved. Built with ❤️ by
+          © 2023 TasksPro App. All rights reserved. Built with ⚜️ by
           <a href="https://github.com/Emiand13" class="link-footer">
             Emiand13</a
           >

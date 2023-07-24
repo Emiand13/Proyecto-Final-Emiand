@@ -307,7 +307,7 @@ I hope I can help you in everything I can, if you have any problem with the proj
   </tr>
 </table>
 
-⚜️life is for the living⚜️
+⚜️Life is for the living⚜️
 
 Emilio Carrasco - 13emiand@gmail.com
 
