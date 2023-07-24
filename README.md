@@ -289,7 +289,7 @@ In short, I am deeply grateful to _Amazon_, _Ironhack_, Professor _Diego Zito_, 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<h2>⚜️About me⚜️</h2>
+<h2>⚜️About Me⚜️</h2>
 
 My name is Emilio Carrasco, I am 36 years old, I am a junior web developer and I have been passionate about this world since day one that I started this adventure almost two years ago, every day I learn something new and there is a phrase that I want to share with you Never Master Always Student, being humble and hardworking is a characteristic that defines me.
 
