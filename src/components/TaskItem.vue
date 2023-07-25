@@ -2,10 +2,11 @@
   <div class="flex-container">
     <div class="card" draggable="true">
       <div :class="['card-header', { completed: task.is_complete }]">
-        <img
+        <img width="60" height="60" src="https://img.icons8.com/arcade/64/property-with-timer.png" alt="property-with-timer" class="imagen-titulo-card "/>
+        <!-- <img
           src=".//images/Task-Logo-fullcol-Copy.png"
           class="imagen-titulo-card"
-        />
+        /> -->
         <span :class="['title', { completed: task.is_complete }]">{{
           task.title
         }}</span>
@@ -123,8 +124,9 @@ const toggleComplete = () => {
 }
 
 .imagen-titulo-card {
+  margin-right: 0.5rem;
   height: 40px;
-  width: 60px;
+  width: 40px;
   transition: transform 0.3s;
 }
 

@@ -1,16 +1,17 @@
 <template>
   <div class="add-task-form">
-    <h2 class="header-title">Add a new Task</h2>
-
-    <p class="subtitle">
-      Keep your tasks in order, reach your goals: Act today!
-    </p>
-    <h3><router-link to="/reloj" class="link-clock1">Clock</router-link></h3>
     <div>
       <p class="date">
         <strong>Today's date is {{ formattedDate }}</strong>
       </p>
     </div>
+    <h2 class="header-title" id="prueba">Add a new Task</h2>
+
+     <p class="subtitle"><strong>
+      Keep your tasks in order, reach your goals: Act today!</strong>
+    </p>
+    <h3><router-link to="/reloj" class="link-clock1"><img width="64" height="64" src="https://img.icons8.com/arcade/64/time.png" alt="time"/></router-link></h3>
+   
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>
@@ -94,6 +95,15 @@ onMounted(() => {
 
 <style scooped >
 
+
+#prueba{
+  display: inline-block;
+  margin: 0 0.2rem;
+
+  animation: rubberBand; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.8s; /* don't forget to set a duration! */
+}
+
 .fade-in-button {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
@@ -135,12 +145,13 @@ onMounted(() => {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .date {
   color: gold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
 }
 
 .add-task-form {

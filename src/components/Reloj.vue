@@ -1,10 +1,12 @@
 <template>
-    <div style="text-align: center; padding: 8em 0">
+
+    <div style="text-align: center; padding: 6em 0">
       <h1>
+        <h3  class="link-clock2">TaskPro</h3>
         <h3><router-link 
           to="/" 
           class="link-clock2">
-          TaskPro</router-link> 
+          <img width="64" height="64" src="https://img.icons8.com/arcade/64/clipboard.png" alt="clipboard"/></router-link> 
         </h3>
         <a style="text-decoration: none"
          class="titulo-reloj">
@@ -20,10 +22,12 @@
         frameborder="0"
         class="center"
       ></iframe>
-      <div id="elemento">
+      <!-- <div id="elemento">
         <img src="./images/logo-ironhack-blue.png" class="image-ironhack2" />
-      </div>
+      </div> -->
     </div>
+   
+    
 </template> 
 
 

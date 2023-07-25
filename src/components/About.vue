@@ -1,13 +1,15 @@
 <template>
-  <div class="container">
-    <div class="wrap">
+  
+
+  <div class="flex">
+    <div class="wrap d-flex justify-content-center align-items-center">
       <div class="tarjeta-wrap">
         <div class="tarjeta">
           <div class="adelante card1"></div>
           <div class="atras">
             <div>
-              <br>
-              <h2 class="titulo-about">⚜️About Me⚜️</h2>
+              <br />
+              <h2 class="titulo-about"><img width="48" height="48" src="https://img.icons8.com/emoji/48/fleur-de-lis-emoji.png" alt="fleur-de-lis-emoji"/>About Me<img width="48" height="48" src="https://img.icons8.com/emoji/48/fleur-de-lis-emoji.png" alt="fleur-de-lis-emoji"/></h2>
               <br />
               <p class="parrafo-about">
                 My name is Emilio Carrasco, I am 36 years old, I am a junior web
@@ -17,34 +19,71 @@
                 share with you Never Master Always Student, being humble and
                 hardworking is a characteristic that defines me.
               </p>
-              <br>
+              <img width="64" height="64" src="https://img.icons8.com/arcade/64/github.png" alt="github"/>
+              <br />
+              
               <a href="https://github.com/Emiand13" class="link-emiand13"
                 >Emiand13</a
               >
               <p class="parrafo-about-2">⚜️Life is for the living⚜️</p>
-              <br>
+              <br />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="d-flex justify-content-center align-items-center">
+      <button @click="showCustomAlert" class="alerta-about">
+        No te olvides de mí!!!
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup>
+import Swal from "sweetalert2";
+
+const showCustomAlert = () => {
+  Swal.fire({
+  title: '¡Espero que os haiga gustado TaskPro nos vemos pronto!',
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp'
+  }
+});
+};
 </script>
 
 
 
 <style scoped>
-
+.alerta-about {
+  margin-top: 2rem;
+}
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #716add;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 .titulo-about {
-	margin-top: 10px;
+  margin-top: 10px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: gold;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
+  
 }
 .parrafo-about-2 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -72,8 +111,6 @@
 }
 
 .wrap {
-  width: 50px;
-  margin: 50px auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,7 +119,7 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-} 
+}
 
 .tarjeta-wrap {
   margin: 10px;
@@ -156,23 +193,19 @@
   border-radius: 20px;
 }
 
-.container {
-	display: flex;
-	justify-content: center;
-  margin-top: 50px;
+.flex {
+  margin-top: 100px;
   height: 600px;
- 
 }
 
 @media (max-width: 768px) {
- 
- * {
+  * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  } 
+  }
 
   .wrap {
     width: 150px;
@@ -214,7 +247,6 @@
     left: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-
   }
 
   .adelante {
@@ -238,8 +270,6 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-
-  
   }
 
   .tarjeta-wrap:hover .tarjeta {
@@ -256,30 +286,29 @@
 
   .container {
     height: 450px;
-	
   }
   .titulo-about {
-	margin-top: 10px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: gold;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
-    1px 1px 0 black;
-}
-.parrafo-about-2 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 14px;
-  color: rgb(0, 0, 0);
-}
-.parrafo-about {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 14px;
-  color: rgb(0, 0, 0);
-}
+    margin-top: 10px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    color: gold;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+      1px 1px 0 black;
+  }
+  .parrafo-about-2 {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+  }
+  .parrafo-about {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+  }
 
-.link-emiand13 {
-  text-decoration: none;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 48px;
-}
+  .link-emiand13 {
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 48px;
+  }
 }
 </style>

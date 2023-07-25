@@ -4,7 +4,8 @@
     style="display: flex; justify-content: space-between"
   >
     <div class="container-fluid">
-      <img src="../components/images/Task-Logo-fullcol-Copy.png" class="logo" />
+      <img width="60" height="60" src="https://img.icons8.com/arcade/64/property-with-timer.png" alt="property-with-timer" class="logo"/>
+      <!-- <img src="../components/images/Task-Logo-fullcol-Copy.png" class="logo" /> -->
 
       <button
         class="navbar-toggler"
@@ -50,6 +51,19 @@
         </ul>
       </div>
       <ul>
+
+
+        <button @click="alternarModoClaro" class="modo-boton">
+    <span v-if="!modoClaro">
+      <img width="30" height="30" src="https://img.icons8.com/nolan/64/vaporwave.png" alt="vaporwave"/>
+        </span>
+        <span v-else>
+          <img width="30" height="30" src="https://img.icons8.com/nolan/64/bright-moon.png" alt="bright-moon"/>
+        </span> {{ modoClaro ? '' : '' }}</button>
+
+
+
+
         <li class="log-out-welcome">
           <p class="nav-link">
             Welcome,
@@ -59,7 +73,7 @@
         </li>
         <li>
           <button @click="signOut" class="log-out fade-in-button">
-            Log Out
+           <img width="64" height="64" src="https://img.icons8.com/arcade/64/exit.png" alt="exit"/>
           </button>
           <!-- Comentario: Botón para cerrar sesión -->
         </li>
@@ -70,7 +84,9 @@
 <script setup>
 import { useUserStore } from "../stores/user";
 import { useRouter } from "vue-router";
-import { ref } from "vue";
+import { ref, defineProps, defineEmits } from "vue";
+
+
 
 // Constante para guardar una variable que contendrá el método useRouter
 const route = "/";
@@ -115,6 +131,20 @@ const getEmailPrefix = (email) => {
   }
   return email;
 };
+
+
+// Define las props recibidas del componente padre (Home.vue)
+const props = defineProps(["modoClaro"]);
+
+// Define los eventos a emitir hacia el componente padre (Home.vue)
+const emit = defineEmits(["cambiarModoClaro"]);
+
+// Método para alternar el modo claro y emitir el evento
+const alternarModoClaro = () => {
+  emit('cambiarModoClaro');
+};
+
+
 </script>
 
 
@@ -134,8 +164,8 @@ const getEmailPrefix = (email) => {
 
 .logo {
   height: 60px;
-  width: 90px;
-  border-radius: 15px;
+  width: 55px;
+  /* border-radius: 15px; */
   transition: transform 0.3s;
 }
 
@@ -185,8 +215,8 @@ nav ul {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 45px;
-  width: 100px;
+  height: 40px;
+  width: 30px;
   align-content: center;
   padding: 10px 15px;
   background-color: #ff0800d7;
@@ -197,6 +227,7 @@ nav ul {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
+    margin-left: 1.5rem;
 }
 
 .fade-in-button {
@@ -208,17 +239,65 @@ nav ul {
 .fade-in-button:hover {
   opacity: 0.7;
 }
+
+
+.modo-claro{
+  height:AUTO;
+  width: 100%;
+  background-size: cover;
+  background-image: url("https://th.bing.com/th/id/R.eb7133b0843bfb621b2c71669eb11663?rik=1WOmWabtON9j4g&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f5%2fb%2f6%2f935134-cool-bubble-backgrounds-1920x1280-for-mobile-hd.jpg&ehk=WyUDi6%2fpVqhRgRZxkeM5vq5bvGudbGx3d2e2pzF4Y4o%3d&risl=&pid=ImgRaw&r=0");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modo-boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  margin-left: 5px ;
+  padding: 5px 10px;
+  background-color: #007bff26; /* Color de fondo del botón (modo claro) */
+  color: #fff56400; /* Color de texto del botón (modo claro) */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modo-boton:hover {
+  background-color: #297cf8; /* Nuevo color de fondo al pasar el mouse (modo oscuro) */
+}
+
+/* Estilos para el botón de cambiar el modo en modo oscuro */
+.modo-claro .modo-boton {
+  background-color: rgba(0, 149, 255, 0.279); /* Color de fondo del botón (modo oscuro) */
+  color: #fff564; /* Color de texto del botón (modo oscuro) */
+}
+
+.modo-claro .modo-boton:hover {
+  background-color: #297cf8; /* Nuevo color de fondo al pasar el mouse (modo oscuro) */
+}
+
+/* Estilos para los iconos (Font Awesome) */
+.modo-boton i {
+  font-size: 15px;
+}
+
+
+
 @media (max-width: 768px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
   .logo {
-    height: 60px;
-    width: 75px;
+    margin-top: 5px;
+    height: 50px;
+    width: 45px;
     border-radius: 5px;
   }
   .log-out {
-    height: 35px;
-    width: 100px;
+    height: 45px;
+    width: 40px;
     align-content: center;
     padding: 5px 5px;
     background-color: #a504b7;

@@ -1,14 +1,14 @@
 <template>
   <div :class="{ 'modo-claro': modoClaro }">
   <div class="wrapper">
-    <Nav />
-    <button @click="alternarModoClaro" class="modo-boton">
+    <Nav :modo-claro="modoClaro" @cambiarModoClaro="alternarModoClaro" />
+    <!-- <button @click="alternarModoClaro" class="modo-boton">
     <span v-if="!modoClaro">
-          <i class="fas fa-moon"></i>
+      <img width="30" height="30" src="https://img.icons8.com/nolan/64/vaporwave.png" alt="vaporwave"/>
         </span>
         <span v-else>
-          <i class="fas fa-sun"></i>
-        </span> {{ modoClaro ? '' : '' }}</button>
+          <img width="30" height="30" src="https://img.icons8.com/nolan/64/bright-moon.png" alt="bright-moon"/>
+        </span> {{ modoClaro ? '' : '' }}</button> -->
     <NewTask />
     <div class="flex">
       <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
@@ -49,6 +49,9 @@ onMounted(async () => {
 });
 
 
+const cambiarModoClaro = () => {
+  modoClaro.value = !modoClaro.value;
+};
 
 
 
@@ -81,21 +84,21 @@ onMounted(async () => {
   gap: 5px;
   margin-top: 5px;
   margin-left: 5px ;
-  padding: 10px 15px;
-  background-color: #007bff32; /* Color de fondo del botón (modo claro) */
-  color: #fff564; /* Color de texto del botón (modo claro) */
+  padding: 5px 10px;
+  background-color: #007bff26; /* Color de fondo del botón (modo claro) */
+  color: #fff56400; /* Color de texto del botón (modo claro) */
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .modo-boton:hover {
-  background-color: #0056b3; /* Nuevo color de fondo al pasar el mouse (modo claro) */
+  background-color: #0057b326; /* Nuevo color de fondo al pasar el mouse (modo claro) */
 }
 
 /* Estilos para el botón de cambiar el modo en modo oscuro */
 .modo-claro .modo-boton {
-  background-color: rgba(0, 149, 255, 0.407); /* Color de fondo del botón (modo oscuro) */
+  background-color: rgba(0, 149, 255, 0.279); /* Color de fondo del botón (modo oscuro) */
   color: #fff564; /* Color de texto del botón (modo oscuro) */
 }
 

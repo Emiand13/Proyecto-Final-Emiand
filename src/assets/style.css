@@ -1,6 +1,4 @@
  body{
-
-
   height:auto;
   width: 100%;
   background-size: cover;
@@ -44,15 +42,15 @@
   
   .image-ironhack2 {
     margin-top: 75px;
-    width: 100px;
+    width: 80px;
   }
   
   #elemento {
     position: absolute;
-    top: 60%;
-    left: 46.5%;
+    top: 500px;
+    left: 705px;
     transform: translate(-50%, -50%);
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulse 1s ease-in-out infinite;
   }
   
   @keyframes pulse {
@@ -70,7 +68,7 @@
     }
   }
   .link-clock2 {
-    
+    color:gold;
     text-decoration: none;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: 20px;

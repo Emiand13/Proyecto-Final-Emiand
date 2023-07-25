@@ -73,7 +73,7 @@
               required
             />
           </div>
-          <button class="button2 fade-in-button" type="submit">Sign Up</button>
+          <button onclick="showSuccessMessage()" class="button2 fade-in-button" type="submit">Sign Up</button>
           <p class="texto-have-Acount">
             Have an account?
             <PersonalRouter
@@ -95,12 +95,31 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
+import Swal from 'sweetalert2';
 
-// Route Variables
+
+// function showSuccessMessage() {
+//       Swal.fire({
+//         position: 'top-end',
+//         icon: 'success',
+//         title: 'Your work has been saved',
+//         showConfirmButton: false,
+//         timer: 1500
+//       });
+//     }
+
+
+
+
+
+
+
+
+// Variables de ruta
 const route = "/auth/login";
 const buttonText = "Sign In";
 
-// Input Fields
+// Campos de entrada
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
@@ -129,17 +148,24 @@ const redirect = useRouter();
 const signUp = async () => {
   if (password.value === confirmPassword.value) {
     try {
-      // llama al almacén de usuarios y envía la información de los usuarios al backend para iniciar sesión
+      // Llama al almacén de usuarios y envía la información de los usuarios al backend para iniciar sesión
       await useUserStore().signUp(email.value, password.value);
 
       emailConfirmed.value = true; // Establecer emailConfirmed en true
-
-      // redirige al usuario a homeView (signIn)
+//Confirmación de registro mediante alerta
+      Swal.fire({
+        icon: 'success',
+        title: 'Account created successfully', 
+        text: 'Please confirm your E-amil',
+        showConfirmButton: false,
+        timer: 2000
+      });
+      // Redirige al usuario a homeView (signIn)
       redirect.push({ path: "/auth/login" });
     } catch (error) {
-      // muestra mensaje de error
+      // Muestra mensaje de error
       errorMsg.value = error.message;
-      // oculta el mensaje de error
+      // Oculta el mensaje de error
       setTimeout(() => {
         errorMsg.value = null;
       }, 3000);
@@ -155,6 +181,11 @@ const signUp = async () => {
 </script>
 
 <style  scoped>
+
+
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
 .fade-in-button {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;

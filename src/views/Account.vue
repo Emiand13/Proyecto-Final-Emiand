@@ -110,6 +110,15 @@ const hundleUpdateProfile = (updatedProfileData) => {
   website.value = updatedProfileData.website;
   location.value = updatedProfileData.location;
   bio.value = updatedProfileData.bio;
+
+  //Alerta cuando editas perfil de usuario diciendote que los cambios se han guardado
+  Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: 'Your changes have been saved.',
+  showConfirmButton: false,
+  timer: 1600
+})
   // avatar_url.value = updatedProfileData.avatar_url;
   //Esto es lo que hace que cuando edites la imagen tambien haga el update profile de todo
 };
@@ -153,6 +162,13 @@ const uploadFile = async () => {
     console.error("Error uploading file:", uploadError);
     return;
   }
+  Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: 'Your file has been saved',
+  showConfirmButton: false,
+  timer: 1600
+})
   // Si la carga es exitosa, se muestra un mensaje de éxito en la consola.
   console.log("File succesfully upload.");
 
@@ -184,6 +200,8 @@ const uploadFile = async () => {
 
   // Luego, se actualizan los datos del perfil del usuario en algún almacén utilizando userStore.fetchUser().
   await userStore.fetchUser();
+
+
 };
 
 // Esta función asincrónica se utiliza para obtener los datos del perfil del usuario y asignarlos a las referencias correspondientes. Esto permite actualizar los valores en la interfaz de usuario para reflejar los datos del perfil actualizados obtenidos de algún origen de datos.
@@ -196,7 +214,7 @@ async function getProfile() {
   avatar_url.value = userStore.profile.avatar_url;
   // loading.value = false;
 
- // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba 
+ // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba comentado 
    setTimeout(() => {
      loading.value = false;
    }, 1200);
