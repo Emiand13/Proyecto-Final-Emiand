@@ -73,7 +73,7 @@
         </li>
         <li>
           <button @click="signOut" class="log-out fade-in-button">
-           <img width="64" height="64" src="https://img.icons8.com/arcade/64/exit.png" alt="exit"/>
+           <img width="50" height="50" src="https://img.icons8.com/arcade/64/exit.png" alt="exit" class="exit"/>
           </button>
           <!-- Comentario: Botón para cerrar sesión -->
         </li>
@@ -211,16 +211,15 @@ nav ul {
 }
 
 .log-out {
+  height: 45px;
+    width: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 40px;
-  width: 30px;
   align-content: center;
   padding: 10px 15px;
-  background-color: #ff0800d7;
-  color: rgba(250, 238, 238, 0.952);
+  background-color: rgba(46, 15, 250);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -228,6 +227,14 @@ nav ul {
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
     margin-left: 1.5rem;
+}
+
+.log-out img{
+  height: 62px;
+    width: 75px;
+
+
+
 }
 
 .fade-in-button {

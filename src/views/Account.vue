@@ -145,7 +145,7 @@ const uploadFile = async () => {
     console.error("Error deleting file:", urlDeleteError);
     return;
   }
-  console.log("File succesfully upload.");
+  // console.log("File succesfully upload.");
 
   // Esta línea de código se utiliza para obtener la marca de tiempo actual en milisegundos y almacenarla en la variable timestamp.
   const timestamp = Date.now();
@@ -212,12 +212,12 @@ async function getProfile() {
   location.value = userStore.profile.location;
   bio.value = userStore.profile.bio;
   avatar_url.value = userStore.profile.avatar_url;
-  // loading.value = false;
+ loading.value = false;
 
  // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba comentado 
-   setTimeout(() => {
-     loading.value = false;
-   }, 1200);
+  //  setTimeout(() => {
+  //    loading.value = false;
+  //  }, 1200);
 }
 
 // Esta parte del código establece una observación en la propiedad userStore.profile y, cada vez que cambie, asigna el valor de updatedProfileData.avatar_url a avatar_url.value. Esto permite mantener actualizada la referencia avatar_url con el valor más reciente de la URL del avatar del perfil.
