@@ -52,7 +52,7 @@
       </div>
       <ul>
 
-
+<!-- =========== BOTON CAMBIO MODO ================ -->
         <button @click="alternarModoClaro" class="modo-boton">
     <span v-if="!modoClaro">
       <img width="30" height="30" src="https://img.icons8.com/nolan/64/vaporwave.png" alt="vaporwave"/>
@@ -61,7 +61,7 @@
           <img width="30" height="30" src="https://img.icons8.com/nolan/64/bright-moon.png" alt="bright-moon"/>
         </span> {{ modoClaro ? '' : '' }}</button>
 
-
+<!-- ================================================= -->
 
 
         <li class="log-out-welcome">
@@ -69,13 +69,13 @@
             Welcome,
             <span class="user-email">{{ getEmailPrefix(getUser.email) }}</span>
           </p>
-          <!-- Comentario: Muestra el correo electrónico del usuario -->
+          <!-- Muestra el correo electrónico del usuario -->
         </li>
         <li>
           <button @click="signOut" class="log-out fade-in-button">
            <img width="50" height="50" src="https://img.icons8.com/arcade/64/exit.png" alt="exit" class="exit"/>
           </button>
-          <!-- Comentario: Botón para cerrar sesión -->
+          <!--  Botón para cerrar sesión -->
         </li>
       </ul>
     </div>
@@ -85,6 +85,9 @@
 import { useUserStore } from "../stores/user";
 import { useRouter } from "vue-router";
 import { ref, defineProps, defineEmits } from "vue";
+
+
+
 
 
 
@@ -138,10 +141,11 @@ const props = defineProps(["modoClaro"]);
 
 // Define los eventos a emitir hacia el componente padre (Home.vue)
 const emit = defineEmits(["cambiarModoClaro"]);
-
 // Método para alternar el modo claro y emitir el evento
 const alternarModoClaro = () => {
+  // modoClaro.value = !modoClaro.value;
   emit('cambiarModoClaro');
+  
 };
 
 
@@ -303,11 +307,10 @@ nav ul {
     border-radius: 5px;
   }
   .log-out {
-    height: 45px;
-    width: 40px;
+   
     align-content: center;
     padding: 5px 5px;
-    background-color: #a504b7;
+    /* background-color: #a504b7; */
     color: white;
     border: none;
     border-radius: 5px;
@@ -316,6 +319,11 @@ nav ul {
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
       1px 1px 0 black;
   }
+  .log-out img{
+  height: 50px;
+
+}
+
   .user-email {
     color: gold;
     font-size: 16px;

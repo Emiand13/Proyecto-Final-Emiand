@@ -49,9 +49,9 @@ onMounted(async () => {
 });
 
 
-const cambiarModoClaro = () => {
-  modoClaro.value = !modoClaro.value;
-};
+// const cambiarModoClaro = () => {
+//   modoClaro.value = !modoClaro.value;
+// };
 
 
 
@@ -112,4 +112,3 @@ const cambiarModoClaro = () => {
 }
 /* ========================================================== */
 </style>
-

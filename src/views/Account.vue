@@ -1,7 +1,7 @@
 <template>
-  <!-- <div class="background-container"> -->
-  <Nav />
- 
+  <div :class="{ 'modo-claro': modoClaro }">
+    <Nav :modoClaro="modoClaro" @cambiarModoClaro="handleCambiarModoClaro" />
+   
   <div
     v-if="loading"
     class="container d-flex justify-content-center align-items-center mb-5 gap-15 flex-column"
@@ -67,8 +67,8 @@
   </div>
 
   <br />
-  <!-- </div> -->
-  <div><Footer /></div>
+   </div> 
+ <Footer />
 </template>
 
 <script setup>
@@ -83,9 +83,12 @@ import Footer from "../components/Footer.vue";
 
 const modoClaro = ref(false);
 
-const alternarModoClaro= () => {
+// Método para manejar el evento cambiarModoClaro emitido desde Nav.vue
+const handleCambiarModoClaro = () => {
+  // Lógica para cambiar el modo claro en el componente padre (About.vue)
   modoClaro.value = !modoClaro.value;
 };
+
 
 const userStore = useUserStore();
 
@@ -212,7 +215,7 @@ async function getProfile() {
   location.value = userStore.profile.location;
   bio.value = userStore.profile.bio;
   avatar_url.value = userStore.profile.avatar_url;
- loading.value = false;
+  loading.value = false;
 
  // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba comentado 
   //  setTimeout(() => {
@@ -411,14 +414,34 @@ img {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-.background-container {
-  height: 120vh;
+
+.modo-claro{
+  height:AUTO;
   width: 100%;
   background-size: cover;
-  background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
+  background-image: url("https://th.bing.com/th/id/R.eb7133b0843bfb621b2c71669eb11663?rik=1WOmWabtON9j4g&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f5%2fb%2f6%2f935134-cool-bubble-backgrounds-1920x1280-for-mobile-hd.jpg&ehk=WyUDi6%2fpVqhRgRZxkeM5vq5bvGudbGx3d2e2pzF4Y4o%3d&risl=&pid=ImgRaw&r=0");
   background-repeat: no-repeat;
   background-position: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ==========MEDIA QUERIES========================================= */
 @media (max-width: 765px) {

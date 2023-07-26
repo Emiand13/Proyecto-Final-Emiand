@@ -38,10 +38,12 @@
       </button>
     </div>
   </div>
+
 </template>
 
 <script setup>
 import Swal from "sweetalert2";
+
 
 const showCustomAlert = () => {
   Swal.fire({
@@ -54,11 +56,21 @@ const showCustomAlert = () => {
   }
 });
 };
+
+
+
+
 </script>
 
 
 
 <style scoped>
+
+
+
+
+
+/* =============================== */
 .alerta-about {
   margin-top: 2rem;
 }
