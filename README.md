@@ -4,7 +4,7 @@
 
 <br>
 <div align="center">
-  <img src="./src/components/images/IMAGENREADME.png" alt="Logo" width="300" height="200">
+  <img src="./src/components/images/Task-Logo-fullcol-Copy.png" alt="Logo" width="300" height="200">
   <h3 align="center">Final Project TaskPro App</h3>
   <a href="https://proyecto-final-emiand.vercel.app/auth/login">Visit Website</a>
 </div>
@@ -46,7 +46,7 @@
 
 With TaskPro, we aim to get a centralized space to create, edit and manage all your tasks, whether they are pending, in progress or completed.
 
-<img src="./src/components/images/capturaReadmeNueva.png" alt="CapturaApp" >
+<img src="./src/components/images/IMAGENREADME.png" alt="CapturaApp" >
 
 <h2> Description </h2>
 

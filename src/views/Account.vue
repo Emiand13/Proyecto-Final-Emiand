@@ -84,9 +84,7 @@
              {{ location }}
             </p>
           </h4>
-          <!-- <Profile :editProfile="showEditProfile" @updateProfileEmit="hundleUpdateProfile" /> -->
-          <!-- ===================== BOTON EDIT PROFILE ================================== -->
-
+       
 
           <!-- =========================================== -->
         </div>
@@ -420,7 +418,6 @@ img {
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
-  margin-top: 15vh;
   overflow-wrap: break-word;
   text-overflow: ellipsis;
   white-space: nowrap;
