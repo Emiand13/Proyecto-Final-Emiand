@@ -1,74 +1,125 @@
 <template>
   <div :class="{ 'modo-claro': modoClaro }">
     <Nav :modoClaro="modoClaro" @cambiarModoClaro="handleCambiarModoClaro" />
-   
-  <div
-    v-if="loading"
-    class="container d-flex justify-content-center align-items-center mb-5 gap-15 flex-column"
-    style="height: 460px"
-  >
-    <div class="lds-spinner">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <div class="container-account text-center" v-else>
-    <div class="data">
-      <h1 class="titulo-data-perfil">Your profile</h1>
-      <div class="datos">
-        <h4 class="name">
-          <p>{{ username }}</p>
-        </h4>
-        <h4>
-          <p>
-            <a target="_blank" :href="website" class="link-website">{{
-              website
-            }}</a>
-          </p>
-        </h4>
-        <h4>
-          <p>{{ bio }}</p>
-        </h4>
-        <h4>
-          <p>{{ location }}</p>
-        </h4>
+
+    <!-- ============================= LOADING ==================================== -->
+    <div
+      v-if="loading"
+      class="container d-flex justify-content-center align-items-center mb-5 gap-15 flex-column"
+      style="height: 460px"
+    >
+      <div class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-    <Profile @updateProfileEmit="hundleUpdateProfile" />
-    <div class="select-avatar">
-      <img
-        :src="avatar_url"
-        v-if="avatar_url"
-        alt="Profile picture"
-        class="imagen-avatar"
-      />
+
+    <!-- =============================================================================== -->
+    <div class="container-account text-center" v-else>
+      <div class="data">
+        <!-- ==================== TITULO PERFIL USUARIO=================================== -->
+        <h1 class="titulo-data-perfil">Your Profile</h1>
+        <div class="datos">
+          <h4>
+            <!-- ================== NOMBRE USUARIO + IMAGEN =============================== -->
+            <img
+                width="64"
+                height="64"
+                src="https://img.icons8.com/arcade/64/name.png"
+                alt="name"
+              />
+            <p class="image-name">
+
+              {{ username }}
+            </p>
+          </h4>
+          <h4>
+            <!-- =============== WEBSITE USUARIO + IMAGEN =================================== -->
+            <img
+                  width="64"
+                  height="64"
+                  src="https://img.icons8.com/arcade/64/internet.png"
+                  alt="internet"
+                />
+            <p>
+              <a target="_blank" :href="website" class="link-website"
+                >
+                {{ website }}</a
+              >
+            </p>
+          </h4>
+
+          <h4>
+            <!-- ================ BIO USUARIO + IMAGEN ============================================== -->
+            <img
+                width="64"
+                height="64"
+                src="https://img.icons8.com/arcade/64/book.png"
+                alt="book"
+              />
+            <p>
+
+              {{ bio }}
+            </p>
+          </h4>
+          <h4>
+            <!-- ====================== LOCATION USUARIO + IMAGEN ====================================== -->
+            <img
+                width="64"
+                height="64"
+                src="https://img.icons8.com/arcade/64/user-location.png"
+                alt="user-location"
+              />
+            <p>
+             {{ location }}
+            </p>
+          </h4>
+          <!-- <Profile :editProfile="showEditProfile" @updateProfileEmit="hundleUpdateProfile" /> -->
+          <!-- ===================== BOTON EDIT PROFILE ================================== -->
+
+
+          <!-- =========================================== -->
+        </div>
+      </div>
+
+      <Profile @updateProfileEmit="hundleUpdateProfile" />
+    <div class="background">
       <h3 class="titulo-AVATAR-perfil">Select your avatar</h3>
-      <!-- <img src="../components/images/th.jpg" class="img-avatar-default">  -->
-      <br />
+      <div class="select-avatar">
+
+        <img
+          :src="avatar_url"
+          v-if="avatar_url"
+          alt="Profile picture"
+          class="imagen-avatar"
+        />
+
+        <!-- <img src="../components/images/th.jpg" class="img-avatar-default">  -->
+       
+      </div>
       <input
-        @change="fileManager"
-        type="file"
-        class="boton-select-file fade-in-button"
-      />
-      <button @click="uploadFile" class="boton-upload-file fade-in-button">
-        Upload File
-      </button>
+          @change="fileManager"
+          type="file"
+          class="boton-select-file fade-in-button"
+        />
+        <button @click="uploadFile" class="boton-upload-file fade-in-button">
+          Upload File
+        </button>
     </div>
   </div>
-
-  <br />
-   </div> 
- <Footer />
+    <br />
+  </div>
+  <Footer />
 </template>
 
 <script setup>
@@ -79,8 +130,7 @@ import Nav from "../components/Nav.vue";
 import Profile from "../components/Profile.vue";
 import Footer from "../components/Footer.vue";
 
-// ================= AVATAR URL =======================================
-
+// =======MODO CLARO=======================================
 const modoClaro = ref(false);
 
 // Método para manejar el evento cambiarModoClaro emitido desde Nav.vue
@@ -89,12 +139,12 @@ const handleCambiarModoClaro = () => {
   modoClaro.value = !modoClaro.value;
 };
 
+// ========================================================
 
 const userStore = useUserStore();
 
 const file = ref();
 const fileUrl = ref();
-
 const loading = ref(true);
 const username = ref(null);
 const website = ref(null);
@@ -116,12 +166,12 @@ const hundleUpdateProfile = (updatedProfileData) => {
 
   //Alerta cuando editas perfil de usuario diciendote que los cambios se han guardado
   Swal.fire({
-  position: 'center',
-  icon: 'success',
-  title: 'Your changes have been saved.',
-  showConfirmButton: false,
-  timer: 1600
-})
+    position: "center",
+    icon: "success",
+    title: "Your changes have been saved.",
+    showConfirmButton: false,
+    timer: 1600,
+  });
   // avatar_url.value = updatedProfileData.avatar_url;
   //Esto es lo que hace que cuando edites la imagen tambien haga el update profile de todo
 };
@@ -166,14 +216,14 @@ const uploadFile = async () => {
     return;
   }
   Swal.fire({
-  position: 'center',
-  icon: 'success',
-  title: 'Your file has been saved',
-  showConfirmButton: false,
-  timer: 1600
-})
+    position: "center",
+    icon: "success",
+    title: "Your file has been saved",
+    showConfirmButton: false,
+    timer: 1600,
+  });
   // Si la carga es exitosa, se muestra un mensaje de éxito en la consola.
-  console.log("File succesfully upload.");
+  // console.log("File succesfully upload.");
 
   // Este bloque de código se utiliza para obtener la URL pública de un archivo en el almacenamiento utilizando supabase.storage
   const { data: urlData, error: urlError } = await supabase.storage
@@ -201,10 +251,8 @@ const uploadFile = async () => {
   }
   // console.log("Profile successfully updated.");
 
-  // Luego, se actualizan los datos del perfil del usuario en algún almacén utilizando userStore.fetchUser().
+  // Luego, se actualizan los datos del perfil del usuario en el almacén utilizando userStore.fetchUser().
   await userStore.fetchUser();
-
-
 };
 
 // Esta función asincrónica se utiliza para obtener los datos del perfil del usuario y asignarlos a las referencias correspondientes. Esto permite actualizar los valores en la interfaz de usuario para reflejar los datos del perfil actualizados obtenidos de algún origen de datos.
@@ -212,15 +260,15 @@ async function getProfile() {
   await userStore.fetchUser();
   username.value = userStore.profile.full_name;
   website.value = userStore.profile.website;
-  location.value = userStore.profile.location;
   bio.value = userStore.profile.bio;
+  location.value = userStore.profile.location;
   avatar_url.value = userStore.profile.avatar_url;
-  loading.value = false;
+  // loading.value = false;
 
- // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba comentado 
-  //  setTimeout(() => {
-  //    loading.value = false;
-  //  }, 1200);
+  // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba comentado
+  setTimeout(() => {
+    loading.value = false;
+  }, 1200);
 }
 
 // Esta parte del código establece una observación en la propiedad userStore.profile y, cada vez que cambie, asigna el valor de updatedProfileData.avatar_url a avatar_url.value. Esto permite mantener actualizada la referencia avatar_url con el valor más reciente de la URL del avatar del perfil.
@@ -241,9 +289,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* ==================== imagen datos del perfil ====================== */
+.datos img {
+  width: 64px;
+  height: 64px;
+}
 
-
-/* ========================================= */
+/* ==================== LOADING ===================== */
 .lds-spinner {
   color: official;
   display: inline-block;
@@ -325,26 +377,39 @@ onMounted(() => {
 
 /* ================================================================= */
 .datos {
-  padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  padding: 15px 20px 15px 20px;
   background-color: rgba(190, 190, 190, 0.49);
   border-radius: 15px;
+  height: AUTO;
+  width: 470px;
+  margin-bottom: 2rem;
+
 }
-.select-avatar {
+
+.background{
   padding: 15px;
   background-color: #00000086;
   border-radius: 15px;
 }
+.select-avatar {
+  padding: 15px;
+  background-color: rgba(190, 190, 190, 0.49);
+  border-radius: 15px;
+}
 
-/* =================== foto ============================ */
+/* =================== FILE SELECTED  ============================ */
 img {
   height: 200px;
   width: 200px;
   border-radius: 15px;
 }
 .imagen-avatar {
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-left: 1rem;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
   float: inline-end;
   max-height: 250px;
   max-width: 200px;
@@ -375,9 +440,15 @@ img {
   background-color: #00000086;
   padding: 15px 15px 15px 15px;
   border-radius: 15px;
-  width: 350px;
+  width: 500px;
+  height: auto;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
+    margin-top: 1.5rem;
+    
+}
+.datos a {
+  color: white;
 }
 
 .titulo-data-perfil {
@@ -385,6 +456,8 @@ img {
   color: rgb(255, 255, 255);
   font-size: 48px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
+    -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
 }
 .titulo-AVATAR-perfil {
   color: rgb(255, 255, 255);
@@ -392,6 +465,7 @@ img {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
     -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
+    margin-bottom: 1rem;
 }
 
 .boton-select-file {
@@ -403,6 +477,7 @@ img {
   cursor: pointer;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   margin-right: 25px;
+  margin-top: 1rem;
 }
 .boton-upload-file {
   padding: 10px 20px;
@@ -414,9 +489,8 @@ img {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-
-.modo-claro{
-  height:AUTO;
+.modo-claro {
+  height: AUTO;
   width: 100%;
   background-size: cover;
   background-image: url("https://th.bing.com/th/id/R.eb7133b0843bfb621b2c71669eb11663?rik=1WOmWabtON9j4g&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f5%2fb%2f6%2f935134-cool-bubble-backgrounds-1920x1280-for-mobile-hd.jpg&ehk=WyUDi6%2fpVqhRgRZxkeM5vq5bvGudbGx3d2e2pzF4Y4o%3d&risl=&pid=ImgRaw&r=0");
@@ -424,29 +498,15 @@ img {
   background-position: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========MEDIA QUERIES========================================= */
 @media (max-width: 765px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
+  .datos img {
+  width: 64px;
+  height: 64px;
+  margin-left: 130px;
+}
   .select-avatar {
     margin-top: 1rem;
     padding: 15px;
@@ -459,7 +519,7 @@ img {
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
-    margin-left: 130px;
+    margin-left: 115px;
   }
   .container-account {
     display: flex;
@@ -473,12 +533,13 @@ img {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: 16px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 50px;
     color: rgb(255, 255, 255);
+    width: 360px;
   }
 
   .titulo-data-perfil {
@@ -488,7 +549,6 @@ img {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
       -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
-    margin-left: 70px;
   }
 
   .titulo-AVATAR-perfil {
@@ -502,15 +562,6 @@ img {
     text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.4), 1px -1px 0 rgba(0, 0, 0, 0.4),
       -1px 10px 0 rgba(0, 0, 0, 0.4), 1px 10px 0 rgba(0, 0, 0, 0.4);
     margin-top: 25px;
-  }
-
-  .background-container {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-image: url("https://images2.alphacoders.com/100/1008542.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
   img {
@@ -533,6 +584,22 @@ img {
     justify-content: center;
     margin-top: 1rem;
     margin-left: 8rem;
+  }
+
+  .datos {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  padding: 10px;
+  background-color: rgba(190, 190, 190, 0.49);
+  border-radius: 15px;
+  height: AUTO;
+  width: 350px;
+
+}
+
+  .datos a {
+    color: white;
   }
 }
 </style>

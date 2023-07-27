@@ -37,5 +37,11 @@
 
 
 <style scoped>
+img{
+  transition: transform 0.3s;
+}
 
+img:hover{
+  transform: scale(1.2);
+}
 </style>

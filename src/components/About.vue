@@ -47,7 +47,7 @@ import Swal from "sweetalert2";
 
 const showCustomAlert = () => {
   Swal.fire({
-  title: '¡Espero que os haiga gustado TaskPro nos vemos pronto!',
+  title: '¡Espero que os haya gustado TaskPro nos vemos pronto!',
   showClass: {
     popup: 'animate__animated animate__fadeInDown'
   },
@@ -239,7 +239,7 @@ button {
   }
   .tarjeta {
     width: 350px;
-    height: 350px;
+    height: 400px;
     background: #20baf2;
     position: relative;
     -webkit-transform-style: preserve-3d;

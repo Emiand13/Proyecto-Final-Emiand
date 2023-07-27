@@ -4,11 +4,12 @@
       <div class="header">
         <div class="header-description">
           <div class="text-center">
-            <img
+          
+        <img
               src="../components/images/IMAGENLOGO.png"
               class="image"
               alt="imagen logo"
-            />
+            /> 
             <h3 class="header-title">Register to TaskPro</h3>
             <p class="subtitle">Ready to create your tasks in TaskPro!!!</p>
             <div v-show="errorMsg" class="error">{{ errorMsg }}</div>
@@ -158,7 +159,7 @@ const signUp = async () => {
         title: 'Account created successfully', 
         text: 'Please confirm your E-amil',
         showConfirmButton: false,
-        timer: 2000
+        timer: 3000
       });
       // Redirige al usuario a homeView (signIn)
       redirect.push({ path: "/auth/login" });
@@ -322,7 +323,7 @@ p {
 @media (max-width: 768px) {
   .toggle-password1 {
     position: absolute;
-    top: 572px;
+    top: 580px;
     right: 50px;
     transform: translateY(-50%);
     cursor: pointer;
@@ -333,7 +334,7 @@ p {
   }
   .toggle-password2 {
     position: absolute;
-    top: 636px;
+    top: 645px;
     right: 50px;
     transform: translateY(-50%);
     cursor: pointer;

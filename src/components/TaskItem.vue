@@ -74,7 +74,7 @@ const props = defineProps({
   task: Object,
 });
 const selectedTaskId = ref(null);
-const tasks = ref([]);
+// const tasks = ref([]);
 
 // Este código define una función asincrónica deleteTask que utiliza taskStore para eliminar una tarea específica mediante su ID. El uso de await asegura que la función asincrónica espere a que se complete la operación de eliminación antes de continuar con el resto del código.
 const deleteTask = async () => {

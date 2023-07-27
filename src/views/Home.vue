@@ -2,13 +2,7 @@
   <div :class="{ 'modo-claro': modoClaro }">
   <div class="wrapper">
     <Nav :modo-claro="modoClaro" @cambiarModoClaro="alternarModoClaro" />
-    <!-- <button @click="alternarModoClaro" class="modo-boton">
-    <span v-if="!modoClaro">
-      <img width="30" height="30" src="https://img.icons8.com/nolan/64/vaporwave.png" alt="vaporwave"/>
-        </span>
-        <span v-else>
-          <img width="30" height="30" src="https://img.icons8.com/nolan/64/bright-moon.png" alt="bright-moon"/>
-        </span> {{ modoClaro ? '' : '' }}</button> -->
+    
     <NewTask />
     <div class="flex">
       <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
@@ -27,7 +21,15 @@ import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
 
 
-// ============Cambio de background en el home =======================
+
+
+
+
+
+
+
+
+// ============Cambio de background Modo oscuro y Modo claro =======================
 
 const modoClaro = ref(false);
 
@@ -60,7 +62,7 @@ onMounted(async () => {
 
 <style scoped>
 .flex {
-  display: flex;
+  display: flex; 
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;

@@ -4,7 +4,7 @@
 
 <br>
 <div align="center">
-  <img src="./src/components/images/Task-Logo-fullcol-Copy.png" alt="Logo" width="300" height="200">
+  <img src="./src/components/images/IMAGENREADME.png" alt="Logo" width="300" height="200">
   <h3 align="center">Final Project TaskPro App</h3>
   <a href="https://proyecto-final-emiand.vercel.app/auth/login">Visit Website</a>
 </div>
@@ -123,22 +123,22 @@ The application provides functionalities such as user account registration, task
  - Repaso a la App y todas sus funcionalidades ✅ <br>
 
  <h3>Jueves 20/07/23</h3>
-
+ - Implementar el Clock componente ✅  <br>
  - Seguir probando la funcionabilidad de la app ✅ <br>
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <h3>Lunes 24/07/23</h3>
 
-- EXTRAS
+- Alertas SweetAlert2 ✅ <br>
 - Implementar el About con card-flip y datos DEV ✅ <br>
 - Implementar loading en el componente Account para evitar delay de supabase ✅ <br>
-- Implementar ModoClaro "EXTRA" en el componente Home ✅ <br>
+- Implementar ModoClaro/ModoOscuro en todos los componentes ✅ <br>
 
 <h3>Martes 25/07/23</h3>
 
-- Ultimos detalles app <br>
-- Preparar presentación del proyecto <br>
+- Ultimos detalles app ✅<br>
+- Preparar presentación del proyecto ✅ <br>
 
 
 
@@ -204,7 +204,7 @@ With TaskPro, you will have a simple and effective tool to manage your tasks in 
 <h2>Build Process</h2>
 
 <ol>
-<li>I set up my project using Vite, which is a fast and efficient development tool for Vue.js based web applications. I installed Vue.js, Vue Router and Pinia as my project dependencies using npm or yarn. I organized the basic structure of the project, including the folders for the components, the paths and the Pinia store.</li>
+<li>I set up my project using Vite, which is a fast and efficient development tool for Vue.js based web applications. I installed Vue.js, Vue Router and Pinia as my project dependencies using npm. I organized the basic structure of the project, including the folders for the components, the paths and the Pinia store.</li>
 <br>
 <li>For the UI, I designed and built the necessary Vue components for my task app. I used Vue Router to define the routes and views corresponding to the different sections of my application. I've implemented navigation between views using the features provided by Vue Router, such as <router-link> and <router-view> .
 </li>

@@ -112,13 +112,25 @@ onMounted(() => {
 .fade-in-button:hover {
   opacity: 0.7;
 }
-.link-clock1 {
+/* .link-clock1{
   color:gold;
   text-decoration: none;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 20px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+
+} */
+
+img{
+  transition: transform 0.3s;
 }
+img:hover{
+  transform: scale(1.2);
+}
+
+
+
+
 .error-text {
   display: flex;
   justify-content: center;
@@ -134,7 +146,6 @@ onMounted(() => {
   color: rgba(255, 217, 0, 0.952);
   text-align: center;
   margin-top: 2.5rem;
-  margin-bottom: 20px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
   font-size: 75px;
@@ -147,11 +158,16 @@ onMounted(() => {
   margin-bottom: 10px;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
 }
 .date {
-  color: gold;
+  color: #a504b7;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 18px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+ 
 }
 
 .add-task-form {

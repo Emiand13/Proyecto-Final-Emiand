@@ -2,14 +2,13 @@
   <div class="text-center">
     <div class="row g-3">
       <div class="col">
-        <!-- <div class="container">
-    <div class="row"> -->
-        <button
+  
+         <button
           @click="editToggleProfile"
           class="boton-edit-profile fade-in-button"
         >
           Edit Profile
-        </button>
+        </button> 
 
         <form v-if="inputUpdate" class="col g-3 form" action="">
           <div class="col-md-12">
@@ -67,8 +66,7 @@
       </div>
     </div>
   </div>
-  <!-- </div>
-  </div> -->
+ 
 </template>
   
 <script setup>
