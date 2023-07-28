@@ -101,12 +101,11 @@ const togglePasswordVisibility = (field) => {
 </script>
 
 <style scoped>
-/* ========== SIGNIN COMPONENT ============================================== */
+/* ========== SIGN IN COMPONENT ======================== */
 
 .fade-in-button {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
-  /* Otras propiedades de diseño de los botones (tamaño, color, bordes, etc.) */
 }
 
 .fade-in-button:hover {
@@ -129,7 +128,7 @@ const togglePasswordVisibility = (field) => {
 }
 
 .input-password {
-  padding-right: 30px; /* Ajusta el espaciado para el ícono */
+  padding-right: 30px;
   position: relative;
 }
 

@@ -2,11 +2,14 @@
   <div class="flex-container">
     <div class="card" draggable="true">
       <div :class="['card-header', { completed: task.is_complete }]">
-        <img width="60" height="60" src="https://img.icons8.com/arcade/64/property-with-timer.png" alt="property-with-timer" class="imagen-titulo-card "/>
-        <!-- <img
-          src=".//images/Task-Logo-fullcol-Copy.png"
+        <img
+          width="60"
+          height="60"
+          src="https://img.icons8.com/arcade/64/property-with-timer.png"
+          alt="property-with-timer"
           class="imagen-titulo-card"
-        /> -->
+        />
+
         <span :class="['title', { completed: task.is_complete }]">{{
           task.title
         }}</span>
@@ -60,7 +63,7 @@
   </div>
 </template>
 
-<!-- ===================== COMIENZA EL SCRIPT ================================= -->
+<!-- ================== COMIENZA EL SCRIPT ======================== -->
 
 <script setup>
 import { ref, defineProps } from "vue";
@@ -74,7 +77,6 @@ const props = defineProps({
   task: Object,
 });
 const selectedTaskId = ref(null);
-// const tasks = ref([]);
 
 // Este código define una función asincrónica deleteTask que utiliza taskStore para eliminar una tarea específica mediante su ID. El uso de await asegura que la función asincrónica espere a que se complete la operación de eliminación antes de continuar con el resto del código.
 const deleteTask = async () => {

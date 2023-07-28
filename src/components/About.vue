@@ -1,6 +1,4 @@
 <template>
-  
-
   <div class="flex">
     <div class="wrap d-flex justify-content-center align-items-center">
       <div class="tarjeta-wrap">
@@ -9,7 +7,19 @@
           <div class="atras">
             <div>
               <br />
-              <h2 class="titulo-about"><img width="48" height="48" src="https://img.icons8.com/emoji/48/fleur-de-lis-emoji.png" alt="fleur-de-lis-emoji"/>About Me<img width="48" height="48" src="https://img.icons8.com/emoji/48/fleur-de-lis-emoji.png" alt="fleur-de-lis-emoji"/></h2>
+              <h2 class="titulo-about">
+                <img
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/emoji/48/fleur-de-lis-emoji.png"
+                  alt="fleur-de-lis-emoji"
+                />About Me<img
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/emoji/48/fleur-de-lis-emoji.png"
+                  alt="fleur-de-lis-emoji"
+                />
+              </h2>
               <br />
               <p class="parrafo-about">
                 My name is Emilio Carrasco, I am 36 years old, I am a junior web
@@ -19,9 +29,14 @@
                 share with you Never Master Always Student, being humble and
                 hardworking is a characteristic that defines me.
               </p>
-              <img width="64" height="64" src="https://img.icons8.com/arcade/64/github.png" alt="github"/>
+              <img
+                width="64"
+                height="64"
+                src="https://img.icons8.com/arcade/64/github.png"
+                alt="github"
+              />
               <br />
-              
+
               <a href="https://github.com/Emiand13" class="link-emiand13"
                 >Emiand13</a
               >
@@ -34,45 +49,37 @@
     </div>
     <div class="d-flex justify-content-center align-items-center">
       <button @click="showCustomAlert" class="alerta-about">
-        <img width="90" height="90" src="https://img.icons8.com/3d-fluency/94/wedding-gift.png" alt="wedding-gift"/>
+        <img
+          width="90"
+          height="90"
+          src="https://img.icons8.com/3d-fluency/94/wedding-gift.png"
+          alt="wedding-gift"
+        />
       </button>
     </div>
   </div>
-
 </template>
 
 <script setup>
 import Swal from "sweetalert2";
 
-
 const showCustomAlert = () => {
   Swal.fire({
-  title: 'Espero que os haya gustado TaskPro App nos vemos pronto! Gracias!!!',
-  
- 
- 
-  showClass: {
-    popup: 'animate__animated animate__fadeInDown'
-  },
-  hideClass: {
-    popup: 'animate__animated animate__fadeOutUp'
-  }
-});
+    title:
+      "Espero que os haya gustado TaskPro App nos vemos pronto! Gracias!!!",
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
 };
-
-
-
-
 </script>
 
 
 
 <style scoped>
-
-
-
-
-
 /* =============================== */
 .alerta-about {
   margin-top: 0.5rem;
@@ -95,7 +102,6 @@ button {
   color: gold;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
-  
 }
 .parrafo-about-2 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;

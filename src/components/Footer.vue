@@ -2,12 +2,13 @@
   <footer class="footer">
     <div class="container-flex">
       <div class="footer-image">
-        <img width="60" height="60" src="https://img.icons8.com/arcade/64/property-with-timer.png" alt="property-with-timer" class="logo"/>
-        <!-- <img
-          src="../components/images/Task-Logo-fullcol-Copy.png"
-          alt="logo"
+        <img
+          width="60"
+          height="60"
+          src="https://img.icons8.com/arcade/64/property-with-timer.png"
+          alt="property-with-timer"
           class="logo"
-        /> -->
+        />
         <h6>
           © 2023 TasksPro App. All rights reserved. Built by
           <a href="https://github.com/Emiand13" class="link-footer">

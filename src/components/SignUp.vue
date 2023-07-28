@@ -4,12 +4,11 @@
       <div class="header">
         <div class="header-description">
           <div class="text-center">
-          
-        <img
+            <img
               src="../components/images/IMAGENLOGO.png"
               class="image"
               alt="imagen logo"
-            /> 
+            />
             <h3 class="header-title">Register to TaskPro</h3>
             <p class="subtitle">Ready to create your tasks in TaskPro!!!</p>
             <div v-show="errorMsg" class="error">{{ errorMsg }}</div>
@@ -74,7 +73,13 @@
               required
             />
           </div>
-          <button onclick="showSuccessMessage()" class="button2 fade-in-button" type="submit">Sign Up</button>
+          <button
+            onclick="showSuccessMessage()"
+            class="button2 fade-in-button"
+            type="submit"
+          >
+            Sign Up
+          </button>
           <p class="texto-have-Acount">
             Have an account?
             <PersonalRouter
@@ -90,30 +95,13 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch } from "vue";
+import { ref } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
 import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
-import Swal from 'sweetalert2';
-
-
-// function showSuccessMessage() {
-//       Swal.fire({
-//         position: 'top-end',
-//         icon: 'success',
-//         title: 'Your work has been saved',
-//         showConfirmButton: false,
-//         timer: 1500
-//       });
-//     }
-
-
-
-
-
-
+import Swal from "sweetalert2";
 
 
 // Variables de ruta
@@ -124,9 +112,7 @@ const buttonText = "Sign In";
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
-
 const emailConfirmed = ref(false);
-
 const passwordVisible = ref(false);
 const confirmPasswordVisible = ref(false);
 
@@ -153,13 +139,13 @@ const signUp = async () => {
       await useUserStore().signUp(email.value, password.value);
 
       emailConfirmed.value = true; // Establecer emailConfirmed en true
-//Confirmación de registro mediante alerta
+      //Confirmación de registro mediante alerta
       Swal.fire({
-        icon: 'success',
-        title: 'Account created successfully', 
-        text: 'Please confirm your E-amil',
+        icon: "success",
+        title: "Account created successfully",
+        text: "Please confirm your E-amil",
         showConfirmButton: false,
-        timer: 3000
+        timer: 4000,
       });
       // Redirige al usuario a homeView (signIn)
       redirect.push({ path: "/auth/login" });
@@ -182,15 +168,9 @@ const signUp = async () => {
 </script>
 
 <style  scoped>
-
-
-body {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
-}
 .fade-in-button {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
-  /* Otras propiedades de diseño de los botones (tamaño, color, bordes, etc.) */
 }
 
 .fade-in-button:hover {
@@ -213,7 +193,7 @@ body {
   background-position: center;
 }
 
-/* ICONO1 OJO VISIBLE / NO VISIBLE PASSWORD*/
+/* ICONO1 OJO */
 .toggle-password1 {
   position: absolute;
   top: 485px;
@@ -226,7 +206,7 @@ body {
   cursor: pointer;
 }
 
-/* ICONO2 OJO VISIBLE / NO VISIBLE PASSWORD*/
+/* ICONO2 OJO */
 .toggle-password2 {
   position: absolute;
   top: 550px;

@@ -1,11 +1,18 @@
 <template>
+
+  <!-- ===================== NAVBAR ====================================== -->
   <nav
     class="navbar navbar-expand-lg"
     style="display: flex; justify-content: space-between"
   >
     <div class="container-fluid">
-      <img width="60" height="60" src="https://img.icons8.com/arcade/64/property-with-timer.png" alt="property-with-timer" class="logo"/>
-      <!-- <img src="../components/images/Task-Logo-fullcol-Copy.png" class="logo" /> -->
+      <img
+        width="60"
+        height="60"
+        src="https://img.icons8.com/arcade/64/property-with-timer.png"
+        alt="property-with-timer"
+        class="logo"
+      />
 
       <button
         class="navbar-toggler"
@@ -35,12 +42,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link to="/" class="nav-link"> TaskPro </router-link>
+            <router-link to="/" class="nav-link">TaskPro</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/account" class="nav-link"
-              > Account</router-link
-            >
+            <router-link to="/account" class="nav-link">Account</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/reloj">Clock</router-link>
@@ -51,31 +56,49 @@
         </ul>
       </div>
       <ul>
-
-<!-- =========== BOTON CAMBIO MODO ================ -->
+        <!-- =========== BOTON CAMBIO MODO ================ -->
         <button @click="alternarModoClaro" class="modo-boton">
-    <span v-if="!modoClaro">
-      <img width="30" height="30" src="https://img.icons8.com/nolan/64/vaporwave.png" alt="vaporwave"/>
-        </span>
-        <span v-else>
-          <img width="30" height="30" src="https://img.icons8.com/nolan/64/bright-moon.png" alt="bright-moon"/>
-        </span> {{ modoClaro ? '' : '' }}</button>
+          <span v-if="!modoClaro">
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/nolan/64/vaporwave.png"
+              alt="vaporwave"
+            />
+          </span>
+          <span v-else>
+            <img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/nolan/64/bright-moon.png"
+              alt="bright-moon"
+            />
+          </span>
+          {{ modoClaro ? "" : "" }}
+        </button>
 
-<!-- ================================================= -->
-
+        <!-- ================================================= -->
 
         <li class="log-out-welcome">
           <p class="nav-link">
+             <!-- Muestra el correo electrónico del usuario -->
             Welcome,
             <span class="user-email">{{ getEmailPrefix(getUser.email) }}</span>
           </p>
-          <!-- Muestra el correo electrónico del usuario -->
+         
         </li>
         <li>
+           <!--  Botón para cerrar sesión -->
           <button @click="signOut" class="log-out fade-in-button">
-           <img width="50" height="50" src="https://img.icons8.com/arcade/64/exit.png" alt="exit" class="exit"/>
+            <img
+              width="50"
+              height="50"
+              src="https://img.icons8.com/arcade/64/exit.png"
+              alt="exit"
+              class="exit"
+            />
           </button>
-          <!--  Botón para cerrar sesión -->
+         
         </li>
       </ul>
     </div>
@@ -85,11 +108,6 @@
 import { useUserStore } from "../stores/user";
 import { useRouter } from "vue-router";
 import { ref, defineProps, defineEmits } from "vue";
-
-
-
-
-
 
 // Constante para guardar una variable que contendrá el método useRouter
 const route = "/";
@@ -135,7 +153,6 @@ const getEmailPrefix = (email) => {
   return email;
 };
 
-
 // Define las props recibidas del componente padre (Home.vue)
 const props = defineProps(["modoClaro"]);
 
@@ -144,11 +161,8 @@ const emit = defineEmits(["cambiarModoClaro"]);
 // Método para alternar el modo claro y emitir el evento
 const alternarModoClaro = () => {
   // modoClaro.value = !modoClaro.value;
-  emit('cambiarModoClaro');
-  
+  emit("cambiarModoClaro");
 };
-
-
 </script>
 
 
@@ -216,7 +230,7 @@ nav ul {
 
 .log-out {
   height: 45px;
-    width: 45px;
+  width: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,30 +244,25 @@ nav ul {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
-    margin-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 
-.log-out img{
+.log-out img {
   height: 62px;
-    width: 75px;
-
-
-
+  width: 75px;
 }
 
 .fade-in-button {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
-  /* Otras propiedades de diseño de los botones (tamaño, color, bordes, etc.) */
 }
 
 .fade-in-button:hover {
   opacity: 0.7;
 }
 
-
-.modo-claro{
-  height:AUTO;
+.modo-claro {
+  height: AUTO;
   width: 100%;
   background-size: cover;
   background-image: url("https://th.bing.com/th/id/R.eb7133b0843bfb621b2c71669eb11663?rik=1WOmWabtON9j4g&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f5%2fb%2f6%2f935134-cool-bubble-backgrounds-1920x1280-for-mobile-hd.jpg&ehk=WyUDi6%2fpVqhRgRZxkeM5vq5bvGudbGx3d2e2pzF4Y4o%3d&risl=&pid=ImgRaw&r=0");
@@ -267,7 +276,7 @@ nav ul {
   align-items: center;
   gap: 5px;
   margin-top: 5px;
-  margin-left: 5px ;
+  margin-left: 5px;
   padding: 5px 10px;
   background-color: #007bff26; /* Color de fondo del botón (modo claro) */
   color: #fff56400; /* Color de texto del botón (modo claro) */
@@ -280,10 +289,14 @@ nav ul {
   background-color: #297cf8; /* Nuevo color de fondo al pasar el mouse (modo oscuro) */
 }
 
-/* Estilos para el botón de cambiar el modo en modo oscuro */
+
 .modo-claro .modo-boton {
-  background-color: rgba(0, 149, 255, 0.279); /* Color de fondo del botón (modo oscuro) */
-  color: #fff564; /* Color de texto del botón (modo oscuro) */
+  background-color: rgba(
+    0,
+    149,
+    255,
+    0.279
+  ); 
 }
 
 .modo-claro .modo-boton:hover {
@@ -295,8 +308,6 @@ nav ul {
   font-size: 15px;
 }
 
-
-
 @media (max-width: 768px) {
   /* Estilos que se aplican cuando el ancho de la pantalla es menor o igual a 768px */
 
@@ -307,10 +318,8 @@ nav ul {
     border-radius: 5px;
   }
   .log-out {
-   
     align-content: center;
     padding: 5px 5px;
-    /* background-color: #a504b7; */
     color: white;
     border: none;
     border-radius: 5px;
@@ -319,10 +328,9 @@ nav ul {
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
       1px 1px 0 black;
   }
-  .log-out img{
-  height: 50px;
-
-}
+  .log-out img {
+    height: 50px;
+  }
 
   .user-email {
     color: gold;

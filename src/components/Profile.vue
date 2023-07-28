@@ -136,7 +136,6 @@ onMounted(async () => {
 .fade-in-button {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
-  /* Otras propiedades de diseño de los botones (tamaño, color, bordes, etc.) */
 }
 
 .fade-in-button:hover {

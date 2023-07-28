@@ -7,11 +7,19 @@
     </div>
     <h2 class="header-title" id="prueba">Add a new Task</h2>
 
-     <p class="subtitle"><strong>
-      Keep your tasks in order, reach your goals: Act today!</strong>
+    <p class="subtitle">
+      <strong> Keep your tasks in order, reach your goals: Act today!</strong>
     </p>
-    <h3><router-link to="/reloj" class="link-clock1"><img width="64" height="64" src="https://img.icons8.com/arcade/64/time.png" alt="time"/></router-link></h3>
-   
+    <h3>
+      <router-link to="/reloj" class="link-clock1"
+        ><img
+          width="64"
+          height="64"
+          src="https://img.icons8.com/arcade/64/time.png"
+          alt="time"
+      /></router-link>
+    </h3>
+
     <div v-if="showErrorMessage">
       <p class="error-text">{{ errorMessage }}</p>
     </div>
@@ -38,7 +46,6 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-
 import { useTaskStore } from "../stores/task";
 
 const taskStore = useTaskStore();
@@ -95,8 +102,7 @@ onMounted(() => {
 
 <style scooped >
 
-
-#prueba{
+#prueba {
   display: inline-block;
   margin: 0 0.2rem;
 
@@ -112,24 +118,13 @@ onMounted(() => {
 .fade-in-button:hover {
   opacity: 0.7;
 }
-/* .link-clock1{
-  color:gold;
-  text-decoration: none;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 20px;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 
-} */
-
-img{
+img {
   transition: transform 0.3s;
 }
-img:hover{
+img:hover {
   transform: scale(1.2);
 }
-
-
-
 
 .error-text {
   display: flex;
@@ -167,7 +162,6 @@ img:hover{
   font-size: 18px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
- 
 }
 
 .add-task-form {

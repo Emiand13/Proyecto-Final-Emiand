@@ -22,9 +22,9 @@
         frameborder="0"
         class="center"
       ></iframe>
-      <!-- <div id="elemento">
+       <!-- <div id="elemento">
         <img src="./images/logo-ironhack-blue.png" class="image-ironhack2" />
-      </div> -->
+      </div>  -->
     </div>
    
     
