@@ -34,7 +34,7 @@
     </div>
     <div class="d-flex justify-content-center align-items-center">
       <button @click="showCustomAlert" class="alerta-about">
-        No te olvides de mí!!!
+        <img width="90" height="90" src="https://img.icons8.com/3d-fluency/94/wedding-gift.png" alt="wedding-gift"/>
       </button>
     </div>
   </div>
@@ -47,7 +47,10 @@ import Swal from "sweetalert2";
 
 const showCustomAlert = () => {
   Swal.fire({
-  title: '¡Espero que os haya gustado TaskPro nos vemos pronto!',
+  title: 'Espero que os haya gustado TaskPro App nos vemos pronto! Gracias!!!',
+  
+ 
+ 
   showClass: {
     popup: 'animate__animated animate__fadeInDown'
   },
@@ -72,7 +75,7 @@ const showCustomAlert = () => {
 
 /* =============================== */
 .alerta-about {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 body {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -81,11 +84,8 @@ body {
 }
 button {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #716add;
-  color: #fff;
+  background: none;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
