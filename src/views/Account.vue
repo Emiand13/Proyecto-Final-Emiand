@@ -256,17 +256,18 @@ const uploadFile = async () => {
 // Esta función asincrónica se utiliza para obtener los datos del perfil del usuario y asignarlos a las referencias correspondientes. Esto permite actualizar los valores en la interfaz de usuario para reflejar los datos del perfil actualizados obtenidos de algún origen de datos.
 async function getProfile() {
   await userStore.fetchUser();
+  console.log("");
   username.value = userStore.profile.full_name;
   website.value = userStore.profile.website;
   bio.value = userStore.profile.bio;
   location.value = userStore.profile.location;
   avatar_url.value = userStore.profile.avatar_url;
-  // loading.value = false;
+  loading.value = false;
 
   // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba comentado
-  setTimeout(() => {
-    loading.value = false;
-  }, 1200);
+  // setTimeout(() => {
+  //   loading.value = false;
+  // }, 1200);
 }
 
 // Esta parte del código establece una observación en la propiedad userStore.profile y, cada vez que cambie, asigna el valor de updatedProfileData.avatar_url a avatar_url.value. Esto permite mantener actualizada la referencia avatar_url con el valor más reciente de la URL del avatar del perfil.
