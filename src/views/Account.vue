@@ -143,7 +143,7 @@ const userStore = useUserStore();
 
 const file = ref();
 const fileUrl = ref();
-const loading = ref(true);
+// const loading = ref(true);
 const username = ref(null);
 const website = ref(null);
 const avatar_url = ref(null);
@@ -262,7 +262,7 @@ async function getProfile() {
   bio.value = userStore.profile.bio;
   location.value = userStore.profile.location;
   avatar_url.value = userStore.profile.avatar_url;
-  loading.value = false;
+  // loading.value = false;
 
   // Este setTimeout esta puesto por ESTETICA porque hay pocos datos que traer de SUPABASE en caso de haber mas datos usariamos loading.value = false; como esta justo arriba comentado
   // setTimeout(() => {
