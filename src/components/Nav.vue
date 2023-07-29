@@ -116,10 +116,10 @@ const route = "/";
 const getUser = useUserStore().user; // Obtiene el usuario del almacén de usuarios
 
 // Constante que recupera el correo electrónico del usuario desde useUserStore
-const userEmail = ref(""); // Variable reactiva para almacenar el correo electrónico del usuario
+const userEmail = getUser.email;; // Variable reactiva para almacenar el correo electrónico del usuario
 
 // Función asíncrona que recupera el correo electrónico del usuario cuando se carga el componente
-const userStore = useUserStore(); // Accede al almacén de usuarios
+ const userStore = useUserStore(); // Accede al almacén de usuarios
 const router = useRouter(); // Accede al enrutador
 
 // Obtiene el correo electrónico del usuario cuando se carga el componente

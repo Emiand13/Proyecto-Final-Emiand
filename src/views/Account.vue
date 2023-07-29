@@ -162,6 +162,7 @@ const hundleUpdateProfile = (updatedProfileData) => {
   location.value = updatedProfileData.location;
   bio.value = updatedProfileData.bio;
 
+
   //Alerta cuando editas perfil de usuario diciendote que los cambios se han guardado
   Swal.fire({
     position: "center",
@@ -256,7 +257,6 @@ const uploadFile = async () => {
 // Esta función asincrónica se utiliza para obtener los datos del perfil del usuario y asignarlos a las referencias correspondientes. Esto permite actualizar los valores en la interfaz de usuario para reflejar los datos del perfil actualizados obtenidos de algún origen de datos.
 async function getProfile() {
   await userStore.fetchUser();
-  console.log("");
   username.value = userStore.profile.full_name;
   website.value = userStore.profile.website;
   bio.value = userStore.profile.bio;

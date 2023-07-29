@@ -57,7 +57,7 @@
           <br />
           <button
             type="button"
-            @click.prevent="updateProfile"
+            @click="updateProfile"
             class="boton-actualizar-perfil fade-in-button"
           >
             Update profile
