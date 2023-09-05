@@ -1,14 +1,16 @@
 <template>
   <div class="container">
     <div class="text-center">
-      <img
-        src="../components/images/IMAGENLOGO.png"
+
+      <!-- AQUI PODEMOS PONER UNA IMAGEN DE LOGO -->
+      <!-- <img
+        src=""
         class="image2"
         alt="imagen logo"
-      />
-      <h3 class="header-title">Welcome to TaskPro</h3>
+      /> -->
+      <h3 class="header-title">Bienvenidos a BAD BOYS SMOKE</h3>
 
-      <p class="subtitle">Ready to create your tasks in TaskPro!!!</p>
+      <p class="subtitle">Donde encontraras la mayor variedad del CBD</p>
     </div>
     <div v-show="errorMsg" class="error">{{ errorMsg }}</div>
 
